@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogbeitrag - Jordan Freddy Portfolio</title>
+    <meta name="description" content="Vollständiger Blogbeitrag von Jordan Freddy">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/blog-post.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" style="color: hsl(var(--foreground)); font-size: 1.5rem;">Portfolio</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="index.html">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="about.html">Über mich</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="projects.html">Projekte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="contact.html">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-24" style="min-height: 100vh;">
+        <div class="container py-5">
+            <div class="animate-fade-in">
+                <a href="blog.html" class="back-link">
+                    <i class="fas fa-arrow-left me-2"></i>
+                    Zurück zum Blog
+                </a>
+                
+                <article class="article-content">
+                    <header class="mb-5">
+                        <div id="heroImageContainer" class="mb-4">
+                            <!-- Hero image will be inserted here -->
+                        </div>
+                        
+                        <div id="postMeta" class="post-meta mb-4">
+                            <!-- Post meta will be inserted here -->
+                        </div>
+                        
+                        <h1 id="postTitle" class="display-4 fw-bold mb-4">
+                            <!-- Post title will be inserted here -->
+                        </h1>
+                    </header>
+                    
+                    <div id="postContent">
+                        <!-- Post content will be inserted here -->
+                    </div>
+                    
+                    <footer class="author-section">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div class="author-avatar me-3">JF</div>
+                                <div>
+                                    <h4 class="h6 fw-semibold mb-0">Jordan Freddy</h4>
+                                    <p class="small text-muted-foreground mb-0">Web Developer & Designer</p>
+                                </div>
+                            </div>
+                            
+                            <a href="blog.html" class="btn btn-outline-custom">Alle Beiträge</a>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-muted py-5">
+        <div class="container">
+            <div class="row justify-content-between align-items-center mb-4">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="fw-bold">Portfolio</h5>
+                    <p class="text-muted-foreground mb-0" style="max-width: 400px;">
+                        Projekte, Arbeiten und Gedanken – klar gestaltet und sauber umgesetzt.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end gap-3">
+                        <a href="https://www.linkedin.com/in/jordan-freddy" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Jorxas" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-between align-items-center pt-4 border-top">
+                <div class="col-md-6">
+                    <p class="text-muted-foreground mb-0 small">
+                        &copy; 2025 Portfolio. Alle Rechte vorbehalten.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                    <div class="d-flex justify-content-md-end gap-4">
+                        <a href="index.html" class="text-muted-foreground text-decoration-none small">Startseite</a>
+                        <a href="about.html" class="text-muted-foreground text-decoration-none small">Über mich</a>
+                        <a href="projects.html" class="text-muted-foreground text-decoration-none small">Projekte</a>
+                        <a href="blog.html" class="text-muted-foreground text-decoration-none small">Blog</a>
+                        <a href="contact.html" class="text-muted-foreground text-decoration-none small">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/blog-post.js"></script>
+</body>
+</html>

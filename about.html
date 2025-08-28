@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich – Jordan Freddy Portfolio</title>
+    <meta name="description" content="Erfahre mehr über Jordan Freddy – Werkstudent und Webentwickler">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" style="color: hsl(var(--foreground)); font-size: 1.5rem;">Portfolio</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="index.html">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom active" href="about.html">Über mich</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="projects.html">Projekte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="contact.html">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-24" style="min-height: 100vh;">
+        <div class="container py-5">
+            <!-- Page Header -->
+            <div class="text-center mb-12 animate-fade-in">
+                <h1 class="display-4 fw-bold">Über mich</h1>
+            </div>
+
+            <!-- Main Content -->
+            <div class="row align-items-center mb-12 animate-fade-in animate-delay-200">
+                <!-- Profile Image -->
+                <div class="col-lg-6 text-center mb-5 mb-lg-0">
+                    <div class="position-relative d-inline-block">
+                        <img 
+                            src="img/meinBild.jpg" 
+                            alt="Jordan Freddy Pokem Tezo"
+                            class="rounded-circle profile-image shadow-lg"
+                            style="width: 300px; height: 300px; object-fit: cover; border: 4px solid hsl(var(--accent));"
+                        />
+                    </div>
+                </div>
+
+                <!-- Bio -->
+                <div class="col-lg-6">
+                    <h2 class="h3 fw-semibold mb-3">Jordan Freddy Pokem Tezo</h2>
+                    <h3 class="h5 text-muted-foreground mb-4">Werkstudent – Softwareentwicklung</h3>
+                    <p class="mb-3">
+                        Mein Name ist <strong>Jordan Freddy</strong> und ich studiere derzeit <strong>Informatik an der THM in Gießen</strong> (Bachelor) mit Fokus auf <strong>Software Engineering</strong> und <strong>Datenanalyse</strong>.
+                    </p>
+                    <p class="mb-3">
+                        Besonders interessiere ich mich für die <strong>praktische Umsetzung von IT-Lösungen</strong> und die <strong>Arbeit in dynamischen Teams</strong>. Ich gelte als zuverlässig, teamorientiert und lerne schnell.
+                    </p>
+                    <p class="mb-5">
+                        Aktuell suche ich eine <strong>Werkstudentenstelle im IT‑Bereich</strong>, um mein Wissen zu vertiefen und es in realen Projekten anzuwenden.
+                    </p>
+
+                    <!-- Skills -->
+                    <h3 class="h5 fw-semibold mt-4 mb-4">Meine Fähigkeiten</h3>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="fw-medium">Frontend (HTML/CSS/JS)</span>
+                            <span class="text-muted-foreground">93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="93"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="fw-medium">Backend (Java – Vert.x)</span>
+                            <span class="text-muted-foreground">91%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="91"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="fw-medium">Echtzeit‑Kommunikation (MQTT)</span>
+                            <span class="text-muted-foreground">93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="93"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="fw-medium">Datenbanken (MariaDB / SQL)</span>
+                            <span class="text-muted-foreground">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="87"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="fw-medium">Tools & DevOps (Docker, Git/GitLab, LaTeX, MS Word/Excel)</span>
+                            <span class="text-muted-foreground">89%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="89"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mb-12 animate-fade-in animate-delay-300">
+                <h2 class="h2 fw-bold text-center mb-5">Zertifizierungen</h2>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <a href="https://www.linkedin.com/learning/certificates/45c3d36f14565fda11b59d76061c19d52be168fa5498b1a0c1c6b9fbe3b29c33?trk=share_certificate" 
+                           target="_blank" 
+                           class="text-decoration-none">
+                            <div class="card card-custom h-100 p-4 certification-card">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="d-flex align-items-center justify-content-center me-3" 
+                                         style="width: 48px; height: 48px; background-color: hsl(var(--accent) / 0.1); border-radius: 8px;">
+                                        <span style="color: hsl(var(--accent)); font-weight: bold; font-size: 1.1rem;">FE</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="h6 fw-semibold mb-0">Frontend-Webentwickler</h4>
+                                        <p class="small text-muted-foreground mb-0">LinkedIn Learning • 45 Std.</p>
+                                    </div>
+                                </div>
+                                <p class="small text-muted-foreground mb-2">Abgeschlossen: 6. April 2025</p>
+                                <p class="small">Frontend-Entwicklung mit HTML, CSS, JavaScript und modernen Frameworks</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <a href="https://www.linkedin.com/learning/certificates/289576a1aa90d368578acca712d86007814e363e9dda095ee717197520ace77e" 
+                           target="_blank" 
+                           class="text-decoration-none">
+                            <div class="card card-custom h-100 p-4 certification-card">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="d-flex align-items-center justify-content-center me-3" 
+                                         style="width: 48px; height: 48px; background-color: hsl(var(--accent) / 0.1); border-radius: 8px;">
+                                        <span style="color: hsl(var(--accent)); font-weight: bold; font-size: 1.1rem;">SQL</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="h6 fw-semibold mb-0">Das Wesentliche von SQL</h4>
+                                        <p class="small text-muted-foreground mb-0">LinkedIn Learning • 5h 17m</p>
+                                    </div>
+                                </div>
+                                <p class="small text-muted-foreground mb-2">Abgeschlossen: 20. Juni 2025</p>
+                                <p class="small">Datenbankverwaltung und SQL-Abfrageoptimierung</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <a href="https://www.linkedin.com/learning/certificates/7e5c5694213eb3709e6c36fb503151555600510c2094dbd9a0c7e107760dd4ae" 
+                           target="_blank" 
+                           class="text-decoration-none">
+                            <div class="card card-custom h-100 p-4 certification-card">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="d-flex align-items-center justify-content-center me-3" 
+                                         style="width: 48px; height: 48px; background-color: hsl(var(--accent) / 0.1); border-radius: 8px;">
+                                        <span style="color: hsl(var(--accent)); font-weight: bold; font-size: 1.1rem;">OOP</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="h6 fw-semibold mb-0">Grundlagen der Programmierung: Objektorientiertes Design</h4>
+                                        <p class="small text-muted-foreground mb-0">LinkedIn Learning • 2h 8m</p>
+                                    </div>
+                                </div>
+                                <p class="small text-muted-foreground mb-2">Abgeschlossen: 25. Januar 2025</p>
+                                <p class="small">Grundlagen der objektorientierten Programmierung und Design-Patterns</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Skills -->
+            <div class="mb-12 animate-fade-in animate-delay-300">
+                <h2 class="h2 fw-bold text-center mb-5">Sprachkenntnisse</h2>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card card-custom h-100 p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 48px; height: 48px; background-color: hsl(var(--accent) / 0.1); border-radius: 8px;">
+                                    <span style="color: hsl(var(--accent)); font-weight: bold; font-size: 1.1rem;">🇫🇷</span>
+                                </div>
+                                <div>
+                                    <h4 class="h6 fw-semibold mb-0">Französisch</h4>
+                                    <p class="small text-muted-foreground mb-0">Muttersprache</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-muted-foreground">Niveau:</span>
+                                <div class="d-flex gap-1">
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot fill"></div>
+                                </div>
+                            </div>
+                            <p class="small text-muted-foreground mb-0">Perfekte Beherrschung in Wort und Schrift</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card card-custom h-100 p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 48px; height: 48px; background-color: hsl(var(--accent) / 0.1); border-radius: 8px;">
+                                    <span style="color: hsl(var(--accent)); font-weight: bold; font-size: 1.1rem;">🇩🇪</span>
+                                </div>
+                                <div>
+                                    <h4 class="h6 fw-semibold mb-0">Deutsch</h4>
+                                    <p class="small text-muted-foreground mb-0">Gut</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-muted-foreground">Niveau:</span>
+                                <div class="d-flex gap-1">
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot"></div>
+                                </div>
+                            </div>
+                            <p class="small text-muted-foreground mb-0">DSH3 - Sehr gute Kommunikation im Alltag und Beruf</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card card-custom h-100 p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 48px; height: 48px; background-color: hsl(var(--accent) / 0.1); border-radius: 8px;">
+                                    <span style="color: hsl(var(--accent)); font-weight: bold; font-size: 1.1rem;">🇬🇧</span>
+                                </div>
+                                <div>
+                                    <h4 class="h6 fw-semibold mb-0">Englisch</h4>
+                                    <p class="small text-muted-foreground mb-0">Grundkenntnisse</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-muted-foreground">Niveau:</span>
+                                <div class="d-flex gap-1">
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot fill"></div>
+                                    <div class="language-dot"></div>
+                                    <div class="language-dot"></div>
+                                    <div class="language-dot"></div>
+                                </div>
+                            </div>
+                            <p class="small text-muted-foreground mb-0">Grundlegende Kommunikation und Verständnis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience & Education -->
+            <div class="animate-fade-in animate-delay-400">
+                <h2 class="h2 fw-bold text-center mb-5">Erfahrung & Ausbildung</h2>
+                
+                <div class="row">
+                    <!-- Experience -->
+                    <div class="col-lg-6 mb-5">
+                        <h3 class="h4 fw-semibold mb-4">Berufserfahrung</h3>
+                        <div class="timeline-item">
+                            <h4 class="h5 fw-medium">Werkstudent – Softwareentwicklung (gesucht)</h4>
+                            <p class="text-muted-foreground mb-2">Aktiv auf der Suche</p>
+                            <p class="small">Motiviert, praktische Erfahrungen in realen Projekten zu sammeln und mein Studium sinnvoll zu ergänzen.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="h5 fw-medium">Werkstudent – Lagerhelfer</h4>
+                            <p class="text-muted-foreground mb-2">seit 2025</p>
+                            <p class="small">Wareneingang/-ausgang, Kommissionierung und Bestandskontrolle; effizientes Arbeiten im Team und unter Zeitdruck.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="h5 fw-medium">Werkstudent – Verkäufer</h4>
+                            <p class="text-muted-foreground mb-2">2023 – 2024</p>
+                            <p class="small">Kundenberatung, Kassenabwicklung und Warenpräsentation; Stärkung von Kommunikations‑ und Organisationsfähigkeiten.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Education -->
+                    <div class="col-lg-6">
+                        <h3 class="h4 fw-semibold mb-4">Bildung</h3>
+                        <div class="timeline-item">
+                            <h4 class="h5 fw-medium">Bachelor Informatik</h4>
+                            <p class="fw-medium" style="color: hsl(var(--accent));">Technische Hochschule Mittelhessen (THM), Gießen</p>
+                            <p class="text-muted-foreground mb-2">seit 2024</p>
+                            <p class="small">Schwerpunkte: Softwareentwicklung, Data Science</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="h5 fw-medium">Bachelor Informatik</h4>
+                            <p class="fw-medium" style="color: hsl(var(--accent));">Technische Universität Darmstadt</p>
+                            <p class="text-muted-foreground mb-2">10/2023 – 30/2024</p>
+                            <p class="small">Grundstudium Informatik</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="h5 fw-medium">Baccalauréat (Allgemeine Hochschulreife)</h4>
+                            <p class="fw-medium" style="color: hsl(var(--accent));">Kamerun</p>
+                            <p class="text-muted-foreground mb-2">2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-muted py-5">
+        <div class="container">
+            <div class="row justify-content-between align-items-center mb-4">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="fw-bold">Portfolio</h5>
+                    <p class="text-muted-foreground mb-0" style="max-width: 400px;">
+                        Präsentation meiner Arbeiten, Projekte und Ideen mit klarem Design und sauberem Code.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end gap-3">
+                        <a href="https://www.linkedin.com/in/jordan-freddy" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Jorxas" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-between align-items-center pt-4 border-top">
+                <div class="col-md-6">
+                    <p class="text-muted-foreground mb-0 small">
+                        &copy; 2025 Portfolio. Alle Rechte vorbehalten.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                    <div class="d-flex justify-content-md-end gap-4">
+                        <a href="index.html" class="text-muted-foreground text-decoration-none small">Startseite</a>
+                        <a href="about.html" class="text-muted-foreground text-decoration-none small">Über mich</a>
+                        <a href="projects.html" class="text-muted-foreground text-decoration-none small">Projekte</a>
+                        <a href="blog.html" class="text-muted-foreground text-decoration-none small">Blog</a>
+                        <a href="contact.html" class="text-muted-foreground text-decoration-none small">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/about.js"></script>
+</body>
+</html>
