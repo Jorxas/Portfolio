@@ -25,6 +25,15 @@
 		techStack: ["Java", "Markdown", "HTML/CSS"],
 		demoUrl: "#",
 		codeUrl: "https://github.com/Jorxas/funtionplotter",
+		category: "Web App",
+	},
+	{
+		title: "Portfolio Website",
+		description: "Moderne Portfolio-Website mit responsivem Design, Bootstrap und interaktiven Elementen. Präsentiert Projekte, Erfahrungen und Kontaktinformationen.",
+		image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=2070&q=80",
+		techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+		demoUrl: "#",
+		codeUrl: "https://github.com/Jorxas/Portfolio",
 		category: "Website",
 	},
 	{
