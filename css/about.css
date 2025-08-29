@@ -110,3 +110,39 @@
     color: hsl(var(--muted-foreground)) !important;
     font-size: 0.875rem;
 }
+
+/* Skill bars */
+.skill-bar {
+    background-color: hsl(var(--muted));
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: hsl(var(--accent));
+    border-radius: 5px;
+    transition: width 2s ease-in-out;
+    width: 0%;
+}
+
+/* Timeline styles */
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid hsl(var(--accent));
+    margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    background-color: hsl(var(--accent));
+    border-radius: 50%;
+}
