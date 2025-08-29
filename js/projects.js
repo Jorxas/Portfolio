@@ -24,7 +24,7 @@
 		image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2072&q=80",
 		techStack: ["Java", "Markdown", "HTML/CSS"],
 		demoUrl: "#",
-		codeUrl: "#",
+		codeUrl: "https://github.com/Jorxas/funtionplotter",
 		category: "Website",
 	},
 	{
