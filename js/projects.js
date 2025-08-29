@@ -42,7 +42,7 @@
 		image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=2070&q=80",
 		techStack: ["HTML", "CSS", "Font Awesome", "Google Fonts"],
 		demoUrl: "#",
-		codeUrl: "#",
+		codeUrl: "https://github.com/Jorxas/myfirstpage",
 		category: "Website",
 	},
 	{
