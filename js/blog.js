@@ -91,14 +91,88 @@ function filterPosts() {
 	}
 }
 
-// Newsletter subscription
-function subscribeNewsletter() {
-	const email = document.getElementById('newsletterEmail').value;
-	if (email) {
-		alert('Danke für dein Abo!');
-		document.getElementById('newsletterEmail').value = '';
-	} else {
-		alert('Bitte eine gültige E‑Mail‑Adresse eingeben.');
+// Newsletter subscription with Formspree
+document.addEventListener('DOMContentLoaded', function() {
+	const newsletterForm = document.getElementById('newsletterForm');
+	if (newsletterForm) {
+		newsletterForm.addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			const form = this;
+			const email = document.getElementById('newsletterEmail').value;
+			const submitBtn = document.getElementById('newsletterBtn');
+			const btnText = document.getElementById('newsletterBtnText');
+			const spinner = document.getElementById('newsletterSpinner');
+			const messageDiv = document.getElementById('newsletterMessage');
+			
+			// Validation
+			if (!email || !isValidEmail(email)) {
+				showNewsletterMessage('Bitte gib eine gültige E-Mail-Adresse ein.', 'error');
+				return;
+			}
+			
+			// Show loading state
+			submitBtn.disabled = true;
+			btnText.textContent = 'Wird abonniert...';
+			spinner.classList.remove('d-none');
+			
+			// Prepare form data
+			const formData = new FormData();
+			formData.append('newsletter_email', email);
+			formData.append('subject', 'Newsletter Abonnement - Jordan Freddy Portfolio');
+			formData.append('message', `Neue Newsletter-Anmeldung: ${email}`);
+			
+			// Submit to Formspree
+			fetch(form.action, {
+				method: 'POST',
+				body: formData,
+				headers: {
+					'Accept': 'application/json'
+				}
+			})
+			.then(response => {
+				if (response.ok) {
+					showNewsletterMessage('Erfolgreich abonniert! Du erhältst bald Updates zu neuen Artikeln.', 'success');
+					form.reset();
+				} else {
+					throw new Error('Network response was not ok');
+				}
+			})
+			.catch(error => {
+				console.error('Error:', error);
+				showNewsletterMessage('Fehler beim Abonnieren. Bitte versuche es später erneut.', 'error');
+			})
+			.finally(() => {
+				// Reset button state
+				submitBtn.disabled = false;
+				btnText.textContent = 'Abonnieren';
+				spinner.classList.add('d-none');
+			});
+		});
+	}
+});
+
+// Email validation function
+function isValidEmail(email) {
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	return emailRegex.test(email);
+}
+
+// Newsletter message function
+function showNewsletterMessage(message, type = 'info') {
+	const messageDiv = document.getElementById('newsletterMessage');
+	if (messageDiv) {
+		messageDiv.className = `alert alert-${type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info'} alert-dismissible fade show mt-3`;
+		messageDiv.innerHTML = `
+			${message}
+			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+		`;
+		messageDiv.classList.remove('d-none');
+		
+		// Auto hide after 5 seconds
+		setTimeout(() => {
+			messageDiv.classList.add('d-none');
+		}, 5000);
 	}
 }
 
