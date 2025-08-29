@@ -1,24 +1,24 @@
 :root {
-    /* Color scheme */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 142.1 76.2% 36.3%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 142.1 76.2% 36.3%;
-    --accent-foreground: 355.7 100% 97.3%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
+    /* Color scheme - Dark Tech/Gaming Blue-Purple Theme */
+    --background: 250 20% 15%;
+    --foreground: 210 40% 98%;
+    --card: 250 20% 20%;
+    --card-foreground: 210 40% 98%;
+    --popover: 250 20% 20%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 250 20% 15%;
+    --secondary: 250 20% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 250 20% 25%;
+    --muted-foreground: 210 20% 80%;
+    --accent: 280 65% 70%;
+    --accent-foreground: 250 20% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 250 20% 30%;
+    --input: 250 20% 30%;
+    --ring: 280 65% 70%;
     --radius: 0.5rem;
 }
 
@@ -41,9 +41,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Navigation */
 .navbar-custom {
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(88, 28, 135, 0.9) !important;
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
 }
 
 .nav-link-custom {
@@ -214,6 +214,94 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-muted-foreground {
     color: hsl(var(--muted-foreground));
+}
+
+/* Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.5) 0%, transparent 50%);
+    animation: float 15s ease-in-out infinite;
+}
+
+.animated-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 60% 60%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-20px) rotate(1deg);
+    }
+    66% {
+        transform: translateY(10px) rotate(-1deg);
+    }
+}
+
+/* Floating particles */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(168, 85, 247, 0.3);
+    border-radius: 50%;
+    animation: particle-float 15s infinite linear;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 6s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 8s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 10s; }
+.particle:nth-child(7) { left: 70%; animation-delay: 12s; }
+.particle:nth-child(8) { left: 80%; animation-delay: 14s; }
+.particle:nth-child(9) { left: 90%; animation-delay: 16s; }
+
+@keyframes particle-float {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
 }
 
 /* Custom spacing */
