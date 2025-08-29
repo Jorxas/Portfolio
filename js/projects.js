@@ -64,13 +64,13 @@
 		category: "Web App",
 	},
 	{
-		title: "Persönliche Projekte (GitHub)",
-		description: "Kleine Web‑Apps (Rechner, Mini‑Tools), Prototypen für E‑Commerce und eine Plattform zur Aktivitäten‑Referenzierung. Fokus auf Frontend‑Design und UX.",
+		title: "Mini Apps Collection - Spielezentrum",
+		description: "Moderne Benutzeroberfläche, die alle JavaScript-Projekte an einem Ort zusammenführt. Enthält Taschenrechner, Countdown Timer, Währungsrechner, Witz-Generator und Zahlenraten. Glassmorphism-Interface mit flüssigen Animationen.",
 		image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80",
-		techStack: ["JavaScript", "HTML", "CSS", "Bootstrap"],
+		techStack: ["JavaScript", "HTML", "CSS", "Glassmorphism"],
 		demoUrl: "#",
 		codeUrl: "#",
-		category: "Website",
+		category: "Web App",
 	},
 ];
 
