@@ -55,6 +55,15 @@
 		category: "Website",
 	},
 	{
+		title: "Jorxas - Elektronik Online-Shop",
+		description: "Moderne E-Commerce-Website für den Verkauf von Elektronikgeräten. Vollständig funktional mit Warenkorb, Produktkatalog, FAQ und responsive Design. Implementiert mit HTML, CSS und Vanilla JavaScript.",
+		image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2070&q=80",
+		techStack: ["HTML", "CSS", "JavaScript", "Font Awesome", "Leaflet.js"],
+		demoUrl: "#",
+		codeUrl: "#",
+		category: "Web App",
+	},
+	{
 		title: "Persönliche Projekte (GitHub)",
 		description: "Kleine Web‑Apps (Rechner, Mini‑Tools), Prototypen für E‑Commerce und eine Plattform zur Aktivitäten‑Referenzierung. Fokus auf Frontend‑Design und UX.",
 		image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80",
