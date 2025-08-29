@@ -6,7 +6,7 @@
 		image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&w=2070&q=80",
 		techStack: ["Java (Vert.x)", "MariaDB", "MQTT", "Docker", "HTML/CSS/JS"],
 		demoUrl: "#",
-		codeUrl: "#",
+		codeUrl: "https://git.thm.de/gen1002-informatik-projekt-sose25/student-project-work/group-05",
 		category: "Web App",
 	},
 	{
@@ -15,7 +15,7 @@
 		image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=2072&q=80",
 		techStack: ["Java (Vert.x)", "Bootstrap", "JavaScript", "Docker", "Git"],
 		demoUrl: "#",
-		codeUrl: "#",
+		codeUrl: "https://git.thm.de/jfpt62/pi-2-ss-25-fr-1-o",
 		category: "Web App",
 	},
 	{
