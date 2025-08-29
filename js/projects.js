@@ -51,7 +51,7 @@
 		image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2070&q=80",
 		techStack: ["HTML", "CSS"],
 		demoUrl: "#",
-		codeUrl: "#",
+		codeUrl: "https://github.com/Jorxas/My-Blog",
 		category: "Website",
 	},
 	{
