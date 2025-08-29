@@ -1,25 +1,92 @@
-// Contact form handling
+// Contact form handling with Formspree
 document.getElementById('contactForm').addEventListener('submit', function(e) {
 	e.preventDefault();
 	
-	// Get form data
-	const name = document.getElementById('name').value;
-	const email = document.getElementById('email').value;
-	const subject = document.getElementById('subject').value;
-	const message = document.getElementById('message').value;
+	// Get form elements
+	const form = this;
+	const submitBtn = document.getElementById('submitBtn');
+	const submitText = document.getElementById('submitText');
+	const submitSpinner = document.getElementById('submitSpinner');
 	
-	// Simple validation
+	// Get form data
+	const formData = new FormData(form);
+	const name = formData.get('name');
+	const email = formData.get('email');
+	const subject = formData.get('subject');
+	const message = formData.get('message');
+	
+	// Validation
 	if (!name || !email || !subject || !message) {
-		alert('Please fill in all required fields.');
+		showNotification('Bitte fülle alle Pflichtfelder aus.', 'error');
 		return;
 	}
 	
-	// Simulate form submission
-	alert('Thank you for your message! I\'ll get back to you soon.');
+	// Email validation
+	if (!isValidEmail(email)) {
+		showNotification('Bitte gib eine gültige E-Mail-Adresse ein.', 'error');
+		return;
+	}
 	
-	// Clear form
-	this.reset();
+	// Show loading state
+	submitBtn.disabled = true;
+	submitText.textContent = 'Wird gesendet...';
+	submitSpinner.classList.remove('d-none');
+	
+	// Submit to Formspree
+	fetch(form.action, {
+		method: 'POST',
+		body: formData,
+		headers: {
+			'Accept': 'application/json'
+		}
+	})
+	.then(response => {
+		if (response.ok) {
+			showNotification('Nachricht erfolgreich gesendet! Ich melde mich bald bei dir.', 'success');
+			form.reset();
+		} else {
+			throw new Error('Network response was not ok');
+		}
+	})
+	.catch(error => {
+		console.error('Error:', error);
+		showNotification('Fehler beim Senden der Nachricht. Bitte versuche es später erneut.', 'error');
+	})
+	.finally(() => {
+		// Reset button state
+		submitBtn.disabled = false;
+		submitText.textContent = 'Nachricht senden';
+		submitSpinner.classList.add('d-none');
+	});
 });
+
+// Email validation function
+function isValidEmail(email) {
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	return emailRegex.test(email);
+}
+
+// Notification function
+function showNotification(message, type = 'info') {
+	// Create notification element
+	const notification = document.createElement('div');
+	notification.className = `alert alert-${type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info'} alert-dismissible fade show position-fixed`;
+	notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+	notification.innerHTML = `
+		${message}
+		<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+	`;
+	
+	// Add to page
+	document.body.appendChild(notification);
+	
+	// Auto remove after 5 seconds
+	setTimeout(() => {
+		if (notification.parentNode) {
+			notification.remove();
+		}
+	}, 5000);
+}
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
