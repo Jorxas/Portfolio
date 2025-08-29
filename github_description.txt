@@ -1,1 +1,0 @@
-Persönliches Portfolio-Website von Jordan Freddy Pokem Tezo. Responsive Frontend mit Bootstrap 5, CSS3 und JavaScript. Präsentiert Projekte und Kompetenzen in der Softwareentwicklung.
