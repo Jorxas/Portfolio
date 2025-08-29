@@ -119,28 +119,29 @@
                 <div class="col-lg-8 animate-fade-in animate-delay-300">
                     <div class="card-custom p-4">
                         <h2 class="h4 fw-bold mb-4">Nachricht senden</h2>
-                        <form id="contactForm">
+                        <form id="contactForm" action="https://formspree.io/f/mandeweo" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="name" class="form-label form-label-custom">Name *</label>
-                                    <input type="text" class="form-control form-control-custom" id="name" required>
+                                    <input type="text" class="form-control form-control-custom" id="name" name="name" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="email" class="form-label form-label-custom">E‑Mail *</label>
-                                    <input type="email" class="form-control form-control-custom" id="email" required>
+                                    <input type="email" class="form-control form-control-custom" id="email" name="email" required>
                                 </div>
                                 <div class="col-12">
                                     <label for="subject" class="form-label form-label-custom">Betreff *</label>
-                                    <input type="text" class="form-control form-control-custom" id="subject" required>
+                                    <input type="text" class="form-control form-control-custom" id="subject" name="subject" required>
                                 </div>
                                 <div class="col-12">
                                     <label for="message" class="form-label form-label-custom">Nachricht *</label>
-                                    <textarea class="form-control form-control-custom" id="message" rows="6" required></textarea>
+                                    <textarea class="form-control form-control-custom" id="message" name="message" rows="6" required></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-custom btn-lg">
+                                    <button type="submit" class="btn btn-custom btn-lg" id="submitBtn">
                                         <i class="fas fa-paper-plane me-2"></i>
-                                        Nachricht senden
+                                        <span id="submitText">Nachricht senden</span>
+                                        <span id="submitSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
                                     </button>
                                 </div>
                             </div>
