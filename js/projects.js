@@ -69,7 +69,7 @@
 		image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80",
 		techStack: ["JavaScript", "HTML", "CSS", "Glassmorphism"],
 		demoUrl: "#",
-		codeUrl: "#",
+		codeUrl: "https://github.com/Jorxas/mini_js_project",
 		category: "Web App",
 	},
 ];
