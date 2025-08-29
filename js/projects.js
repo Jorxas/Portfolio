@@ -37,6 +37,15 @@
 		category: "Website",
 	},
 	{
+		title: "Meine Erste Webseite",
+		description: "Meine erste selbst erstellte Webseite mit HTML und CSS. Portfolio-Projekt mit Navigation, Kontaktformular und Social Media Integration. Grundlage für meine Webentwicklungsfähigkeiten.",
+		image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=2070&q=80",
+		techStack: ["HTML", "CSS", "Font Awesome", "Google Fonts"],
+		demoUrl: "#",
+		codeUrl: "#",
+		category: "Website",
+	},
+	{
 		title: "Persönliche Projekte (GitHub)",
 		description: "Kleine Web‑Apps (Rechner, Mini‑Tools), Prototypen für E‑Commerce und eine Plattform zur Aktivitäten‑Referenzierung. Fokus auf Frontend‑Design und UX.",
 		image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80",
