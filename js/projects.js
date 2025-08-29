@@ -58,9 +58,9 @@ function createProjectCard(project) {
 						${techBadges}
 					</div>
 					<div class="d-flex gap-2">
-						<a href="${project.demoUrl}" class="btn btn-custom">Live‑Demo</a>
+						<button class="btn btn-disabled" disabled>Live‑Demo</button>
 						<a href="${project.codeUrl}" class="btn btn-outline-custom">Code ansehen</a>
-						<a href="#" class="btn btn-outline-custom">Live‑Page</a>
+						<button class="btn btn-disabled" disabled>Live‑Page</button>
 					</div>
 				</div>
 			</div>
