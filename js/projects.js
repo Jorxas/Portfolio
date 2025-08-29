@@ -46,6 +46,15 @@
 		category: "Website",
 	},
 	{
+		title: "Freizeitaktivitäten Hessen",
+		description: "Diese Website präsentiert eine umfassende Übersicht über Freizeitaktivitäten in der Region Hessen. Das Projekt wurde mit HTML und CSS entwickelt und bietet Besuchern detaillierte Informationen über verschiedene Aktivitäten, von Outdoor-Sport bis hin zu kulturellen Veranstaltungen.",
+		image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2070&q=80",
+		techStack: ["HTML", "CSS"],
+		demoUrl: "#",
+		codeUrl: "#",
+		category: "Website",
+	},
+	{
 		title: "Persönliche Projekte (GitHub)",
 		description: "Kleine Web‑Apps (Rechner, Mini‑Tools), Prototypen für E‑Commerce und eine Plattform zur Aktivitäten‑Referenzierung. Fokus auf Frontend‑Design und UX.",
 		image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80",
