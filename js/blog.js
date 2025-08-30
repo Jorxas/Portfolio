@@ -48,6 +48,14 @@ const allPosts = [
 		image: "https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
 		category: "Backend",
 	},
+	{
+		id: "7",
+		title: "Docker & CI/CD Pipeline Setup",
+		excerpt: "Praktischer Leitfaden für die Einrichtung von Docker-Containern und Continuous Integration/Deployment Pipelines.",
+		date: "10. August 2025",
+		image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+		category: "DevOps",
+	},
 ];
 
 let activeCategory = "All";
