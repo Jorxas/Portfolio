@@ -1,86 +1,263 @@
  // Blog posts data
  const posts = {
 	"1": {
-		title: "10 Tipps für sauberen Code",
+		title: "Webseiten wie ein Profi strukturieren: Semantische Tags in HTML5",
 		content: `
-			<p>Sauberer Code ist eine der wichtigsten Fähigkeiten für Entwickler. Es geht nicht nur darum, dass der Code funktioniert – er soll auch lesbar, wartbar und skalierbar sein. Hier sind 10 essenzielle Tipps, die dir helfen, besseren Code zu schreiben.</p>
+			<p>Die Struktur einer Webseite ist fundamental für ihre Qualität. Mit semantischen HTML5-Tags kannst du professionelle, zugängliche und SEO-optimierte Websites erstellen. Hier erfährst du, wie du die wichtigsten semantischen Tags richtig einsetzt.</p>
 
-			<h2>1. Aussagekräftige Variablennamen</h2>
-			<p>Variablennamen sollten klar ausdrücken, was sie enthalten. Statt generischer Namen wie 'data' oder 'temp' beschreibe den Zweck der Variable.</p>
+			<h2>Was sind semantische Tags?</h2>
+			<p>Semantische Tags geben dem Browser und Suchmaschinen eine klare Bedeutung über den Inhalt. Sie verbessern die Zugänglichkeit und machen deinen Code verständlicher.</p>
+
+			<h2>1. &lt;header&gt; - Der Kopfbereich</h2>
+			<p>Der Header enthält meist das Logo, die Navigation und wichtige Informationen über die Seite.</p>
 			
-			<pre><code>// Schlecht
-const d = new Date();
-const u = users.filter(x => x.active);
+			<pre><code>&lt;header&gt;
+    &lt;h1&gt;Meine Website&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#home"&gt;Startseite&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#about"&gt;Über uns&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
 
-// Gut
-const currentDate = new Date();
-const activeUsers = users.filter(user => user.isActive);</code></pre>
+			<h2>2. &lt;nav&gt; - Navigation</h2>
+			<p>Kennzeichnet den Navigationsbereich deiner Website. Screen Reader können so schnell zur Navigation springen.</p>
 
-			<h2>2. Kleine, fokussierte Funktionen</h2>
-			<p>Funktionen sollten eine Sache gut machen. Wenn sie mehrere Dinge tun, teile sie in kleinere Funktionen auf.</p>
+			<h2>3. &lt;main&gt; - Hauptinhalt</h2>
+			<p>Enthält den wichtigsten Inhalt der Seite. Es sollte nur ein &lt;main&gt;-Element pro Seite geben.</p>
 
-			<h2>3. Selbstdokumentierender Code</h2>
-			<p>Guter Code erklärt sich weitgehend selbst. Kommentare sind hilfreich, aber die Logik sollte auch ohne viele Kommentare verständlich sein.</p>
+			<h2>4. &lt;section&gt; - Abschnitte</h2>
+			<p>Gruppiert thematisch zusammengehörige Inhalte. Jede Section sollte eine Überschrift haben.</p>
 
-			<h2>4. Einheitliche Benennungen</h2>
-			<p>Bleibe konsistent bei camelCase, snake_case oder kebab-case. Konsistenz wirkt professionell und verbessert die Lesbarkeit.</p>
+			<pre><code>&lt;section&gt;
+    &lt;h2&gt;Unsere Dienstleistungen&lt;/h2&gt;
+    &lt;p&gt;Wir bieten verschiedene Services an...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
 
-			<h2>5. Versionskontrolle effektiv nutzen</h2>
-			<p>Häufige, kleine Commits mit aussagekräftigen Messages erleichtern das Nachvollziehen und Zurücksetzen.</p>
+			<h2>5. &lt;article&gt; - Selbstständige Inhalte</h2>
+			<p>Für Inhalte, die auch allein stehen können: Blog-Posts, News-Artikel, Kommentare.</p>
 
-			<h2>6. Fehler sauber behandeln</h2>
-			<p>Antizipiere Fehlerfälle und behandle sie angemessen. Verhindere unnötige Abstürze.</p>
+			<h2>6. &lt;aside&gt; - Zusatzinformationen</h2>
+			<p>Für Inhalte, die zum Hauptinhalt gehören, aber nicht direkt damit verbunden sind: Sidebars, Werbung, verwandte Links.</p>
 
-			<h2>7. Tiefe Verschachtelung vermeiden</h2>
-			<p>Zu viele verschachtelte ifs/Loops erschweren das Lesen. Nutze frühe Returns oder zerlege die Logik.</p>
+			<h2>7. &lt;footer&gt; - Fußbereich</h2>
+			<p>Enthält Kontaktinformationen, Copyright, Links zu sozialen Medien.</p>
 
-			<h2>8. Toten Code entfernen</h2>
-			<p>Nicht genutzter Code (auskommentiert/alt) erhöht nur die Komplexität.</p>
+			<h2>Vorteile semantischer Tags</h2>
+			<ul>
+				<li><strong>Zugänglichkeit:</strong> Screen Reader können die Struktur besser verstehen</li>
+				<li><strong>SEO:</strong> Suchmaschinen verstehen den Inhalt besser</li>
+				<li><strong>Wartbarkeit:</strong> Code ist leichter zu verstehen und zu pflegen</li>
+				<li><strong>Zukunftssicherheit:</strong> Standards-konformer Code</li>
+			</ul>
 
-			<h2>9. Linting-Tools einsetzen</h2>
-			<p>Tools wie ESLint helfen, Standards durchzusetzen und Probleme früh zu erkennen.</p>
+			<h2>Beispiel einer vollständigen Struktur</h2>
+			<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;title&gt;Meine Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Website-Titel&lt;/h1&gt;
+        &lt;nav&gt;Navigation&lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Hauptinhalt&lt;/h2&gt;
+            &lt;p&gt;Inhalt...&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;Zusatzinfo&lt;/h3&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Copyright 2025&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
 
-			<h2>10. Regelmäßig refaktorisieren</h2>
-			<p>Verbessere deinen Code kontinuierlich. Refactoring hält die Codequalität hoch.</p>
-
-			<p>Sauberen Code zu schreiben ist Übungssache. Fang heute an – die Qualität deiner Projekte wird profitieren.</p>
+			<p>Semantische HTML5-Tags sind der Schlüssel zu professionellen, zugänglichen und suchmaschinenoptimierten Websites. Beginne heute damit, sie in deine Projekte zu integrieren!</p>
 		`,
-		date: "15. Mai 2023",
+		date: "12. April 2025",
 		author: "Jordan Freddy",
-		category: "Entwicklung",
-		image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-		readTime: "8 Min."
+		category: "Frontend",
+		image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+		readTime: "10 Min."
 	},
 	"2": {
-		title: "Die Zukunft des Webdesigns: Trends im Blick",
+		title: "Responsive Design mit Flexbox und Grid erstellen",
 		content: `
-			<p>Webdesign entwickelt sich rasant. Wer moderne, ansprechende Erlebnisse schaffen will, sollte die wichtigsten Trends kennen.</p>
+			<p>Moderne CSS-Layout-Techniken haben die Webentwicklung revolutioniert. Flexbox und Grid ermöglichen es uns, komplexe, responsive Layouts zu erstellen, die auf allen Geräten perfekt funktionieren.</p>
 
-			<h2>1. KI‑getriebene Personalisierung</h2>
-			<p>KI ermöglicht dynamische Inhalte und intelligente Layouts – Websites werden adaptiver und nutzerzentrierter.</p>
+			<h2>Warum Flexbox und Grid?</h2>
+			<p>Traditionelle Layout-Methoden mit Float und Position waren umständlich und fehleranfällig. Flexbox und Grid bieten intuitive, mächtige Werkzeuge für moderne Layouts.</p>
 
-			<h2>2. Voice User Interface (VUI)</h2>
-			<p>Mit Sprachassistenten steigt die Relevanz sprachbasierter Interaktionen. Design muss Sprache mitdenken.</p>
+			<h2>1. Flexbox - Flexible Box Layout</h2>
+			<p>Flexbox ist ideal für eindimensionale Layouts - entweder in Zeilen oder Spalten. Perfekt für Navigationen, Card-Layouts und flexible Inhalte.</p>
 
-			<h2>3. Immersive 3D‑Erlebnisse</h2>
-			<p>WebGL/WebXR erlauben 3D direkt im Browser: Produkt‑Demos, virtuelle Touren, Storytelling.</p>
+			<h3>Grundlegende Flexbox-Eigenschaften</h3>
+			<pre><code>.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-			<h2>4. Mikro‑Interaktionen & Animationen</h2>
-			<p>Feine Animationen geben Feedback und steigern Engagement – dosiert und sinnvoll eingesetzt.</p>
+.item {
+    flex: 1;
+    margin: 10px;
+}</code></pre>
 
-			<h2>5. Dark Mode & Farbpsychologie</h2>
-			<p>Dunkle Designs sind Standard geworden. Farben gezielt einsetzen und Kontraste beachten.</p>
+			<h3>Responsive Navigation mit Flexbox</h3>
+			<pre><code>.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
 
-			<h2>6. Minimalistische, klare Layouts</h2>
-			<p>Viel Weißraum, klare Hierarchie – bessere Lesbarkeit und Fokus.</p>
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
 
-			<p>Bleibe neugierig und probiere neue Technologien – so entstehen innovative Erlebnisse.</p>
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}</code></pre>
+
+			<h2>2. CSS Grid - Zweidimensionale Layouts</h2>
+			<p>Grid ist perfekt für zweidimensionale Layouts. Du definierst Zeilen und Spalten und platzierst Elemente genau dort, wo du sie haben möchtest.</p>
+
+			<h3>Grid-Container einrichten</h3>
+			<pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    gap: 2rem;
+    padding: 2rem;
+}</code></pre>
+
+			<h3>Responsive Grid-Layout</h3>
+			<pre><code>.responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .responsive-grid {
+        grid-template-columns: 1fr;
+    }
+}</code></pre>
+
+			<h2>3. Kombination von Flexbox und Grid</h2>
+			<p>Die wahre Stärke liegt in der Kombination beider Techniken. Grid für das Hauptlayout, Flexbox für die Inhalte innerhalb der Grid-Zellen.</p>
+
+			<pre><code>.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}</code></pre>
+
+			<h2>4. Responsive Design Best Practices</h2>
+			<ul>
+				<li><strong>Mobile-First:</strong> Beginne mit dem kleinsten Screen und erweitere</li>
+				<li><strong>Flexible Einheiten:</strong> Verwende rem, em, %, vw/vh statt px</li>
+				<li><strong>Breakpoints:</strong> Definiere klare Breakpoints für verschiedene Geräte</li>
+				<li><strong>Testen:</strong> Teste auf echten Geräten, nicht nur im Browser</li>
+			</ul>
+
+			<h2>5. Praktisches Beispiel: Portfolio-Layout</h2>
+			<pre><code>.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-image {
+    flex: 0 0 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}</code></pre>
+
+			<h2>Browser-Support und Fallbacks</h2>
+			<p>Flexbox und Grid werden von allen modernen Browsern unterstützt. Für ältere Browser kannst du Fallbacks verwenden:</p>
+
+			<pre><code>/* Fallback für ältere Browser */
+.container {
+    display: block; /* Fallback */
+}
+
+/* Moderne Browser */
+@supports (display: flex) {
+    .container {
+        display: flex;
+    }
+}</code></pre>
+
+			<p>Flexbox und Grid haben die CSS-Layout-Landschaft revolutioniert. Mit diesen Techniken kannst du moderne, responsive und wartbare Websites erstellen. Beginne heute damit, sie in deine Projekte zu integrieren!</p>
 		`,
-		date: "22. Juni 2023",
+		date: "18. April 2025",
 		author: "Jordan Freddy",
-		category: "Design",
-		image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2055&q=80",
-		readTime: "6 Min."
+		category: "Frontend",
+		image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+		readTime: "12 Min."
 	},
 	"3": {
 		title: "Barrierefreie Webanwendungen bauen",
