@@ -40,7 +40,9 @@ function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in');
+                entry.target.classList.add('animated');
+                // Unobserve after animation is triggered
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
