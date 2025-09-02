@@ -33,8 +33,8 @@ function initSmoothScrolling() {
 // Initialize animations on scroll
 function initScrollAnimations() {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0,
+        rootMargin: '0px 0px 0px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -47,9 +47,15 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements with animation classes
-    document.querySelectorAll('.animate-fade-in').forEach(el => {
-        observer.observe(el);
+    // Immediately reveal elements already in viewport, observe the rest
+    const animatedEls = document.querySelectorAll('.animate-fade-in');
+    animatedEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            el.classList.add('animated');
+        } else {
+            observer.observe(el);
+        }
     });
 }
 
