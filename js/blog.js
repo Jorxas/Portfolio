@@ -272,8 +272,8 @@ function showNewsletterMessage(message, type = 'info') {
 	}
 }
 
-// Initialize page
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize page (robust for cases where DOM is already ready on mobile)
+function initBlogPage() {
 	// Display all posts initially
 	filterPosts();
 
@@ -319,4 +319,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	animatedElements.forEach(el => {
 		observer.observe(el);
 	});
-});
+}
+
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', initBlogPage);
+} else {
+	// DOM is already ready
+	initBlogPage();
+}
