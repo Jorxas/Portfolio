@@ -32,99 +32,111 @@ Jordan Freddy ist ein **Informatikstudent** (Bachelor) an der THM Gießen mit Sp
 - ✅ **Projektfilterung** - Suche und Filterung nach Kategorie
 - ✅ **Moderne Benutzeroberfläche** - Sauberes Design mit Bootstrap 5
 - ✅ **SEO-Optimierung** - Metadaten und semantische Struktur
+- ✅ **JSON-basierte Datenverwaltung** - Blogs werden dynamisch aus JSON geladen
 
 ## 🛠️ Verwendete Technologien
 
 ### Frontend:
 - **HTML5** - Semantische Struktur
 - **CSS3** - Benutzerdefinierte Styles mit CSS-Variablen
-- **JavaScript** - Interaktionen und Animationen
+- **JavaScript (ES6+)** - Interaktionen, Animationen und JSON-Integration
 - **Bootstrap 5** - CSS-Framework für responsives Design
 - **Font Awesome** - Vektorbasierte Icons
 - **Google Fonts** - Typografie (Inter, Poppins)
 
 ### Backend & Tools:
-- **Java (Vert.x)** - Backend-Framework für Projekte
-- **MariaDB** - Datenbank
-- **MQTT** - Echtzeit-Kommunikation
-- **Docker** - Containerisierung
+- **Docker** - Containerisierung und Deployment
+- **Nginx** - Webserver für Production
 - **Git** - Versionskontrolle
+- **JSON** - Datenstruktur für Blog-Inhalte
 
 ## 📁 Projektstruktur
 
 ```
 portfolio/
-├── index.html          # Startseite
-├── about.html          # Über mich Seite
-├── projects.html       # Projekte Seite
-├── blog.html           # Blog Seite
-├── blog-post.html      # Blog-Artikel Template
-├── contact.html        # Kontakt Seite
-├── css/                # CSS Styles
+├── index.html              # Startseite
+├── about.html              # Über mich Seite
+├── projects.html           # Projekte Seite
+├── blog.html               # Blog Seite
+├── blog-post.html          # Blog-Artikel Template
+├── contact.html            # Kontakt Seite
+├── css/                    # CSS Styles
+│   ├── common.css          # Gemeinsame Styles
 │   ├── index.css
 │   ├── about.css
 │   ├── projects.css
 │   ├── blog.css
 │   ├── blog-post.css
 │   └── contact.css
-├── js/                 # JavaScript Skripte
+├── js/                     # JavaScript Skripte
+│   ├── common.js           # Gemeinsame Funktionen
 │   ├── index.js
 │   ├── about.js
 │   ├── projects.js
 │   ├── blog.js
-│   ├── blog-post.js
+│   ├── blog-post.js        # JSON-Integration für Blogs
 │   └── contact.js
-├── img/                # Bilder
-│   └── meinBild.jpg    # Profilbild
-└── README.md           # Diese Datei
+├── data/                   # Datenstrukturen
+│   └── blog-posts.json     # Blog-Inhalte
+├── img/                    # Bilder
+│   └── meinBild.jpg        # Profilbild
+├── Dockerfile              # Docker-Konfiguration
+├── docker-run.ps1          # PowerShell-Script zum Starten
+├── .dockerignore           # Docker-Ignore-Datei
+└── README.md               # Diese Datei
 ```
-
-## 🎨 Präsentierte Projekte
-
-### 1. Simon Goes Multiplayer
-- **Beschreibung**: Verteiltes Multiplayer-Spiel mit Echtzeit-Synchronisation
-- **Technologien**: Java (Vert.x), MariaDB, MQTT, Docker
-- **Funktionen**: MQTT-Kommunikation, robustes Backend, containerisierte Bereitstellung
-
-### 2. To-Do App
-- **Beschreibung**: Aufgabenverwaltungsanwendung mit responsiver Benutzeroberfläche
-- **Technologien**: Java (Vert.x), Bootstrap, JavaScript, Docker
-- **Funktionen**: Vollständiges CRUD, moderne Benutzeroberfläche, automatisierte Bereitstellung
-
-### 3. Function Plotter
-- **Beschreibung**: Java-basiertes Tool zum Plotten von Funktionen
-- **Technologien**: Java, Markdown, HTML/CSS
-- **Funktionen**: Funktionale Programmierung, Streams, Collections
 
 ## 🚀 Installation und Verwendung
 
 ### Voraussetzungen:
+- **Docker** (empfohlen für beste Performance)
 - Moderner Webbrowser (Chrome, Firefox, Safari, Edge)
-- Lokaler Webserver (optional für Entwicklung)
 
-### Installation:
-1. Repository klonen:
+### 🐳 Mit Docker (Empfohlen):
+
+1. **Repository klonen:**
    ```bash
    git clone [REPO_URL]
    cd portfolio
    ```
 
-2. `index.html` in Ihrem Browser öffnen oder Dateien über einen lokalen Webserver bereitstellen
+2. **Docker-Container starten:**
+   ```powershell
+   # PowerShell-Script ausführen
+   .\docker-run.ps1
+   ```
 
-### Lokale Entwicklung:
-Für einen einfachen Entwicklungsserver:
+3. **Website öffnen:**
+   - Öffnen Sie `http://localhost:8080` in Ihrem Browser
+
+### 🌐 Alternative: Lokaler Webserver
+
+Falls Docker nicht verfügbar ist:
+
 ```bash
-# Mit Python 3
-python -m http.server 8000
-
-# Mit Node.js (falls http-server installiert ist)
+# Mit Node.js
 npx http-server
-
-# Mit PHP
-php -S localhost:8000
 ```
 
 Dann öffnen Sie `http://localhost:8000` in Ihrem Browser.
+
+## 🎨 Architektur und Funktionsweise
+
+### Frontend-Architektur:
+- **Modulare Struktur** - Jede Seite hat eigene CSS/JS-Dateien
+- **JSON-Integration** - Blog-Inhalte werden dynamisch geladen
+- **Responsive Design** - Mobile-First-Ansatz mit Bootstrap
+- **Progressive Enhancement** - Funktioniert auch ohne JavaScript
+
+### Datenverwaltung:
+- **Statische Inhalte** - HTML-basierte Seiten
+- **Dynamische Blogs** - JSON-basierte Inhalte mit JavaScript
+- **Bildoptimierung** - Responsive Bilder mit verschiedenen Größen
+
+### Performance:
+- **Lazy Loading** - Bilder werden bei Bedarf geladen
+- **CSS/JS-Minimierung** - Optimierte Dateigrößen
+- **Caching-Strategien** - Browser-Caching für statische Ressourcen
 
 ## 📱 Responsives Design
 
@@ -135,11 +147,11 @@ Die Website ist vollständig responsiv und optimiert für:
 
 ## 🎯 Projektziele
 
-- ✅ Präsentation der Fähigkeiten und Projekte von Jordan Freddy
-- ✅ Erstellung einer modernen und intuitiven Benutzeroberfläche
-- ✅ Demonstration der Webentwicklungsfähigkeiten
-- ✅ Erleichterung des Kontakts mit Recruitern
-- ✅ Bereitstellung einer Basis für zukünftige Entwicklungen
+- ✅ **Professionelle Präsentation** - Moderne und intuitive Benutzeroberfläche
+- ✅ **Technische Demonstration** - Zeigt Webentwicklungsfähigkeiten
+- ✅ **Kontaktförderung** - Erleichtert Verbindung mit Recruitern
+- ✅ **Skalierbarkeit** - Basis für zukünftige Entwicklungen
+- ✅ **Performance** - Schnelle Ladezeiten und optimale Benutzererfahrung
 
 ## 📞 Kontakt
 
