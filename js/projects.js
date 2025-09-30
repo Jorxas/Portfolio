@@ -72,6 +72,15 @@
 		codeUrl: "https://github.com/Jorxas/mini_js_project",
 		category: "Web App",
 	},
+	{
+		title: "Interaktive 3D-Karte - Empanadas",
+		description: "Interaktive elektronische Karte zur Förderung eines Empanada-Verkaufsstands. 3D-Rotationsanimation, Touch-Interaktion, Vollbildansicht und Download-Funktion für beide Kartenseiten. Modernes Design mit flüssigen Animationen und responsive Layout.",
+		image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=2070&q=80",
+		techStack: ["HTML5", "CSS3", "JavaScript", "Canvas API"],
+		demoUrl: "https://cs-empanadas.netlify.app",
+		codeUrl: "https://github.com/Jorxas/empanadas",
+		category: "Web App",
+	},
 ];
 
 let activeCategory = "All";
@@ -96,7 +105,7 @@ function createProjectCard(project) {
 					<div class="d-flex gap-2">
 						<button class="btn btn-disabled" disabled>Live‑Demo</button>
 						<a href="${project.codeUrl}" class="btn btn-outline-custom">Code ansehen</a>
-						<button class="btn btn-disabled" disabled>Live‑Page</button>
+						<a href="${project.demoUrl}" class="btn btn-custom" target="_blank">Live‑Page</a>
 					</div>
 				</div>
 			</div>
