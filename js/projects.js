@@ -68,7 +68,7 @@
 		description: "Moderne Benutzeroberfläche, die alle JavaScript-Projekte an einem Ort zusammenführt. Enthält Taschenrechner, Countdown Timer, Währungsrechner, Witz-Generator und Zahlenraten. Interface mit flüssigen Animationen.",
 		image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80",
 		techStack: ["JavaScript", "HTML", "CSS"],
-		demoUrl: "#",
+		demoUrl: "https://jorxas.github.io/mini_js_project/",
 		codeUrl: "https://github.com/Jorxas/mini_js_project",
 		category: "Web App",
 	},
@@ -92,9 +92,10 @@ function createProjectCard(project) {
 		`<span class="tech-badge">${tech}</span>`
 	).join('');
 
-	// Check if this is the Empanadas project to enable Live-Page button
-	const isEmpanadasProject = project.title === "Interaktive 3D-Karte - Empanadas";
-	const livePageButton = isEmpanadasProject 
+	// Check if project has a live demo page
+	const hasLivePage = project.title === "Interaktive 3D-Karte - Empanadas" || 
+	                    project.title === "Mini Apps Collection - Spielezentrum";
+	const livePageButton = hasLivePage 
 		? `<a href="${project.demoUrl}" class="btn btn-custom" target="_blank">Live‑Page</a>`
 		: `<button class="btn btn-disabled" disabled>Live‑Page</button>`;
 
