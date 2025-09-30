@@ -6,7 +6,7 @@
 		image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&w=2070&q=80",
 		techStack: ["Java (Vert.x)", "MariaDB", "MQTT", "Docker", "HTML/CSS/JS", "Git"],
 		demoUrl: "#",
-		codeUrl: "https://git.thm.de/gen1002-informatik-projekt-sose25/student-project-work/group-05",
+		codeUrl: "https://github.com/Jorxas/simon_game",
 		category: "Web App",
 	},
 	{
@@ -15,7 +15,7 @@
 		image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=2072&q=80",
 		techStack: ["Java (Vert.x)", "MariaDB", "HTML/CSS/JS", "Docker", "Git"],
 		demoUrl: "#",
-		codeUrl: "https://git.thm.de/jfpt62/pi-2-ss-25-fr-1-o",
+		codeUrl: "https://github.com/Jorxas/Todo-app",
 		category: "Web App",
 	},
 	{
@@ -92,6 +92,12 @@ function createProjectCard(project) {
 		`<span class="tech-badge">${tech}</span>`
 	).join('');
 
+	// Check if this is the Empanadas project to enable Live-Page button
+	const isEmpanadasProject = project.title === "Interaktive 3D-Karte - Empanadas";
+	const livePageButton = isEmpanadasProject 
+		? `<a href="${project.demoUrl}" class="btn btn-custom" target="_blank">Live‑Page</a>`
+		: `<button class="btn btn-disabled" disabled>Live‑Page</button>`;
+
 	return `
 		<div class="col-lg-4 col-md-6 project-item" data-category="${project.category}">
 			<div class="card project-card h-100">
@@ -105,7 +111,7 @@ function createProjectCard(project) {
 					<div class="d-flex gap-2">
 						<button class="btn btn-disabled" disabled>Live‑Demo</button>
 						<a href="${project.codeUrl}" class="btn btn-outline-custom">Code ansehen</a>
-						<a href="${project.demoUrl}" class="btn btn-custom" target="_blank">Live‑Page</a>
+						${livePageButton}
 					</div>
 				</div>
 			</div>
