@@ -81,6 +81,15 @@
 		codeUrl: "https://github.com/Jorxas/empanadas",
 		category: "Web App",
 	},
+	{
+		title: "Steinbeis Beratungszentrum - Bau- und Immobilienökonomie",
+		description: "Moderne Unternehmenswebsite zur Präsentation der Beratungsdienstleistungen des Steinbeis Beratungszentrums im Bereich Bau und Immobilien, mit Expertise in Bauprojektmanagement, Immobilienbewertung und Risk Engineering.",
+		image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2070&q=80",
+		techStack: ["Next.js", "React", "Tailwind CSS", "Lucide React", "JavaScript (JSX)", "Google Fonts"],
+		demoUrl: "#",
+		codeUrl: "https://bitbucket.org/jorxas/steinbeis",
+		category: "Website",
+	},
 ];
 
 let activeCategory = "All";
