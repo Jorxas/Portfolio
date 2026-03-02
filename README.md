@@ -1,10 +1,10 @@
 # Portfolio - Jordan Freddy Pokem Tezo
 
-## 📋 Beschreibung
+##  Beschreibung
 
 Persönliches Portfolio von **Jordan Freddy Pokem Tezo**, Informatikstudent an der THM Gießen, spezialisiert auf Softwareentwicklung. Diese Website präsentiert seine Projekte, Fähigkeiten und Erfahrungen im Bereich der Programmierung.
 
-## 🎯 Über mich
+##  Über mich
 
 Jordan Freddy ist ein **Informatikstudent** (Bachelor) an der THM Gießen mit Spezialisierung auf **Software Engineering** und **Datenanalyse**. Er sucht derzeit eine **Werkstudentenstelle im IT-Bereich**, um sein Wissen zu vertiefen und es in realen Projekten anzuwenden.
 
@@ -16,23 +16,23 @@ Jordan Freddy ist ein **Informatikstudent** (Bachelor) an der THM Gießen mit Sp
 - **Kommunikation**: MQTT
 - **Tools**: Bootstrap, Font Awesome
 
-## 🚀 Funktionen
+##  Funktionen
 
 ### Hauptseiten:
-- **🏠 Startseite** (`index.html`) - Allgemeine Präsentation mit Hero-Sektion, Über mich, Projekte und Kontakt
-- **👤 Über mich** (`about.html`) - Detaillierte Informationen über Jordan, seine Fähigkeiten und seinen Werdegang
-- **💼 Projekte** (`projects.html`) - Vollständiges Projektportfolio mit Filtern und Suche
-- **📝 Blog** (`blog.html`) - Artikel und Gedanken zur Technologie
-- **📞 Kontakt** (`contact.html`) - Kontaktformular und Verbindungsinformationen
+- ** Startseite** (`index.html`) - Allgemeine Präsentation mit Hero-Sektion, Über mich, Projekte und Kontakt
+- ** Über mich** (`about.html`) - Detaillierte Informationen über Jordan, seine Fähigkeiten und seinen Werdegang
+- ** Projekte** (`projects.html`) - Vollständiges Projektportfolio mit Filtern und Suche
+- ** Blog** (`blog.html`) - Artikel und Gedanken zur Technologie
+- ** Kontakt** (`contact.html`) - Kontaktformular und Verbindungsinformationen
 
 ### Technische Funktionen:
-- ✅ **Responsives Design** - Kompatibel mit Mobile, Tablet und Desktop
-- ✅ **Flüssige Animationen** - Übergangseffekte und CSS-Animationen
-- ✅ **Intuitive Navigation** - Feste Navigationsleiste mit aktiven Indikatoren
-- ✅ **Projektfilterung** - Suche und Filterung nach Kategorie
-- ✅ **Moderne Benutzeroberfläche** - Sauberes Design mit Bootstrap 5
-- ✅ **SEO-Optimierung** - Metadaten und semantische Struktur
-- ✅ **JSON-basierte Datenverwaltung** - Blogs werden dynamisch aus JSON geladen
+-  **Responsives Design** - Kompatibel mit Mobile, Tablet und Desktop
+-  **Flüssige Animationen** - Übergangseffekte und CSS-Animationen
+-  **Intuitive Navigation** - Feste Navigationsleiste mit aktiven Indikatoren
+-  **Projektfilterung** - Suche und Filterung nach Kategorie
+-  **Moderne Benutzeroberfläche** - Sauberes Design mit Bootstrap 5
+-  **SEO-Optimierung** - Metadaten und semantische Struktur
+-  **JSON-basierte Datenverwaltung** - Blogs werden dynamisch aus JSON geladen
 
 ## 🛠️ Verwendete Technologien
 
@@ -50,7 +50,7 @@ Jordan Freddy ist ein **Informatikstudent** (Bachelor) an der THM Gießen mit Sp
 - **Git** - Versionskontrolle
 - **JSON** - Datenstruktur für Blog-Inhalte
 
-## 📁 Projektstruktur
+##  Projektstruktur
 
 ```
 portfolio/
@@ -86,13 +86,13 @@ portfolio/
 └── README.md               # Diese Datei
 ```
 
-## 🚀 Installation und Verwendung
+##  Installation und Verwendung
 
 ### Voraussetzungen:
 - **Docker** (empfohlen für beste Performance)
 - Moderner Webbrowser (Chrome, Firefox, Safari, Edge)
 
-### 🐳 Mit Docker (Empfohlen):
+###  Mit Docker (Empfohlen):
 
 1. **Repository klonen:**
    ```bash
@@ -109,7 +109,7 @@ portfolio/
 3. **Website öffnen:**
    - Öffnen Sie `http://localhost:8080` in Ihrem Browser
 
-### 🌐 Alternative: Lokaler Webserver
+###  Alternative: Lokaler Webserver
 
 Falls Docker nicht verfügbar ist:
 
@@ -120,7 +120,7 @@ npx http-server
 
 Dann öffnen Sie `http://localhost:8000` in Ihrem Browser.
 
-## 🎨 Architektur und Funktionsweise
+##  Architektur und Funktionsweise
 
 ### Frontend-Architektur:
 - **Modulare Struktur** - Jede Seite hat eigene CSS/JS-Dateien
@@ -138,31 +138,23 @@ Dann öffnen Sie `http://localhost:8000` in Ihrem Browser.
 - **CSS/JS-Minimierung** - Optimierte Dateigrößen
 - **Caching-Strategien** - Browser-Caching für statische Ressourcen
 
-## 📱 Responsives Design
+##  Responsives Design
 
 Die Website ist vollständig responsiv und optimiert für:
 - **Mobile**: 320px - 768px
 - **Tablet**: 768px - 1024px
 - **Desktop**: 1024px+
 
-## 🎯 Projektziele
+##  Projektziele
 
-- ✅ **Professionelle Präsentation** - Moderne und intuitive Benutzeroberfläche
-- ✅ **Technische Demonstration** - Zeigt Webentwicklungsfähigkeiten
-- ✅ **Kontaktförderung** - Erleichtert Verbindung mit Recruitern
-- ✅ **Skalierbarkeit** - Basis für zukünftige Entwicklungen
-- ✅ **Performance** - Schnelle Ladezeiten und optimale Benutzererfahrung
+-  **Professionelle Präsentation** - Moderne und intuitive Benutzeroberfläche
+-  **Technische Demonstration** - Zeigt Webentwicklungsfähigkeiten
+-  **Kontaktförderung** - Erleichtert Verbindung mit Recruitern
+-  **Skalierbarkeit** - Basis für zukünftige Entwicklungen
+-  **Performance** - Schnelle Ladezeiten und optimale Benutzererfahrung
 
-## 📞 Kontakt
+##  Kontakt
 
 - **LinkedIn**: [Jordan Freddy](https://www.linkedin.com/in/jordan-freddy)
 - **GitHub**: [Jorxas](https://github.com/Jorxas)
 - **E-Mail**: Über das Kontaktformular auf der Website
-
-## 📄 Lizenz
-
-Dieses Projekt ist ein persönliches Portfolio. Alle Rechte vorbehalten © 2025 Jordan Freddy Pokem Tezo.
-
----
-
-*Entwickelt mit ❤️ von Jordan Freddy Pokem Tezo*
