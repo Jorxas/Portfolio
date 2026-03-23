@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Jordan Freddy Pokem Tezo
 
-## Getting Started
+## Beschreibung
 
-First, run the development server:
+Persönliches Portfolio von **Jordan Freddy Pokem Tezo**, Informatikstudent an der THM Gießen, spezialisiert auf Softwareentwicklung. Diese Website präsentiert Projekte, Fähigkeiten und Erfahrungen im Bereich der Programmierung.
+
+## Über mich
+
+Jordan Freddy ist **Informatikstudent** (Bachelor) an der THM Gießen mit Spezialisierung auf **Software Engineering** und **Datenanalyse**. Er sucht derzeit eine **Werkstudentenstelle im IT-Bereich**, um sein Wissen zu vertiefen und es in realen Projekten anzuwenden.
+
+### Hauptkompetenzen
+
+- **Frontend**: HTML/CSS/JavaScript
+- **Backend**: Java (Vert.x)
+- **Datenbanken**: MariaDB
+- **DevOps**: Docker, Git
+- **Kommunikation**: MQTT
+
+## Funktionen
+
+- **Responsives Design** - optimiert für Mobile, Tablet und Desktop
+- **Moderne Benutzeroberfläche** - sauberes, gut strukturiertes Layout
+- **Intuitive Navigation** - klare Seitenstruktur für gute Nutzerführung
+- **SEO-Basis** - semantische Struktur und Metadaten
+
+## Verwendete Technologien
+
+- **Next.js** (App Router)
+- **React**
+- **TypeScript**
+- **CSS**
+
+## Installation und Verwendung
+
+### Voraussetzungen
+
+- Node.js (empfohlen: aktuelle LTS-Version)
+- npm
+
+### Entwicklung starten
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dann im Browser öffnen: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Projektziele
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Professionelle Präsentation** - moderne und intuitive Benutzeroberfläche
+- **Technische Demonstration** - zeigt Webentwicklungsfähigkeiten
+- **Kontaktförderung** - erleichtert Verbindung mit Recruitern
+- **Skalierbarkeit** - Basis für zukünftige Entwicklungen
 
-## Learn More
+## Kontakt
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **LinkedIn**: [Jordan Freddy](https://www.linkedin.com/in/jordan-freddy)
+- **GitHub**: [Jorxas](https://github.com/Jorxas)
