@@ -33,10 +33,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="min-h-screen flex flex-col font-[family-name:var(--font-inter)] antialiased">
+    <html
+      lang="de"
+      className={`${inter.variable} ${poppins.variable} w-full overflow-x-hidden`}
+      suppressHydrationWarning
+    >
+      <body
+        className="min-h-dvh w-full overflow-x-hidden flex flex-col font-[family-name:var(--font-inter)] antialiased"
+        suppressHydrationWarning
+      >
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 w-full overflow-x-clip">{children}</main>
         <Footer />
       </body>
     </html>
