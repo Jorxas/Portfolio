@@ -84,6 +84,25 @@ export const projects: Project[] = [
     category: "Web App",
   },
   {
+    id: "quizgame",
+    title: "Multiplayer Trivia Quiz",
+    description:
+      "Quiz-Plattform: Web-Frontend (HTML/CSS/JS, Nginx), Java-Vert.x-REST-Backend (/api), MariaDB, MQTT (Mosquitto), Docker-Compose; Web-Controller für Eingaben. Akademisches Gruppenprojekt.",
+    image: "/images/quizgame-cover.png",
+    techStack: [
+      "Java (Vert.x)",
+      "MariaDB",
+      "MQTT",
+      "Docker Compose",
+      "Nginx",
+      "HTML/CSS/JS",
+      "Bootstrap",
+    ],
+    demoUrl: null,
+    codeUrl: "https://github.com/Jorxas/quizgame",
+    category: "Web App",
+  },
+  {
     id: "todo-app",
     title: "To-Do App",
     description: "Task-Management-Anwendung mit responsivem UI. Backend Java (Vert.x) mit MariaDB, Frontend HTML/CSS/JS, Deployment via Docker, Versionskontrolle mit Git.",
@@ -144,16 +163,6 @@ export const projects: Project[] = [
     category: "Web App",
   },
   {
-    id: "jorxas-shop",
-    title: "Jorxas – Elektronik Online-Shop",
-    description: "Moderne E-Commerce-Website für den Verkauf von Elektronikgeräten. Vollständig funktional mit Warenkorb, Produktkatalog, FAQ und responsive Design.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2070&q=80",
-    techStack: ["HTML", "CSS", "JavaScript", "Font Awesome", "Leaflet.js"],
-    demoUrl: null,
-    codeUrl: "#",
-    category: "Web App",
-  },
-  {
     id: "erste-webseite",
     title: "Meine Erste Webseite",
     description: "Meine erste selbst erstellte Webseite mit HTML und CSS. Portfolio-Projekt mit Navigation, Kontaktformular und Social Media Integration.",
@@ -162,75 +171,6 @@ export const projects: Project[] = [
     demoUrl: null,
     codeUrl: "https://github.com/Jorxas/myfirstpage",
     category: "Website",
-  },
-  {
-    id: "freizeitaktivitaeten",
-    title: "Freizeitaktivitäten Hessen",
-    description: "Website mit umfassender Übersicht über Freizeitaktivitäten in der Region Hessen, von Outdoor-Sport bis hin zu kulturellen Veranstaltungen.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2070&q=80",
-    techStack: ["HTML", "CSS"],
-    demoUrl: null,
-    codeUrl: "https://github.com/Jorxas/My-Blog",
-    category: "Website",
-  },
-];
-
-export interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  date: string;
-  author: string;
-  category: string;
-  image: string;
-  readTime: string;
-}
-
-export const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "Webseiten wie ein Profi strukturieren: Semantische Tags in HTML5",
-    excerpt: "Entdecke, wie du semantische HTML5-Tags verwendest, um eine professionelle und zugängliche Webstruktur zu erstellen.",
-    content: "<p>Die Struktur einer Webseite ist fundamental für ihre Qualität...</p>",
-    date: "12. April 2025",
-    author: "Jordan Freddy",
-    category: "Frontend",
-    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2070&q=80",
-    readTime: "10 Min.",
-  },
-  {
-    id: "2",
-    title: "Responsive Design mit Flexbox und Grid erstellen",
-    excerpt: "Lerne moderne CSS-Layout-Techniken mit Flexbox und Grid für professionelle, responsive Websites.",
-    content: "<p>Moderne CSS-Layout-Techniken haben die Webentwicklung revolutioniert...</p>",
-    date: "18. April 2025",
-    author: "Jordan Freddy",
-    category: "Frontend",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2070&q=80",
-    readTime: "12 Min.",
-  },
-  {
-    id: "3",
-    title: "3 kleine JavaScript-Tricks für interaktive Webseiten",
-    excerpt: "Entdecke 3 praktische JavaScript-Techniken, die deine Webseiten sofort interaktiver und benutzerfreundlicher machen.",
-    content: "<p>JavaScript macht Webseiten lebendig und interaktiv...</p>",
-    date: "25. April 2025",
-    author: "Jordan Freddy",
-    category: "Frontend",
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=2070&q=80",
-    readTime: "8 Min.",
-  },
-  {
-    id: "4",
-    title: "Inhalte einfach mit Bootstrap-Utilities organisieren",
-    excerpt: "Entdecke die Macht der Bootstrap-Utilities – organisiere deine Inhalte schnell und effizient ohne Custom CSS.",
-    content: "<p>Als Entwickler habe ich oft gesehen, wie Bootstrap-Utilities unterschätzt werden...</p>",
-    date: "28. April 2025",
-    author: "Jordan Freddy",
-    category: "Frontend",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=2070&q=80",
-    readTime: "12 Min.",
   },
 ];
 
