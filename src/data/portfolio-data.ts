@@ -144,6 +144,17 @@ export const projects: Project[] = [
     category: "Website",
   },
   {
+    id: "concal",
+    title: "Concal",
+    description:
+      "Kalorien- und Makro-Tracking mit KI (Foto-Analyse via Gemini), persönliche Tagesziele aus Profil & TDEE, Dashboard mit Mahlzeiten-Slots, Rezepte teilen und in der Community entdecken. Next.js, Supabase.",
+    image: "/images/concal-cover.png",
+    techStack: ["Next.js", "Supabase", "Gemini AI", "TypeScript"],
+    demoUrl: "https://concal-eight.vercel.app",
+    codeUrl: "#",
+    category: "Web App",
+  },
+  {
     id: "portfolio-website",
     title: "Portfolio Website",
     description: "Moderne Portfolio-Website mit responsivem Design, Bootstrap und interaktiven Elementen. Präsentiert Projekte, Erfahrungen und Kontaktinformationen.",
