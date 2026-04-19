@@ -103,6 +103,17 @@ export const projects: Project[] = [
     category: "Web App",
   },
   {
+    id: "2d-game",
+    title: "2D Action-Adventure (Phaser 3)",
+    description:
+      "Phaser-3-2D-Action-Adventure: verknüpfte Zonen, Nahkampf plus Feuer- und Eismagie, Shop und Quest-Tagebuch, Wind/Eis/Dash und Schalter, drei Boss-Routen plus finaler Zauberer, lokale JSON-Speicherstände. Pixel-Art mit Kenney Pixel Platformer (Tilemap oder volles Paket).",
+    image: "/images/2d-game-cover.png",
+    techStack: ["Phaser 3", "JavaScript", "Vite", "HTML5", "JSON", "Kenney Assets"],
+    demoUrl: null,
+    codeUrl: "https://github.com/Jorxas/2d-game",
+    category: "Web App",
+  },
+  {
     id: "todo-app",
     title: "To-Do App",
     description: "Task-Management-Anwendung mit responsivem UI. Backend Java (Vert.x) mit MariaDB, Frontend HTML/CSS/JS, Deployment via Docker, Versionskontrolle mit Git.",
