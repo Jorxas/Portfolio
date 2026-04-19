@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, ExternalLink } from "lucide-react";
 import { personalInfo, projects, skills } from "@/data/portfolio-data";
@@ -14,8 +13,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="gradient-bg relative flex items-center justify-center min-h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(99,102,241,0.15)_0%,_transparent_70%)]" />
+      <section className="bg-background relative flex items-center justify-center min-h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(99,102,241,0.08)_0%,_transparent_65%)]" />
 
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-accent/5 blur-3xl animate-float" />
@@ -169,7 +168,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-accent/10 via-background to-purple-500/10">
+      <section className="py-24 bg-muted/40">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
