@@ -74,13 +74,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "simon-goes-multiplayer",
-    title: "Simon Goes Multiplayer",
-    description: "Verteiltes Multiplayer-Spiel mit Echtzeit-Synchronisation (MQTT). Backend in Java (Vert.x) mit MariaDB; Frontend in HTML/CSS/JS; DevOps via Docker Compose.",
-    image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&w=2070&q=80",
-    techStack: ["Java (Vert.x)", "MariaDB", "MQTT", "Docker", "HTML/CSS/JS", "Git"],
-    demoUrl: null,
-    codeUrl: "https://github.com/Jorxas/simon_game",
+    id: "concal",
+    title: "Concal",
+    description:
+      "Kalorien- und Makro-Tracking mit KI (Foto-Analyse via Gemini), persönliche Tagesziele aus Profil & TDEE, Dashboard mit Mahlzeiten-Slots, Rezepte teilen und in der Community entdecken. Next.js, Supabase.",
+    image: "/images/concal-cover.png",
+    techStack: ["Next.js", "Supabase", "Gemini AI", "TypeScript"],
+    demoUrl: "https://concal-eight.vercel.app",
+    codeUrl: "#",
     category: "Web App",
   },
   {
@@ -114,16 +115,6 @@ export const projects: Project[] = [
     category: "Web App",
   },
   {
-    id: "todo-app",
-    title: "To-Do App",
-    description: "Task-Management-Anwendung mit responsivem UI. Backend Java (Vert.x) mit MariaDB, Frontend HTML/CSS/JS, Deployment via Docker, Versionskontrolle mit Git.",
-    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=2072&q=80",
-    techStack: ["Java (Vert.x)", "MariaDB", "HTML/CSS/JS", "Docker", "Git"],
-    demoUrl: null,
-    codeUrl: "https://github.com/Jorxas/Todo-app",
-    category: "Web App",
-  },
-  {
     id: "function-plotter",
     title: "Function Plotter",
     description: "Java-basiertes Tool zum Plotten von Funktionen mit Fokus auf Streams, Collections und funktionaler Programmierung.",
@@ -144,17 +135,6 @@ export const projects: Project[] = [
     category: "Website",
   },
   {
-    id: "concal",
-    title: "Concal",
-    description:
-      "Kalorien- und Makro-Tracking mit KI (Foto-Analyse via Gemini), persönliche Tagesziele aus Profil & TDEE, Dashboard mit Mahlzeiten-Slots, Rezepte teilen und in der Community entdecken. Next.js, Supabase.",
-    image: "/images/concal-cover.png",
-    techStack: ["Next.js", "Supabase", "Gemini AI", "TypeScript"],
-    demoUrl: "https://concal-eight.vercel.app",
-    codeUrl: "#",
-    category: "Web App",
-  },
-  {
     id: "portfolio-website",
     title: "Portfolio Website",
     description: "Moderne Portfolio-Website mit responsivem Design, Bootstrap und interaktiven Elementen. Präsentiert Projekte, Erfahrungen und Kontaktinformationen.",
@@ -163,6 +143,26 @@ export const projects: Project[] = [
     demoUrl: null,
     codeUrl: "https://github.com/Jorxas/Portfolio",
     category: "Website",
+  },
+  {
+    id: "simon-goes-multiplayer",
+    title: "Simon Goes Multiplayer",
+    description: "Verteiltes Multiplayer-Spiel mit Echtzeit-Synchronisation (MQTT). Backend in Java (Vert.x) mit MariaDB; Frontend in HTML/CSS/JS; DevOps via Docker Compose.",
+    image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&w=2070&q=80",
+    techStack: ["Java (Vert.x)", "MariaDB", "MQTT", "Docker", "HTML/CSS/JS", "Git"],
+    demoUrl: null,
+    codeUrl: "https://github.com/Jorxas/simon_game",
+    category: "Web App",
+  },
+  {
+    id: "todo-app",
+    title: "To-Do App",
+    description: "Task-Management-Anwendung mit responsivem UI. Backend Java (Vert.x) mit MariaDB, Frontend HTML/CSS/JS, Deployment via Docker, Versionskontrolle mit Git.",
+    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=2072&q=80",
+    techStack: ["Java (Vert.x)", "MariaDB", "HTML/CSS/JS", "Docker", "Git"],
+    demoUrl: null,
+    codeUrl: "https://github.com/Jorxas/Todo-app",
+    category: "Web App",
   },
   {
     id: "mini-apps",
