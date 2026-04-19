@@ -5,6 +5,7 @@ import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { motion } from "framer-motion";
 import type { Project } from "@/data/portfolio-data";
+import { assetPath } from "@/lib/asset-path";
 
 interface ProjectCardProps {
   project: Project;
@@ -27,7 +28,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           }`}
         >
           <Image
-            src={project.image}
+            src={assetPath(project.image)}
             alt={project.title}
             fill
             className={`transition-transform duration-500 group-hover:scale-105 ${
