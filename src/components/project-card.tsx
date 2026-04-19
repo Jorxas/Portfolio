@@ -21,12 +21,20 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       className="group"
     >
       <div className="h-full rounded-2xl border border-border bg-card overflow-hidden card-hover">
-        <div className="relative h-48 overflow-hidden">
+        <div
+          className={`relative h-48 overflow-hidden ${
+            project.imageObjectFit === "contain" ? "bg-white" : ""
+          }`}
+        >
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            className={`transition-transform duration-500 group-hover:scale-105 ${
+              project.imageObjectFit === "contain"
+                ? "object-contain object-center p-3"
+                : "object-cover"
+            }`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>

@@ -66,6 +66,8 @@ export interface Project {
   title: string;
   description: string;
   image: string;
+  /** "contain" = ganzes Bild sichtbar ohne Beschnitt. Standard: cover */
+  imageObjectFit?: "cover" | "contain";
   techStack: string[];
   demoUrl: string | null;
   codeUrl: string;
@@ -118,7 +120,7 @@ export const projects: Project[] = [
     id: "function-plotter",
     title: "Function Plotter",
     description: "Java-basiertes Tool zum Plotten von Funktionen mit Fokus auf Streams, Collections und funktionaler Programmierung.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2072&q=80",
+    image: "/images/function-plotter-cover.png",
     techStack: ["Java", "Markdown", "HTML/CSS"],
     demoUrl: null,
     codeUrl: "https://github.com/Jorxas/funtionplotter",
@@ -138,17 +140,18 @@ export const projects: Project[] = [
     id: "portfolio-website",
     title: "Portfolio Website",
     description: "Moderne Portfolio-Website mit responsivem Design, Bootstrap und interaktiven Elementen. Präsentiert Projekte, Erfahrungen und Kontaktinformationen.",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=2070&q=80",
+    image: "/images/portfolio-website-cover.png",
     techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     demoUrl: null,
     codeUrl: "https://github.com/Jorxas/Portfolio",
     category: "Website",
   },
   {
-    id: "simon-goes-multiplayer",
-    title: "Simon Goes Multiplayer",
+    id: "simon-game",
+    title: "Simon Game",
     description: "Verteiltes Multiplayer-Spiel mit Echtzeit-Synchronisation (MQTT). Backend in Java (Vert.x) mit MariaDB; Frontend in HTML/CSS/JS; DevOps via Docker Compose.",
-    image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&w=2070&q=80",
+    image: "/images/simon-game-cover.png",
+    imageObjectFit: "contain",
     techStack: ["Java (Vert.x)", "MariaDB", "MQTT", "Docker", "HTML/CSS/JS", "Git"],
     demoUrl: null,
     codeUrl: "https://github.com/Jorxas/simon_game",
