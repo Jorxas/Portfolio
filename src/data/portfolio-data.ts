@@ -139,12 +139,13 @@ export const projects: Project[] = [
   {
     id: "portfolio-website",
     title: "Portfolio Website",
-    description: "Moderne Portfolio-Website mit responsivem Design, Bootstrap und interaktiven Elementen. Präsentiert Projekte, Erfahrungen und Kontaktinformationen.",
+    description:
+      "Moderne Portfolio-Website mit Next.js (App Router), React und TypeScript. Responsives Design mit Tailwind CSS, Animationen mit Framer Motion; statischer Export und Deployment auf GitHub Pages.",
     image: "/images/portfolio-website-cover.png",
-    techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"],
     demoUrl: null,
     codeUrl: "https://github.com/Jorxas/Portfolio",
-    category: "Website",
+    category: "Web App",
   },
   {
     id: "simon-game",
