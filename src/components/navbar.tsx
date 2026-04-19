@@ -9,7 +9,6 @@ const links = [
   { href: "/", label: "Startseite" },
   { href: "/about", label: "Über mich" },
   { href: "/projects", label: "Projekte" },
-  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Kontakt" },
 ];
 
