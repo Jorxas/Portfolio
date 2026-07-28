@@ -31,7 +31,7 @@ export const skills: Skill[] = [
   { name: "React / Next.js", percentage: 80 },
   { name: "Tailwind CSS", percentage: 88 },
   { name: "Backend (Java – Vert.x)", percentage: 91 },
-  { name: "Python", percentage: 75 },
+  { name: "Python (NumPy, Pandas)", percentage: 75 },
   { name: "Echtzeit-Kommunikation (MQTT)", percentage: 93 },
   { name: "Datenbanken (MariaDB / SQL)", percentage: 87 },
   { name: "Tools & DevOps (Docker, Git, Linux)", percentage: 89 },
@@ -49,7 +49,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: "Python & Data",
-    items: ["Python", "SQL", "MariaDB"],
+    items: ["Python", "NumPy", "Pandas", "SQL", "MariaDB"],
   },
   {
     category: "Tools & DevOps",
@@ -71,7 +71,7 @@ export interface Project {
   techStack: string[];
   demoUrl: string | null;
   codeUrl: string;
-  category: "Web App" | "Website";
+  category: "Web App" | "Website" | "Data Science";
 }
 
 export const projects: Project[] = [
@@ -197,6 +197,30 @@ export const projects: Project[] = [
     demoUrl: null,
     codeUrl: "https://github.com/Jorxas/myfirstpage",
     category: "Website",
+  },
+  {
+    id: "cnn-clothing-classification",
+    title: "CNN Clothing Classification",
+    description:
+      "CNN from scratch in PyTorch für die Klassifikation von Kleidungsstücken in 5 Kategorien. Eigene Data-Augmentation-Pipeline, Hyperparameter-Tuning und Experiment-Tracking mit Weights & Biases, 72,45% Testgenauigkeit bei ~767k Parametern ganz ohne Transfer Learning. Projekt im Kurs Einführung in Deep Learning (THM).",
+    image: "/images/cnn-clothing-confusion-matrix.png",
+    imageObjectFit: "contain",
+    techStack: ["PyTorch", "Python", "torchvision", "CNN", "Weights & Biases"],
+    demoUrl: null,
+    codeUrl: "https://github.com/Jorxas/cnn-clothing-classification",
+    category: "Data Science",
+  },
+  {
+    id: "rnn-music-generation",
+    title: "Irische Musikgenerierung mit RNN",
+    description:
+      "Zeichenbasiertes RNN (LSTM & GRU) in PyTorch, trainiert auf dem IrishMAN-Datensatz, um irische Folk-Musik in ABC-Notation zu lernen und neue Stücke zu generieren. Eigener Tokenizer, ABC-Syntax-Validator und selbstgebaute Audio-Synthese (Sinuswellen zu WAV) ohne externe Audio-Bibliothek. GRU erreichte 68,5% Top-1- bzw. 93,6% Top-5-Genauigkeit. Gruppenprojekt im Kurs Einführung in Deep Learning (THM).",
+    image: "/images/rnn-music-lstm-vs-gru.png",
+    imageObjectFit: "contain",
+    techStack: ["PyTorch", "Python", "LSTM/GRU", "Sequenzmodellierung", "Weights & Biases"],
+    demoUrl: null,
+    codeUrl: "https://github.com/Jorxas/eidl-abgabe3-musikgenerierung",
+    category: "Data Science",
   },
 ];
 
