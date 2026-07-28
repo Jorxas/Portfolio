@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ProjectCard } from "@/components/project-card";
 import { projects } from "@/data/portfolio-data";
 
-const categories = ["Alle", "Web App", "Website"];
+const categories = ["Alle", "Web App", "Website", "Data Science"];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("Alle");
