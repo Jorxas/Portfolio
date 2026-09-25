@@ -1,59 +1,89 @@
-# Portfolio - Jordan Freddy Pokem Tezo
+# Jordan Freddy Pokem Tezo
 
-## Beschreibung
+Computer Science student at **THM Gießen** focused on software engineering, modern web development, backend systems, and applied AI.
 
-Persönliches Portfolio von **Jordan Freddy Pokem Tezo**, Informatikstudent an der THM Gießen, spezialisiert auf Softwareentwicklung. Diese Website präsentiert Projekte, Fähigkeiten und Erfahrungen im Bereich der Programmierung.
+I enjoy building complete products — from responsive interfaces and APIs to databases, real-time communication, deployment, and machine-learning experiments.
 
-## Über mich
+## Featured Projects
 
-Jordan Freddy ist **Informatikstudent** (Bachelor) an der THM Gießen mit Spezialisierung auf **Software Engineering** und **Datenanalyse**. Er sucht derzeit eine **Werkstudentenstelle im IT-Bereich**, um sein Wissen zu vertiefen und es in realen Projekten anzuwenden.
+### Concal
+**AI-powered calorie tracking and social recipe sharing**
 
-### Hauptkompetenzen
+- Next.js, React, TypeScript
+- Supabase authentication, database and storage
+- Google Gemini for food-photo analysis
+- Modern full-stack architecture with production deployment support
 
-- **Frontend**: HTML/CSS/JavaScript
-- **Backend**: Java (Vert.x)
-- **Datenbanken**: MariaDB
-- **DevOps**: Docker, Git
-- **Kommunikation**: MQTT
+[View repository](https://github.com/Jorxas/Concal)
 
-## Funktionen
+### Multiplayer Trivia Quiz
+**Distributed multiplayer quiz system with hardware and web components**
 
-- **Responsives Design** - optimiert für Mobile, Tablet und Desktop
-- **Moderne Benutzeroberfläche** - sauberes, gut strukturiertes Layout
-- **Intuitive Navigation** - klare Seitenstruktur für gute Nutzerführung
-- **SEO-Basis** - semantische Struktur und Metadaten
+- Java + Vert.x REST backend
+- MariaDB
+- MQTT real-time communication
+- Docker / Docker Compose
+- ESP32 / Arduino integration
+- HTML, CSS, JavaScript and Bootstrap frontend
 
-## Verwendete Technologien
+[View repository](https://github.com/Jorxas/quizgame)
 
-- **Next.js** (App Router)
-- **React**
-- **TypeScript**
-- **CSS**
+### Steinbeis
+**Modern responsive website for a construction and real-estate consulting center**
 
-## Installation und Verwendung
+- Next.js
+- React
+- Tailwind CSS
+- Responsive UI and mobile navigation
 
-### Voraussetzungen
+[View repository](https://github.com/Jorxas/Steinbeis)
 
-- Node.js (empfohlen: aktuelle LTS-Version)
-- npm
+### CNN Clothing Classification
+**Deep-learning image classification project**
 
-### Entwicklung starten
+- Convolutional Neural Networks
+- PyTorch
+- Training, evaluation and experimentation
+- Five clothing categories
+- Technical presentation and reproducible evaluation scripts
 
-```bash
-npm install
-npm run dev
-```
+[View repository](https://github.com/Jorxas/cnn-clothing-classification)
 
-Dann im Browser öffnen: [http://localhost:3000](http://localhost:3000)
+### Music Generation with RNNs
+**Character-level music generation from Irish folk music in ABC notation**
 
-## Projektziele
+- PyTorch
+- LSTM and GRU architectures
+- Sequence modelling and sampling
+- Weights & Biases experiment tracking
+- Model comparison and generated-music validation
 
-- **Professionelle Präsentation** - moderne und intuitive Benutzeroberfläche
-- **Technische Demonstration** - zeigt Webentwicklungsfähigkeiten
-- **Kontaktförderung** - erleichtert Verbindung mit Recruitern
-- **Skalierbarkeit** - Basis für zukünftige Entwicklungen
+[View repository](https://github.com/Jorxas/eidl-abgabe3-musikgenerierung)
 
-## Kontakt
+### Portfolio
+**Personal portfolio built to present my projects and technical experience**
 
-- **LinkedIn**: [Jordan Freddy](https://www.linkedin.com/in/jordan-freddy)
-- **GitHub**: [Jorxas](https://github.com/Jorxas)
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Responsive design
+
+## Tech Stack
+
+**Languages:** Java, JavaScript, TypeScript, Python, SQL  
+**Frontend:** React, Next.js, HTML, CSS, Tailwind CSS, Bootstrap  
+**Backend:** Java / Vert.x, Node.js, REST APIs  
+**Data:** MariaDB, Supabase  
+**AI / ML:** PyTorch, CNNs, RNNs, LSTM, GRU, Google Gemini  
+**Tools & Infrastructure:** Git, GitHub, Docker, Docker Compose, MQTT, Vercel
+
+## About Me
+
+I am currently studying for a Bachelor's degree in Computer Science at **Technische Hochschule Mittelhessen (THM)** in Gießen, Germany.
+
+My projects span full-stack development, distributed systems, databases, real-time communication and deep learning. I am especially interested in opportunities where I can turn technical concepts into practical, maintainable software.
+
+## Connect
+
+[LinkedIn](https://www.linkedin.com/in/jordan-freddy) · [GitHub](https://github.com/Jorxas)
