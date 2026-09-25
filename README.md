@@ -1,89 +1,33 @@
-# Jordan Freddy Pokem Tezo
+# Portfolio — Jordan Freddy Pokem Tezo
 
-Computer Science student at **THM Gießen** focused on software engineering, modern web development, backend systems, and applied AI.
+Dies ist der Quellcode meiner Portfolio-Website. Ich studiere Informatik an der THM in Gießen und nutze die Seite, um meine Projekte, Kenntnisse und Erfahrungen an einem Ort vorzustellen.
 
-I enjoy building complete products — from responsive interfaces and APIs to databases, real-time communication, deployment, and machine-learning experiments.
+[Portfolio ansehen](https://jorxas.github.io/Portfolio/) · [GitHub-Profil](https://github.com/Jorxas)
 
-## Featured Projects
+## Die Website
 
-### Concal
-**AI-powered calorie tracking and social recipe sharing**
+Die Seite enthält eine Startseite, eine Projektübersicht, Informationen über mich und eine Kontaktseite. Projekttexte und Profildaten sind in [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts) gesammelt, damit ich Inhalte pflegen kann, ohne sie an vielen Stellen im UI zu ändern.
 
-- Next.js, React, TypeScript
-- Supabase authentication, database and storage
-- Google Gemini for food-photo analysis
-- Modern full-stack architecture with production deployment support
+Umgesetzt mit **Next.js**, **React**, **TypeScript**, **Tailwind CSS** und **Framer Motion**. Das Layout ist responsive; die Next.js-Konfiguration erstellt einen statischen Export für GitHub Pages.
 
-[View repository](https://github.com/Jorxas/Concal)
+## Lokal starten
 
-### Multiplayer Trivia Quiz
-**Distributed multiplayer quiz system with hardware and web components**
+Voraussetzungen: Node.js und npm.
 
-- Java + Vert.x REST backend
-- MariaDB
-- MQTT real-time communication
-- Docker / Docker Compose
-- ESP32 / Arduino integration
-- HTML, CSS, JavaScript and Bootstrap frontend
+```bash
+git clone https://github.com/Jorxas/Portfolio.git
+cd Portfolio
+npm install
+npm run dev
+```
 
-[View repository](https://github.com/Jorxas/quizgame)
+Öffne [http://localhost:3000](http://localhost:3000). Mit `npm run build` wird der statische Export in `out/` erstellt. Beim Build auf GitHub Actions wird der Repository-Pfad als Base Path gesetzt; für andere Umgebungen lässt er sich über `NEXT_PUBLIC_BASE_PATH` anpassen.
 
-### Steinbeis
-**Modern responsive website for a construction and real-estate consulting center**
+## Aufbau
 
-- Next.js
-- React
-- Tailwind CSS
-- Responsive UI and mobile navigation
+- [`src/app/`](src/app/) — Seiten, Layout und globale Styles.
+- [`src/components/`](src/components/) — wiederverwendbare Komponenten.
+- [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts) — Inhalte und Projektliste.
+- [`public/`](public/) — Bilder und weitere statische Dateien.
 
-[View repository](https://github.com/Jorxas/Steinbeis)
-
-### CNN Clothing Classification
-**Deep-learning image classification project**
-
-- Convolutional Neural Networks
-- PyTorch
-- Training, evaluation and experimentation
-- Five clothing categories
-- Technical presentation and reproducible evaluation scripts
-
-[View repository](https://github.com/Jorxas/cnn-clothing-classification)
-
-### Music Generation with RNNs
-**Character-level music generation from Irish folk music in ABC notation**
-
-- PyTorch
-- LSTM and GRU architectures
-- Sequence modelling and sampling
-- Weights & Biases experiment tracking
-- Model comparison and generated-music validation
-
-[View repository](https://github.com/Jorxas/eidl-abgabe3-musikgenerierung)
-
-### Portfolio
-**Personal portfolio built to present my projects and technical experience**
-
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Responsive design
-
-## Tech Stack
-
-**Languages:** Java, JavaScript, TypeScript, Python, SQL  
-**Frontend:** React, Next.js, HTML, CSS, Tailwind CSS, Bootstrap  
-**Backend:** Java / Vert.x, Node.js, REST APIs  
-**Data:** MariaDB, Supabase  
-**AI / ML:** PyTorch, CNNs, RNNs, LSTM, GRU, Google Gemini  
-**Tools & Infrastructure:** Git, GitHub, Docker, Docker Compose, MQTT, Vercel
-
-## About Me
-
-I am currently studying for a Bachelor's degree in Computer Science at **Technische Hochschule Mittelhessen (THM)** in Gießen, Germany.
-
-My projects span full-stack development, distributed systems, databases, real-time communication and deep learning. I am especially interested in opportunities where I can turn technical concepts into practical, maintainable software.
-
-## Connect
-
-[LinkedIn](https://www.linkedin.com/in/jordan-freddy) · [GitHub](https://github.com/Jorxas)
+Einige Projekte, die auf der Website vorgestellt werden: [Concal](https://github.com/Jorxas/Concal), [Multiplayer Trivia Quiz](https://github.com/Jorxas/quizgame), [CNN Clothing Classification](https://github.com/Jorxas/cnn-clothing-classification) und [Musikgenerierung mit RNNs](https://github.com/Jorxas/eidl-abgabe3-musikgenerierung).
