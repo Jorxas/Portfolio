@@ -9,6 +9,8 @@ const githubPagesBasePath =
   (isGithubActions && repositoryName ? `/${repositoryName}` : "");
 
 const nextConfig: NextConfig = {
+  // Das Portfolio unabhängig von benachbarten Next.js-Arbeitsbereichen bauen.
+  turbopack: { root: process.cwd() },
   output: "export",
   trailingSlash: true,
   basePath: githubPagesBasePath || undefined,

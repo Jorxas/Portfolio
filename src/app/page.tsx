@@ -7,7 +7,7 @@ import { personalInfo, projects, skills } from "@/data/portfolio-data";
 import { SectionHeading } from "@/components/section-heading";
 import { ProjectCard } from "@/components/project-card";
 
-const featuredProjects = projects.slice(0, 3);
+const featuredProjects = projects.filter((projekt) => ["werkstatt-datenqualitaet-bi", "wartungsportal-angular-java", "wartungskarte-qgis"].includes(projekt.id));
 
 export default function HomePage() {
   return (

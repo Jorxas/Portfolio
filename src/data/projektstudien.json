@@ -1,0 +1,671 @@
+[
+  {
+    "id": "P01",
+    "slug": "werkstatt-datenqualitaet-bi",
+    "titel": "Werkstattdaten: Datenqualität und Kennzahlen",
+    "bereich": "Datenqualität & Business Intelligence",
+    "kopfzeile": "Zwölf Zeilen. Eine verlässliche Zahl.",
+    "problem": "Bestellungen einer Werkstatt enthalten Dubletten und fehlerhafte Beträge. Auswertungen sollen trotzdem nachvollziehbar und zwischen SQL, Excel und Power BI vergleichbar sein.",
+    "nutzen": "Datenbereinigung, SQL, Kennzahlenabgleich und erklärbare BI-Berichte.",
+    "ergebnis": "12 synthetische Zeilen, 10 gültige Bestellungen, 2 Ablehnungen, 820 EUR; Monatswerte 340 und 480 EUR.",
+    "grenze": "Synthetische Daten; kein Cloud-BI-Projekt. Desktopdateien benötigen die genannten Produkte.",
+    "farbe": "#4f46e5",
+    "technologien": [
+      "Python",
+      "SQLite",
+      "Power BI",
+      "DAX",
+      "Excel/VBA"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "12",
+        "text": "Originalzeilen"
+      },
+      {
+        "wert": "10",
+        "text": "gültige Bestellungen"
+      },
+      {
+        "wert": "820 €",
+        "text": "geprüfter Gesamtumsatz"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "CSV-Vertrag und Datenqualität",
+        "text": "CSV-Zeilen mit nachvollziehbaren Ablehnungsgründen prüfen."
+      },
+      {
+        "titel": "SQLite-Import und drei Auswertungen",
+        "text": "Geldbeträge als ganze Cent in SQLite auswerten."
+      },
+      {
+        "titel": "Power-BI-Bericht mit Power Query und DAX",
+        "text": "Monatsfilter und DAX-Kennzahlen im echten Desktopbericht vergleichen."
+      },
+      {
+        "titel": "Excel/VBA und Abgleich aller sieben Kennzahlen",
+        "text": "Sieben Werte einschließlich Excel/VBA mit den SQL-Ergebnissen abgleichen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/werkstatt-datenqualitaet-bi",
+    "original": "Die Originalumsetzung verwendet Python/SQLite, einen echten Power-BI-Bericht und Excel/VBA. Hier werden Datenprüfung und Kennzahlen ausschließlich mit Browser-JavaScript veranschaulicht."
+  },
+  {
+    "id": "P02",
+    "slug": "mini-datahub-api",
+    "titel": "Mini-DataHub für Anwendungsprotokolle",
+    "bereich": "Datenintegration & APIs",
+    "kopfzeile": "Ein Import darf sich wiederholen. Nicht die Daten.",
+    "problem": "JSONL-Protokolle sollen wiederholt importiert und je Umgebung ausgewertet werden, ohne Ereignisse zu verdoppeln.",
+    "nutzen": "ETL, API-Verträge, Idempotenz und strukturierte Fehlerbehandlung.",
+    "ergebnis": "Wiederholte Verarbeitung, Umgebungsfilter und unterschiedliche HTTP-Fehlerfälle tatsächlich geprüft.",
+    "grenze": "Kleine lokale Datenmenge; keine Elastic-, Cloud- oder Produktionsinstanz.",
+    "farbe": "#0284c7",
+    "technologien": [
+      "Python",
+      "FastAPI",
+      "SQLite",
+      "JSONL"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "JSONL",
+        "text": "Eingabeformat"
+      },
+      {
+        "wert": "SQLite",
+        "text": "lokale Speicherung"
+      },
+      {
+        "wert": "FastAPI",
+        "text": "geprüfte Abfrage-API"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Protokollformat und Fehlerbeispiele",
+        "text": "JSONL-Felder und eine absichtlich kaputte Zeile als nachvollziehbaren Eingabevertrag festhalten."
+      },
+      {
+        "titel": "Wiederholbarer SQLite-Import",
+        "text": "Ereigniskennungen in SQLite eindeutig speichern; ein zweiter Lauf fügt keine weiteren Ereignisse hinzu."
+      },
+      {
+        "titel": "Abfrage-API mit Eingabeprüfung",
+        "text": "Abfragen nach Entwicklung und Test über eine kleine FastAPI-Schnittstelle trennen."
+      },
+      {
+        "titel": "Fehlerfälle und Umgebungsfilter",
+        "text": "Doppelte Kennungen, ungültige Anfragen und unbekannte Umgebungen als unterschiedliche Fälle prüfen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/mini-datahub-api",
+    "original": "Die Original-API läuft mit Python/FastAPI und SQLite. Hier übernimmt ein Arbeitsspeicher im Browser die Rolle des Servers; angezeigte HTTP-Antworten sind simuliert."
+  },
+  {
+    "id": "P03",
+    "slug": "lokaler-dokumentenassistent",
+    "titel": "Lokaler Dokumentenassistent mit Quellenprüfung",
+    "bereich": "KI & Dokumentensuche",
+    "kopfzeile": "Eine gute Antwort zeigt ihre Quelle.",
+    "problem": "Eine passende Anweisung soll in drei Dokumenten gefunden werden. Antworten müssen ihre Quelle belegen oder eine fehlende Grundlage deutlich machen.",
+    "nutzen": "LLM-Anbindung, Quellenprüfung, Fehlerrückhaltung und nachvollziehbare Auswertung.",
+    "ergebnis": "9 von 10 Quellenzuordnungen; beide unbeantwortbaren Fragen zurückgehalten. Diese kleine Stichprobe ist keine allgemeine Qualitätsgarantie.",
+    "grenze": "Ollama mit qwen2.5:1.5b wird lokal benötigt; kein MCP und keine Vektordatenbank.",
+    "farbe": "#7c3aed",
+    "technologien": [
+      "Python",
+      "Ollama",
+      "Quellenprüfung"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "3",
+        "text": "Ausgangsdokumente"
+      },
+      {
+        "wert": "9 / 10",
+        "text": "Quellenzuordnungen"
+      },
+      {
+        "wert": "2 / 2",
+        "text": "unbeantwortbare Fragen zurückgehalten"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Dokumente und Prüffragen",
+        "text": "Drei kurze Dokumente in kenntlich benannte Textstellen aufteilen und zehn Prüffragen festlegen."
+      },
+      {
+        "titel": "Lokale Suche mit Quellen",
+        "text": "Passende Textstellen zunächst über eine nachvollziehbare lokale Stichwortsuche bestimmen."
+      },
+      {
+        "titel": "Ollama-Anbindung und Zitatprüfung",
+        "text": "Ollama darf nur einen wörtlichen Beleg vorschlagen; Quelle und Zitat werden anschließend im Original kontrolliert."
+      },
+      {
+        "titel": "Auswertung und unbeantwortbare Fragen",
+        "text": "Fehlende Belege und ein verändertes Zitat führen zur Rückhaltung der Antwort; Quellenwahl und Antwortqualität getrennt beurteilen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/lokaler-dokumentenassistent",
+    "original": "Im Original wurde ein lokales Ollama-Modell tatsächlich ausgeführt. Diese Seite zeigt gespeicherte Beispielfragen und Textbelege; im Browser läuft kein Sprachmodell."
+  },
+  {
+    "id": "P04",
+    "slug": "wartungsportal-angular-java",
+    "titel": "Wartungsportal mit Angular und Java",
+    "bereich": "Webentwicklung & Instandhaltung",
+    "kopfzeile": "Ein Auftrag. Vom Eingang bis erledigt.",
+    "problem": "Ein Wartungsteam möchte Aufträge anlegen, wiederfinden und ihren Bearbeitungsstand ändern; Eingabefehler und ein nicht erreichbares Backend müssen verständlich bleiben.",
+    "nutzen": "Frontend-/Backend-Verträge, Formularvalidierung, Barrierearmut und HTTP-Fehlerbehandlung.",
+    "ergebnis": "Drei Ansichten, Auftragsanlage und Zustandswechsel; Tastaturbedienung und API-Ausfall im Browser geprüft.",
+    "grenze": "Java-HTTP-Backend ohne Spring; keine React-, Vue- oder Figma-Variante.",
+    "farbe": "#2563eb",
+    "technologien": [
+      "Angular",
+      "TypeScript",
+      "Java",
+      "HTTP"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "Angular",
+        "text": "Originaloberfläche"
+      },
+      {
+        "wert": "Java",
+        "text": "Original-HTTP-Backend"
+      },
+      {
+        "wert": "3",
+        "text": "Ansichten im Portal"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Datenmodell und API-Vertrag",
+        "text": "Felder, HTTP-Status und Zustandswechsel festlegen."
+      },
+      {
+        "titel": "Java-HTTP-Backend",
+        "text": "Java verarbeitet Anfragen ohne zusätzliches Backend-Framework."
+      },
+      {
+        "titel": "Angular-Ansichten und Formular",
+        "text": "Dieselben Komponenten für Liste, Detail und Anlage verbinden."
+      },
+      {
+        "titel": "Bedienung, Zustandswechsel und Ausfalltests",
+        "text": "Tastaturbedienung und einen nicht erreichbaren Dienst tatsächlich prüfen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/wartungsportal-angular-java",
+    "original": "Hier läuft der tatsächlich kompilierte Angular-Frontendcode des Projekts. Nur die HTTP-Anbindung wird durch einen lokalen Demo-Interceptor ersetzt. Das originale Java-Backend läuft hier nicht."
+  },
+  {
+    "id": "P05",
+    "slug": "messwertpruefung-dotnet",
+    "titel": "Messwerte mit C# und WPF prüfen",
+    "bereich": "Desktopsoftware & Messtechnik",
+    "kopfzeile": "Gut, abweichend oder ungültig?",
+    "problem": "Messwerte aus einer CSV-Datei sollen gegen einen Toleranzvertrag geprüft und mit verständlichen Fehlerhinweisen in einer Windows-Oberfläche angezeigt werden.",
+    "nutzen": "Trennung von Fachlogik und Oberfläche, CSV-Validierung und native Windows-Bedienung.",
+    "ergebnis": "26 Fachprüfungen und 15 WPF-Prüfungen; native Dateiauswahl und Abbrechen tatsächlich geprüft.",
+    "grenze": "Windows-Desktopprojekt; keine Web-, Mobil- oder ASP.NET-Anwendung.",
+    "farbe": "#0891b2",
+    "technologien": [
+      "C#",
+      ".NET",
+      "WPF",
+      "CSV"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "9,5–10,5",
+        "text": "inklusive Toleranz in mm"
+      },
+      {
+        "wert": "26",
+        "text": "Prüfungen der Fachlogik"
+      },
+      {
+        "wert": "15",
+        "text": "WPF-Prüfungen"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Messformat und Grenzfälle",
+        "text": "Kennung, Wert und Einheit mm festlegen; Datenfehler von einer messbaren Abweichung unterscheiden."
+      },
+      {
+        "titel": "C#-Prüfbibliothek",
+        "text": "Die inklusive Grenze von 9,5 bis 10,5 mm in der C#-Fachlogik prüfen."
+      },
+      {
+        "titel": "WPF-Tabelle und Dateiauswahl",
+        "text": "Dieselbe Logik in einer WPF-Tabelle mit verständlichen Zeilenbefunden anzeigen."
+      },
+      {
+        "titel": "Native Bedienung und abschließende Fehlerfälle",
+        "text": "26 Fach- und 15 WPF-Prüfungen sowie die native Dateiauswahl einschließlich Abbrechen ausführen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/messwertpruefung-dotnet",
+    "original": "Das Original ist eine native C#-/WPF-Anwendung. Die Webansicht ist eine zusätzliche JavaScript-Veranschaulichung derselben kleinen Toleranzregel; hier läuft keine WPF-Anwendung."
+  },
+  {
+    "id": "P06",
+    "slug": "sensorsimulation-cpp",
+    "titel": "Temperatursensor in C++ simulieren",
+    "bereich": "C++ & Sensortechnik",
+    "kopfzeile": "Eine Temperatur wird zum Zustand.",
+    "problem": "Ein Prototyp soll Temperaturverläufe überwachen und Schwellenüberschreitungen reproduzierbar melden, bevor echte Sensorhardware verfügbar ist.",
+    "nutzen": "C++-Fachlogik, reproduzierbarer Build, Zustandsübergänge und technische Grenzwertprüfung.",
+    "ergebnis": "Tatsächlich kompilierte C++-Ausführung und reproduzierbare Temperatur-/Fehlerszenarien.",
+    "grenze": "Simulation ohne Hardware. Qt und MQTT sind nicht implementiert.",
+    "farbe": "#d97706",
+    "technologien": [
+      "C++",
+      "CMake",
+      "Ninja"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "30 °C",
+        "text": "Warnschwelle inklusive"
+      },
+      {
+        "wert": "−40…125",
+        "text": "gültiger Messbereich in °C"
+      },
+      {
+        "wert": "CMake",
+        "text": "tatsächlich geprüfter Bau"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Sensorvertrag und Beispieldaten",
+        "text": "Gültige Werte zwischen −40 und 125 °C sowie die Warnschwelle von 30 °C festlegen."
+      },
+      {
+        "titel": "Kompilierbarer C++-Kern",
+        "text": "Messwerte in C++ in normal, warnung oder ungueltig überführen; keine versteckte Hysterese einbauen."
+      },
+      {
+        "titel": "CMake-Bau und Szenarien",
+        "text": "Den Kern mit CMake/Ninja tatsächlich kompilieren und dieselbe Messfolge erneut abspielen."
+      },
+      {
+        "titel": "Anzeigevertrag und Grenzfälle",
+        "text": "Insbesondere 30 °C, das direkte Rückkehren bei 29 °C und einen ungültigen Eingang prüfen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/sensorsimulation-cpp",
+    "original": "Der Originalkern wurde tatsächlich in C++ kompiliert. Die Kurve hier simuliert den Messablauf in JavaScript; es sind weder Sensorhardware noch MQTT verbunden."
+  },
+  {
+    "id": "P07",
+    "slug": "devops-prueflabor",
+    "titel": "Lokales DevOps-Prüflabor",
+    "bereich": "DevOps & Betrieb",
+    "kopfzeile": "Ein Dienst muss auch Fehler erklären.",
+    "problem": "Ein Dienst soll reproduzierbar gebaut und gestartet werden; Gesundheitsprüfung, Konfigurationsfehler und Wiederherstellung müssen beobachtbar sein.",
+    "nutzen": "Containerisierung, automatisierte lokale Prüfungen und Fehlerdiagnose.",
+    "ergebnis": "Echter Imagebau, HTTP-503-Fehler, Konfigurationsfehler sowie Stoppen und Wiederherstellen geprüft.",
+    "grenze": "Keine AWS-/Azure-Ausführung und keine entfernte CI-Plattform. Ab Phase 2 wird das separat veröffentlichte Mini-DataHub als dokumentierte Dienstabhängigkeit benötigt.",
+    "farbe": "#475569",
+    "technologien": [
+      "Docker",
+      "Node.js",
+      "Healthcheck"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "Docker",
+        "text": "lokaler Imagebau geprüft"
+      },
+      {
+        "wert": "503",
+        "text": "unbereiter Dienst unterscheidbar"
+      },
+      {
+        "wert": "Lokal",
+        "text": "keine Cloudplattform"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Gesundheitsvertrag und Szenarien",
+        "text": "Eine Gesundheitsantwort mit klarer Trennung von bereit, Konfigurationsfehler und fehlender Verbindung definieren."
+      },
+      {
+        "titel": "Docker-Imagebau mit Mini-DataHub",
+        "text": "Den separat dokumentierten Mini-DataHub als kleinen echten Dienst in einem Docker-Image bauen."
+      },
+      {
+        "titel": "Lokaler Runner und Fehlerfälle",
+        "text": "Syntax, Normalbetrieb, Eingabe- und Konfigurationsfehler mit einem lokalen Runner prüfen."
+      },
+      {
+        "titel": "Ausfall, Neustart und Wiederherstellung",
+        "text": "Den eigenen Testcontainer stoppen, den Ausfall beobachten und nach Neustart die Wiederherstellung prüfen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/devops-prueflabor",
+    "original": "Die Originalprüfungen starten echte lokale Docker-Container. Die folgende Konsole ist eine Ablaufillustration mit simulierten Statusantworten; im Browser werden keine Container gebaut."
+  },
+  {
+    "id": "P08",
+    "slug": "it-inventar-support",
+    "titel": "IT-Inventar, Rechte und Support",
+    "bereich": "IT-Betrieb & Support",
+    "kopfzeile": "Aus einer Geräteliste wird ein Befund.",
+    "problem": "Ein IT-Team möchte Geräte erfassen, zu weit gefasste Rechte erkennen und verständliche Support- und Risikoberichte erstellen.",
+    "nutzen": "PowerShell-Datenverarbeitung, strukturierte Supportabläufe und begründete Risikobefunde.",
+    "ergebnis": "Synthetisches Inventar und Rechte-/Risikoberichte; drei HTML-Folien tatsächlich im Browser geprüft.",
+    "grenze": "Keine echte AD-/Entra-Administration, NIS2-Zertifizierung oder PowerPoint-Datei.",
+    "farbe": "#0f766e",
+    "technologien": [
+      "PowerShell",
+      "Inventar",
+      "Rechteprüfung"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "PowerShell",
+        "text": "Originalauswertung"
+      },
+      {
+        "wert": "Synthetisch",
+        "text": "alle Inventardaten"
+      },
+      {
+        "wert": "3",
+        "text": "HTML-Folien im Original"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Inventarvertrag und Beispiele",
+        "text": "Zwei ausdrücklich synthetische Geräte mit Verantwortlichen, Gruppen und Inaktivitätskennzeichen erfassen."
+      },
+      {
+        "titel": "Inventarauswertung und Rechteprüfung",
+        "text": "Fehlende Verantwortung und Gruppen außerhalb der beiden erlaubten Demogruppen getrennt ausweisen."
+      },
+      {
+        "titel": "Support- und Risikoszenarien",
+        "text": "Die drei Befunde von DEMO-PC-02 verständlich beschreiben, ohne echte Berechtigungen oder Geräte abzufragen."
+      },
+      {
+        "titel": "Drei HTML-Folien und Browserprüfung",
+        "text": "Die Auswertung in drei HTML-Folien zusammenfassen und deren Browserdarstellung einschließlich Druckansicht prüfen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/it-inventar-support",
+    "original": "Das Original verarbeitet synthetische Inventardaten mit PowerShell. Diese Browseransicht illustriert die Prüfung; sie liest keine Geräte, Benutzer oder tatsächlichen Berechtigungen aus."
+  },
+  {
+    "id": "P09",
+    "slug": "produktkatalog-php",
+    "titel": "Wiederholbarer Produktkatalog mit PHP",
+    "bereich": "E-Commerce & Produktdaten",
+    "kopfzeile": "Preise bleiben Preise. Auch nach dem zweiten Import.",
+    "problem": "Produktdaten sollen in einen kleinen Katalog übernommen werden, ohne Preise zu verfälschen oder beim erneuten Import Duplikate anzulegen.",
+    "nutzen": "Serverseitige Datenverarbeitung, centgenaue Preise, Transaktionen und HTML-Ausgabe.",
+    "ergebnis": "Echter PHP-/PDO-Lauf; wiederholter Import, ungültige Eingaben und Produktansicht geprüft.",
+    "grenze": "Kein Shopware, Pimcore oder Symfony. PHP benötigt PDO_SQLite.",
+    "farbe": "#b45309",
+    "technologien": [
+      "PHP",
+      "PDO",
+      "SQLite"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "PHP/PDO",
+        "text": "Originalimplementierung"
+      },
+      {
+        "wert": "SQLite",
+        "text": "lokaler Katalog"
+      },
+      {
+        "wert": "Idempotent",
+        "text": "wiederholter Import geprüft"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Produktdatenvertrag",
+        "text": "Sieben CSV-Zeilen mit Artikelnummer, Bezeichnung, Preis und ganzzahligem Bestand untersuchen."
+      },
+      {
+        "titel": "Geprüfter Datenimport",
+        "text": "Geld in ganzen Cent speichern; interne Dubletten und fehlende Preise vor dem Schreiben abweisen."
+      },
+      {
+        "titel": "PHP-Produktansicht",
+        "text": "Die fünf gültigen Artikel mit PHP/PDO und SQLite als kleine Produktansicht darstellen."
+      },
+      {
+        "titel": "Idempotenz und Fehlerfälle",
+        "text": "Den Import wiederholen: Der Katalog bleibt bei fünf Produkten, P01 behält trotz Dublette seinen Preis von 5,50 €."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/produktkatalog-php",
+    "original": "Das Original verwendet PHP/PDO und SQLite. Hier werden Katalog und Import nur im Arbeitsspeicher des Browsers nachgestellt; es gibt weder Shop-Backend noch Bestellung oder Zahlung."
+  },
+  {
+    "id": "P10",
+    "slug": "maschinenzustand-simulation",
+    "titel": "Zustände eines Förderbands simulieren",
+    "bereich": "Automatisierung & Zustandsmodelle",
+    "kopfzeile": "Ein Not-Halt darf nicht einfach verschwinden.",
+    "problem": "Normalbetrieb, Not-Halt und Sensorfehler eines Förderbands sollen vor Versuchen an echter Hardware nachvollziehbar geprüft werden.",
+    "nutzen": "Zustandsmodellierung, reproduzierbare Simulation und technische Fehlerfallanalyse.",
+    "ergebnis": "Normalbetrieb, Not-Halt und Sensorfehler mit festem Zeitschritt tatsächlich ausgeführt.",
+    "grenze": "Keine echte Maschine und kein Simulink-, ISG- oder SCADA-Produktlauf.",
+    "farbe": "#ea580c",
+    "technologien": [
+      "Python",
+      "Zustandsautomat",
+      "Simulation"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "1 s",
+        "text": "Zeitschritt je Aktion"
+      },
+      {
+        "wert": "Not-Halt",
+        "text": "höchste Priorität"
+      },
+      {
+        "wert": "Python",
+        "text": "geprüfter Originalkern"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Zustände und Szenarien",
+        "text": "Bereit, Lauf, Not-Halt und Fehler als explizite Zustände mit einem festen Zeitschritt definieren."
+      },
+      {
+        "titel": "Diskreter Simulationskern",
+        "text": "Start nur aus bereit zulassen; Not-Halt hat Vorrang vor anderen Signalen."
+      },
+      {
+        "titel": "Reproduzierbare Szenarien",
+        "text": "Normalbetrieb, Not-Halt und Sensorfehler als reproduzierbare Python-Szenarien ausführen."
+      },
+      {
+        "titel": "Zeitschritt- und Fehlerfallprüfung",
+        "text": "Nach Rücksetzen bleibt das Band bereit und steht: Ein erneuter Start muss bewusst erfolgen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/maschinenzustand-simulation",
+    "original": "Im Original berechnet ein Python-Modell die diskreten Zustände. Die Browserdarstellung veranschaulicht diese Regeln; sie steuert keine Maschine und ist keine Sicherheitssteuerung."
+  },
+  {
+    "id": "P11",
+    "slug": "wartungskarte-qgis",
+    "titel": "Wartungsaufträge in QGIS kartieren",
+    "bereich": "Geoinformatik & kommunale Daten",
+    "kopfzeile": "Die falsche Koordinate bleibt außerhalb der Karte.",
+    "problem": "Wartungsaufträge einer fiktiven Gemeinde sollen nach Bezirk verortet werden; ungültige Koordinaten dürfen die Karte nicht verfälschen.",
+    "nutzen": "Geodatenqualität, EPSG:4326, Kartenaufbereitung und portable GIS-Projekte.",
+    "ergebnis": "11 gültige Punkte; G12 mit Breite 95 ausgeschlossen. Gespeichertes QGIS-Projekt und Layout tatsächlich gelesen.",
+    "grenze": "Nur synthetische Geodaten; keine kommunale Berufserfahrung.",
+    "farbe": "#059669",
+    "technologien": [
+      "QGIS",
+      "GeoJSON",
+      "Python"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "11",
+        "text": "gültige Wartungspunkte"
+      },
+      {
+        "wert": "1",
+        "text": "abgelehnter Koordinatenfehler"
+      },
+      {
+        "wert": "4326",
+        "text": "verwendeter EPSG-Code"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "GeoJSON und Koordinatenvertrag",
+        "text": "Zwölf synthetische GeoJSON-Punkte im Koordinatensystem EPSG:4326 beschreiben."
+      },
+      {
+        "titel": "QGIS-Projekt und gültige Punkte",
+        "text": "G12 mit Breitengrad 95 ausdrücklich ablehnen, statt ihn unbemerkt auf die Karte zu verschieben."
+      },
+      {
+        "titel": "Kartengestaltung und Auswertung",
+        "text": "Elf gültige Punkte in QGIS gestalten und offene Aufträge nach Bezirk auswerten: Nord vier, Süd drei."
+      },
+      {
+        "titel": "Portables QGZ und Layoutprüfung",
+        "text": "Das portable QGZ-Projekt speichern, erneut lesen und sein Drucklayout tatsächlich exportieren."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/wartungskarte-qgis",
+    "original": "Das Original ist ein tatsächlich geöffnetes und geprüftes QGIS-Projekt. Hier werden dieselben synthetischen Punkte schematisch als SVG dargestellt; es läuft kein QGIS und es gibt keine externe Grundkarte."
+  },
+  {
+    "id": "P12",
+    "slug": "beschaffungsprozess-node-red",
+    "titel": "Beschaffung mit nachvollziehbarer Freigabe",
+    "bereich": "Prozessautomatisierung & Einkauf",
+    "kopfzeile": "Eine Freigabe braucht mehr als einen Klick.",
+    "problem": "Kleine Beschaffungsanträge sollen mit getrennten Rollen und überprüfbaren Betragsregeln vor einem lokalen ERP-Export freigegeben werden.",
+    "nutzen": "Prozessmodellierung, Rollentrennung, Validierung, Idempotenz und lokale Workflow-Orchestrierung.",
+    "ergebnis": "Zwei gültige lokale Exporte, Konfliktschutz und unveränderte Wiederholung. Node-RED separat mit echtem Neustart geprüft.",
+    "grenze": "Power Automate, SharePoint und SAP bleiben unvalidiert. Der eigene JSON-Vertrag ist keine SAP-Schnittstelle. Node-RED bleibt lokal; bekannte npm-Befunde sind im Zusatz dokumentiert.",
+    "farbe": "#16a34a",
+    "technologien": [
+      "Node.js",
+      "Node-RED",
+      "JSON Schema"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "500 €",
+        "text": "inklusive Freigabegrenze"
+      },
+      {
+        "wert": "2",
+        "text": "gültige lokale Exportfälle"
+      },
+      {
+        "wert": "Node-RED",
+        "text": "separat geprüfter Zusatz"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Prozess- und Rollenvertrag",
+        "text": "Antragsteller und Freigabeverantwortlichen trennen; nur positive centgenaue Beträge zulassen."
+      },
+      {
+        "titel": "Lokaler Zustandsautomat",
+        "text": "Eine Genehmigung bis einschließlich 500 EUR zusätzlich an begründeten Bedarf und verfügbares Budget binden."
+      },
+      {
+        "titel": "Voraussetzungen und Produktgrenzen",
+        "text": "Microsoft- und SAP-Zugänge als fehlende Produktvoraussetzungen offen dokumentieren."
+      },
+      {
+        "titel": "Exportvertrag, Wiederholung und Node-RED-Zusatz",
+        "text": "Einen eigenen lokalen Exportvertrag mit Konfliktschutz prüfen und den Node-RED-Zusatz nach echtem Neustart unverändert wiederholen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/beschaffungsprozess-node-red",
+    "original": "Die Originalfassung enthält einen lokalen Node.js-Prozess und einen geprüften Node-RED-Zusatz. Diese Browser-Demo simuliert Rollen, Entscheidungen und Export; kein Power-Automate-, SharePoint- oder SAP-Aufruf."
+  },
+  {
+    "id": "P13",
+    "slug": "stoerungsklassifikation-ml",
+    "titel": "Störungsmeldungen mit einer Baseline vergleichen",
+    "bereich": "Machine Learning & Evaluation",
+    "kopfzeile": "100 Prozent Treffer. Und trotzdem eine Grenze.",
+    "problem": "Ein kleiner Textklassifikator soll gegen eine nachvollziehbare Mehrheitsbaseline geprüft werden; Datentrennung und Grenzen der Beispiele müssen sichtbar bleiben.",
+    "nutzen": "ML-Pipeline, Datentrennung, Konfusionsmatrix und kritische Interpretation von Kennzahlen.",
+    "ergebnis": "60 Meldungen, 42/18-Aufteilung; Baseline 6/18, Modell 18/18. Nur sechs verschiedene Texte; alle Testtexte kommen schon im Training vor.",
+    "grenze": "Die hohe Trefferzahl belegt keine Generalisierung auf neue oder industrielle Meldungen.",
+    "farbe": "#9333ea",
+    "technologien": [
+      "scikit-learn",
+      "Pandas",
+      "NumPy",
+      "TF-IDF"
+    ],
+    "kennzahlen": [
+      {
+        "wert": "42 / 18",
+        "text": "Training und Test nach Kennung"
+      },
+      {
+        "wert": "6",
+        "text": "verschiedene Meldungstexte"
+      },
+      {
+        "wert": "18 / 18",
+        "text": "Modelltreffer in dieser Übung"
+      }
+    ],
+    "vorgehen": [
+      {
+        "titel": "Synthetische Meldungen und feste Aufteilung",
+        "text": "Kennungen vor jeder Anpassung fest in 42/18 aufteilen."
+      },
+      {
+        "titel": "TF-IDF und Naive Bayes",
+        "text": "TF-IDF und Naive Bayes ausschließlich auf Trainingsdaten anpassen."
+      },
+      {
+        "titel": "Vergleich mit Mehrheitsbaseline",
+        "text": "Beide Verfahren auf denselben 18 Testkennungen auswerten."
+      },
+      {
+        "titel": "Fehlerfälle und Grenzen der Stichprobe",
+        "text": "S43, S44 und S50 als Baselinefehler erklären und Textwiederholungen offenlegen."
+      }
+    ],
+    "repository": "https://github.com/Jorxas/stoerungsklassifikation-ml",
+    "original": "Hier werden tatsächlich gespeicherte Prüfergebnisse erklärt. Es findet kein Modelltraining und keine KI-Vorhersage im Browser statt. Die wiederholten Texte begrenzen die Aussagekraft."
+  }
+]

@@ -61,6 +61,8 @@ export const skillCategories: SkillCategory[] = [
   },
 ];
 
+import { projektstudien } from "./projektstudien";
+
 export interface Project {
   id: string;
   title: string;
@@ -71,10 +73,24 @@ export interface Project {
   techStack: string[];
   demoUrl: string | null;
   codeUrl: string;
-  category: "Web App" | "Website" | "Data Science";
+  category: "Web App" | "Website" | "Data Science" | "Daten & KI" | "Software & Systeme" | "Automatisierung & GIS";
+  demoLabel?: string;
+  domain?: string;
 }
 
 export const projects: Project[] = [
+  ...projektstudien.map((p): Project => ({
+    id: p.slug,
+    title: p.titel,
+    description: p.problem,
+    image: `/images/projektstudien/${p.slug}.png`,
+    techStack: p.technologien,
+    demoUrl: `/projects/${p.slug}/`,
+    demoLabel: "Demo & Erklärung",
+    codeUrl: "#",
+    domain: p.bereich,
+    category: ["P01", "P02", "P03", "P13"].includes(p.id) ? "Daten & KI" : ["P08", "P10", "P11", "P12"].includes(p.id) ? "Automatisierung & GIS" : "Software & Systeme",
+  })),
   {
     id: "concal",
     title: "Concal",

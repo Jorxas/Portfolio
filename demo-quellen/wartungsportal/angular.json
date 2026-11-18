@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": { "analytics": false, "cache": { "path": "ausgabe/angular-zwischenspeicher" } },
+  "projects": {
+    "wartungsportal": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src/frontend",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "ausgabe/oberflaeche",
+            "browser": "src/frontend/main.ts",
+            "index": "src/frontend/index.html",
+            "tsConfig": "tsconfig.json",
+            "styles": ["src/frontend/gestaltung.css"]
+          }
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "wartungsportal:build",
+            "proxyConfig": "src/frontend/proxy.json"
+          }
+        }
+      }
+    }
+  }
+}

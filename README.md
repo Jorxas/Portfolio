@@ -6,6 +6,8 @@ Dies ist der Quellcode meiner Portfolio-Website. Ich studiere Informatik an der 
 
 ## Die Website
 
+Die Projektübersicht enthält zusätzlich **13 eigenständige Demo- und Erklärseiten** für BI, Datenintegration, KI, Web-/Desktopentwicklung, C++, DevOps, IT-Support, E-Commerce, Automatisierung und GIS. Jede Seite erklärt Problem, Vorgehen, tatsächliche Ergebnisse und Grenzen. Interaktionen verwenden klar gekennzeichnete simulierte Backends und synthetische Daten; native Produkte werden im Browser nicht vorgetäuscht. Das Wartungsportal verwendet seine echten kompilierten Angular-Komponenten mit einem Demo-HTTP-Interceptor. [Aufbau und Reproduktion](DEMOSEITEN.md).
+
 Die Seite enthält eine Startseite, eine Projektübersicht, Informationen über mich und eine Kontaktseite. Projekttexte und Profildaten sind in [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts) gesammelt, damit ich Inhalte pflegen kann, ohne sie an vielen Stellen im UI zu ändern.
 
 Umgesetzt mit **Next.js**, **React**, **TypeScript**, **Tailwind CSS** und **Framer Motion**. Das Layout ist responsive; die Next.js-Konfiguration erstellt einen statischen Export für GitHub Pages.
