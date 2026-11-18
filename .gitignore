@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Lokale Demoprüfungen und eigenständige Angular-Arbeitsdateien
+/.demo-nachweise/
+/demo-quellen/**/node_modules/
+/demo-quellen/**/ausgabe/

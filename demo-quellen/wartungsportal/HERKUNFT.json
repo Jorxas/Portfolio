@@ -1,0 +1,21 @@
+{
+  "projekt": "P04",
+  "snapshot": "3a2ecee44c44bbbf9489f89ba905fee2ce21e903fb46b19e83f28a743e3ececd",
+  "unveraenderte_frontenddateien": [
+    "src/frontend/auftragsdienst.ts",
+    "src/frontend/detail.ts",
+    "src/frontend/fachmodell.ts",
+    "src/frontend/formular.ts",
+    "src/frontend/gestaltung.css",
+    "src/frontend/index.html",
+    "src/frontend/liste.ts",
+    "src/frontend/proxy.json",
+    "src/frontend/routen.ts"
+  ],
+  "geplante_demoanpassungen": [
+    "src/frontend/main.ts",
+    "src/frontend/demo-backend.ts"
+  ],
+  "backend": "simuliert",
+  "echter_java_server": false
+}

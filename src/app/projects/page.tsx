@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ProjectCard } from "@/components/project-card";
 import { projects } from "@/data/portfolio-data";
 
-const categories = ["Alle", "Web App", "Website", "Data Science"];
+const categories = ["Alle", ...new Set(projects.map((projekt) => projekt.category))];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("Alle");
@@ -28,7 +28,7 @@ export default function ProjectsPage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Meine Projekte"
-          subtitle="Studien- und Praxisprojekte in der Softwareentwicklung."
+          subtitle="Projekte aus unterschiedlichen Fachbereichen. Die neuen Projektseiten erklären Vorgehen und Ergebnisse und bieten klar gekennzeichnete Browser-Demos."
         />
 
         {/* Filters */}

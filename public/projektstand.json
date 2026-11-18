@@ -1,0 +1,71 @@
+{
+  "formatversion": 1,
+  "art": "projektstatus-statisch",
+  "projekte": {
+    "P01": {
+      "verfuegbar": true,
+      "phase": 2,
+      "url": "https://github.com/Jorxas/werkstatt-datenqualitaet-bi"
+    },
+    "P02": {
+      "verfuegbar": true,
+      "phase": 4,
+      "url": "https://github.com/Jorxas/mini-datahub-api"
+    },
+    "P03": {
+      "verfuegbar": true,
+      "phase": 4,
+      "url": "https://github.com/Jorxas/lokaler-dokumentenassistent"
+    },
+    "P04": {
+      "verfuegbar": true,
+      "phase": 2,
+      "url": "https://github.com/Jorxas/wartungsportal-angular-java"
+    },
+    "P05": {
+      "verfuegbar": true,
+      "phase": 3,
+      "url": "https://github.com/Jorxas/messwertpruefung-dotnet"
+    },
+    "P06": {
+      "verfuegbar": true,
+      "phase": 4,
+      "url": "https://github.com/Jorxas/sensorsimulation-cpp"
+    },
+    "P07": {
+      "verfuegbar": true,
+      "phase": 1,
+      "url": "https://github.com/Jorxas/devops-prueflabor"
+    },
+    "P08": {
+      "verfuegbar": true,
+      "phase": 3,
+      "url": "https://github.com/Jorxas/it-inventar-support"
+    },
+    "P09": {
+      "verfuegbar": true,
+      "phase": 4,
+      "url": "https://github.com/Jorxas/produktkatalog-php"
+    },
+    "P10": {
+      "verfuegbar": true,
+      "phase": 4,
+      "url": "https://github.com/Jorxas/maschinenzustand-simulation"
+    },
+    "P11": {
+      "verfuegbar": false,
+      "phase": 0,
+      "url": "https://github.com/Jorxas/wartungskarte-qgis"
+    },
+    "P12": {
+      "verfuegbar": false,
+      "phase": 0,
+      "url": "https://github.com/Jorxas/beschaffungsprozess-node-red"
+    },
+    "P13": {
+      "verfuegbar": false,
+      "phase": 0,
+      "url": "https://github.com/Jorxas/stoerungsklassifikation-ml"
+    }
+  }
+}

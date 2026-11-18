@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { motion } from "framer-motion";
@@ -41,6 +42,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         <div className="p-5 flex flex-col flex-1">
+          {project.domain && <p className="text-[10px] uppercase tracking-wider text-accent mb-2">{project.domain}</p>}
           <h3 className="text-lg font-semibold mb-2 font-[family-name:var(--font-poppins)]">
             {project.title}
           </h3>
@@ -58,15 +60,15 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
           <div className="flex gap-2 mt-auto">
             {project.demoUrl && (
-              <a
+              <Link
                 href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={project.demoUrl.startsWith("/") ? undefined : "_blank"}
+                rel={project.demoUrl.startsWith("/") ? undefined : "noopener noreferrer"}
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-accent text-white hover:bg-accent/80 transition-colors"
               >
                 <ExternalLink size={14} />
-                Live
-              </a>
+                {project.demoLabel || "Live"}
+              </Link>
             )}
             {project.codeUrl !== "#" && (
               <a

@@ -1,0 +1,16 @@
+body { margin: 0; color: #162e3a; background: #f4f7f8; font: 1rem/1.5 system-ui, sans-serif; }
+header { background: #163e50; color: white; padding: 1rem 2rem; }
+main { max-width: 64rem; margin: 2rem auto; padding: 1.5rem; background: white; }
+a { color: #075d85; }
+button, input, select { font: inherit; padding: .5rem; }
+button { color: white; background: #075d85; border: 1px solid #075d85; cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+label { display: block; font-weight: bold; margin-top: 1rem; }
+input { width: min(90%, 35rem); }
+th, td { text-align: left; padding: .5rem; border-bottom: 1px solid #becbd1; overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; }
+caption { text-align: left; margin-bottom: .5rem; }
+dt { font-weight: bold; }
+dd { margin: 0 0 1rem; overflow-wrap: anywhere; }
+[role=alert] { color: #9a1d19; }
+:focus-visible { outline: 3px solid #ab5800; outline-offset: 3px; }
