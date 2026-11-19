@@ -1,4 +1,4 @@
-# Sechzehn eigenständige Projektseiten
+# Siebzehn eigenständige Projektseiten
 
 Jede Seite unter `projects/<projektname>/` erklärt Fachbereich, Vorgehensweise, Ergebnisse und Grenzen. Die 13 technischen Lernprojekte verwenden synthetische Daten. Die drei zusätzlichen Kursprojektseiten (CNN, RNN und Quiz) verwenden veröffentlichte Originalartefakte; ihre zusätzliche Interaktion wird ausdrücklich eingeordnet. Die Seiten benötigen keinen bezahlten Server oder API-Schlüssel und werden statisch auf GitHub Pages veröffentlicht.
 
@@ -18,9 +18,11 @@ Die übrigen Seiten verwenden zusätzliche React-/SVG-Veranschaulichungen. Sie b
 - `public/demos/wartungsportal/`: fertiger Angular-Browserbuild samt Lizenzhinweisen.
 - `public/projektstand.json`: rein statischer Veröffentlichungsstatus; keine Backend-API.
 
-Jede Projektkarte hat getrennte Code- und Demo-Links. Acht Arbeiten sind ausgewählt; alle 17 sind über Filter und Suche zugänglich. Kleine redundante Frontend-Übungen wurden aus der Präsentation genommen, ohne ihre Repositories zu löschen.
+Jede Projektkarte hat getrennte Code- und Demo-Links. Neun Arbeiten sind ausgewählt; alle 18 sind über Filter und Suche zugänglich. Kleine redundante Frontend-Übungen wurden aus der Präsentation genommen, ohne ihre Repositories zu löschen.
 
 ## Zusätzliche Kursprojekte
+
+Zusätzlich besitzt **JobPilot** eine eigene Projektseite und eine eingebettete Kopie seiner öffentlichen Browseroberfläche unter `public/demos/jobpilot/`. Sie verwendet den tatsächlichen Suchplan, die Vergleichs-/Dublettenlogik und den Formularmotor an synthetischen Beispielen. Externe Quellenzugriffe und ein Server sind in dieser gehosteten Ansicht simuliert. Das separat startbare Backend und die Herkunftsnachweise liegen im eigenen [JobPilot-Repository](https://github.com/Jorxas/JobPilot). Änderungen am eingebetteten Export müssen aus dessen geprüftem Build übernommen werden; keine private Originalinstanz kopieren. MIT-Hinweise aus JobScout sind auch im Browserexport enthalten.
 
 - **CNN:** `src/data/legacy-daten.json` enthält originale Matrix, Messwerte und Quellen. Die Matrix summiert sich zu 392 Testbildern und 284 richtigen Vorhersagen. Grafiken unter `public/images/lernstudien/` stammen aus dem Original-Repository; keine rekonstruierten Kurvenwerte, keine neue Bilderkennung.
 - **RNN:** Das Datenartefakt enthält zehn Epochen je Modell, getrennte Testergebnisse und drei originale ABC-Texte. Der Browser spielt auf Wunsch eine vereinfachte Sinus-Synthese ab. Keine historischen Audiodateien, kein Modell-Sampling und keine belastbare Aussage zur musikalischen Qualität.

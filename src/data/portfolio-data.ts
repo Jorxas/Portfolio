@@ -107,6 +107,20 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "stellensuche-jobpilot",
+    title: "JobPilot – Stellensuche mit Überblick",
+    domain: "Webanwendung & Prozessautomatisierung",
+    description:
+      "Ein Werkzeug aus der eigenen Jobsuche: mehrere Quellen, nachvollziehbarer Profilvergleich, Firmenhistorie und ein Formularassistent. Öffentliche Demo mit synthetischen Daten.",
+    image: "/images/jobpilot-uebersicht.png",
+    imageObjectFit: "contain",
+    techStack: ["React", "TypeScript", "Node.js", "Browser-Erweiterung"],
+    codeUrl: "https://github.com/Jorxas/JobPilot",
+    demoUrl: "/projects/stellensuche-jobpilot/",
+    ausgewaehlt: true,
+    category: "Software & Systeme",
+  },
   ...projektstudien.map(
     (p): Project => ({
       id: p.slug,

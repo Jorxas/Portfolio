@@ -19,6 +19,7 @@ const eslintConfig = defineConfig([
     // Kompilierte Anwendung und unveränderte Teile des Original-Quiz-Frontends.
     "public/demos/wartungsportal/**",
     "public/demos/quiz/js/**",
+    "public/demos/jobpilot/**",
     ".demo-nachweise/**",
   ]),
 ]);
