@@ -3,9 +3,13 @@
 import { Datenqualitaet, DataHub, Dokumentensuche, Produktkatalog, Klassifikation } from "./daten-demos";
 import { Messwerte, Sensor, Betrieb, Inventar, Maschine, Wartungskarte, Beschaffung } from "./technik-demos";
 import { assetPath } from "@/lib/asset-path";
+import { Kleidungsnetz, Musiknetz, Quizstudie } from "./lernstudien";
 
 export function ProjektDemo({ projekt }: { projekt: string }) {
   switch (projekt) {
+    case "CNN": return <Kleidungsnetz />;
+    case "RNN": return <Musiknetz />;
+    case "QUIZ": return <Quizstudie />;
     case "P01": return <Datenqualitaet />;
     case "P02": return <DataHub />;
     case "P03": return <Dokumentensuche />;

@@ -1,248 +1,174 @@
-"use client";
-
-import { motion } from "framer-motion";
+import type { Metadata } from "next";
+import Link from "@/components/link";
+import { ArrowUpRight } from "lucide-react";
 import {
-  Gamepad2, Film, Music, Dumbbell, Piano, Code,
-  ExternalLink, Award,
-} from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
-import { SkillBar } from "@/components/skill-bar";
-import {
-  personalInfo, skills, skillCategories,
-  hobbies, certifications, languages,
-  experience, education, furtherTraining,
+  education,
+  languages,
+  certifications,
+  experience,
 } from "@/data/portfolio-data";
-
-const iconMap: Record<string, React.ReactNode> = {
-  Gamepad2: <Gamepad2 size={22} />,
-  Film: <Film size={22} />,
-  Music: <Music size={22} />,
-  Dumbbell: <Dumbbell size={22} />,
-  Piano: <Piano size={22} />,
-  Code: <Code size={22} />,
+import { Einblenden } from "@/components/bewegung";
+export const metadata: Metadata = {
+  title: "Über mich",
+  description:
+    "Jordan Freddy: Informatikstudent an der THM Gießen, Softwareentwicklung und Datenanalyse.",
 };
-
-const card = "rounded-2xl border border-border bg-card p-6 card-hover";
-
-export default function AboutPage() {
+const felder = [
+  {
+    titel: "Software & Systeme",
+    text: "Weboberflächen, Schnittstellen und verteilte Anwendungen.",
+    technik: "Java · TypeScript · Angular · SQL · MQTT",
+    href: "/projects/multiplayer-trivia-quiz/",
+    beleg: "Im Multiplayer-Quiz ansehen",
+  },
+  {
+    titel: "Daten & KI",
+    text: "Daten aufbereiten, Modelle auswerten und Ergebnisse erklären.",
+    technik: "Python · PyTorch · Pandas · Power BI",
+    href: "/projects/cnn-clothing-classification/",
+    beleg: "In der CNN-Auswertung ansehen",
+  },
+  {
+    titel: "Technische Abläufe",
+    text: "Zustände, Automatisierung und räumliche Daten verständlich verbinden.",
+    technik: "C++ · Node-RED · QGIS · Git",
+    href: "/projects/wartungskarte-qgis/",
+    beleg: "In der Wartungskarte ansehen",
+  },
+];
+export default function UeberMich() {
   return (
-    <div className="pt-24 pb-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <SectionHeading title="Über mich" />
-
-        {/* Bio */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto mb-20"
-        >
-          <h2 className="text-2xl font-semibold font-[family-name:var(--font-poppins)] mb-2">
-            {personalInfo.name}
+    <div className="seitenbreite">
+      <Einblenden klasse="seiten-intro ueber-intro">
+        <div>
+          <p className="kleine-ueberschrift">ÜBER MICH / JORDAN FREDDY</p>
+          <h1>
+            Neugierig bleiben.
+            <br />
+            <span>Weiterdenken.</span>
+          </h1>
+          <p>
+            Ich studiere Informatik an der Technischen Hochschule Mittelhessen
+            in Gießen. Mich begeistert, wenn aus einer abstrakten Idee eine
+            Anwendung wird, die sich erklären und ausprobieren lässt.
+          </p>
+        </div>
+        <div className="profilzeichen klein">
+          <span>JF.</span>
+          <p>CODE. DATEN. NEUGIER.</p>
+          <div>
+            Informatik · THM Gießen
+            <br />
+            Bachelorstudium seit 2024
+          </div>
+        </div>
+      </Einblenden>
+      <section className="abschnitt">
+        <div className="abschnittskopf">
+          <div>
+            <p className="kleine-ueberschrift">01 / SCHWERPUNKTE</p>
+            <h2>
+              Fähigkeiten zeigen sich
+              <br />
+              <span>am konkreten Projekt.</span>
+            </h2>
+          </div>
+          <p>
+            Die folgenden Technologien kommen in meinen Studien- und
+            Lernprojekten vor. Die verlinkten Beispiele zeigen den jeweiligen
+            Umfang und seine Grenzen.
+          </p>
+        </div>
+        <div className="methodengitter kenntnisse">
+          {felder.map((f) => (
+            <Einblenden key={f.titel}>
+              <h3>{f.titel}</h3>
+              <p>{f.text}</p>
+              <p className="technikzeile">{f.technik}</p>
+              <Link className="textlink" href={f.href}>
+                {f.beleg}
+                <ArrowUpRight size={16} />
+              </Link>
+            </Einblenden>
+          ))}
+        </div>
+      </section>
+      <section className="abschnitt lebenslauf">
+        <div>
+          <p className="kleine-ueberschrift">02 / MEIN WEG</p>
+          <h2>
+            Studium &<br />
+            <span>Erfahrung.</span>
           </h2>
-          <p className="text-accent font-medium mb-6">{personalInfo.subtitle}</p>
-
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            {personalInfo.bio.map((paragraph, i) => (
-              <p key={i} dangerouslySetInnerHTML={{ __html: paragraph }} />
-            ))}
-          </div>
-
-          {/* Further training */}
-          <div className="mt-8 p-4 rounded-xl bg-accent/5 border border-accent/10">
-            <p className="text-sm font-medium text-accent mb-2">Aktuelle Weiterbildung</p>
-            <div className="flex flex-wrap gap-2">
-              {furtherTraining.map((t) => (
-                <span key={t} className="tech-badge">{t}</span>
-              ))}
+          <p className="absatz-gross">
+            Ich suche eine Werkstudentenstelle, in der ich technische Aufgaben
+            im Team bearbeiten und mein Studium durch Praxis ergänzen kann.
+          </p>
+          <Link className="textlink" href="/contact/">
+            Kontakt aufnehmen <ArrowUpRight size={17} />
+          </Link>
+        </div>
+        <div>
+          <h3 className="laufbahntitel">Studium</h3>
+          {education.map((e) => (
+            <div className="laufbahneintrag" key={e.organization}>
+              <span>{e.period}</span>
+              <h3>{e.title}</h3>
+              <p>{e.organization}</p>
+              {e.description && <p>{e.description}</p>}
             </div>
-          </div>
-        </motion.div>
-
-        {/* Skills */}
-        <SectionHeading title="Fähigkeiten" subtitle="Mein technischer Stack im Überblick." />
-
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
-          {/* Skill bars */}
-          <div>
-            {skills.map((skill, i) => (
-              <SkillBar key={skill.name} skill={skill} index={i} />
-            ))}
-          </div>
-
-          {/* Skill categories */}
-          <div className="space-y-6">
-            {skillCategories.map((cat, i) => (
-              <motion.div
-                key={cat.category}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className={card}
+          ))}
+          <h3 className="laufbahntitel">Berufliche Erfahrung</h3>
+          {experience.slice(1).map((e) => (
+            <div className="laufbahneintrag" key={e.title}>
+              <span>{e.period}</span>
+              <h3>{e.title}</h3>
+              <p>{e.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="abschnitt weiterlernen">
+        <div>
+          <p className="kleine-ueberschrift">03 / WEITERLERNEN</p>
+          <h2>Immer in Bewegung.</h2>
+          <div className="zertifikate">
+            {certifications.map((c) => (
+              <a
+                href={c.url}
+                key={c.abbr}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide text-accent">
-                  {cat.category}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {cat.items.map((item) => (
-                    <span key={item} className="tech-badge">{item}</span>
-                  ))}
+                <span>{c.abbr}</span>
+                <div>
+                  <strong>{c.title}</strong>
+                  <p>
+                    {c.provider} · {c.date.replace("Abgeschlossen: ", "")}
+                  </p>
                 </div>
-              </motion.div>
+                <ArrowUpRight size={18} />
+              </a>
             ))}
           </div>
         </div>
-
-        {/* Hobbies */}
-        <SectionHeading title="Hobbies & Interessen" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
-          {hobbies.map((hobby, i) => (
-            <motion.div
-              key={hobby.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className={card}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
-                  {iconMap[hobby.icon]}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm">{hobby.title}</h4>
-                  <p className="text-xs text-muted-foreground">{hobby.subtitle}</p>
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{hobby.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Certifications */}
-        <SectionHeading title="Zertifizierungen" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
-          {certifications.map((cert, i) => (
-            <motion.a
-              key={cert.title}
-              href={cert.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className={`${card} group cursor-pointer`}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">
-                  {cert.abbr}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-sm truncate group-hover:text-accent transition-colors">
-                    {cert.title}
-                  </h4>
-                  <p className="text-xs text-muted-foreground">{cert.provider}</p>
-                </div>
-                <ExternalLink size={14} className="text-muted-foreground shrink-0 group-hover:text-accent transition-colors" />
-              </div>
-              <p className="text-xs text-muted-foreground mb-1">{cert.date}</p>
-              <p className="text-sm text-muted-foreground">{cert.description}</p>
-            </motion.a>
-          ))}
-        </div>
-
-        {/* Languages */}
-        <SectionHeading title="Sprachkenntnisse" />
-        <div className="grid sm:grid-cols-3 gap-5 mb-20">
-          {languages.map((lang, i) => (
-            <motion.div
-              key={lang.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className={card}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl">{lang.flag}</span>
-                <div>
-                  <h4 className="font-semibold text-sm">{lang.name}</h4>
-                  <p className="text-xs text-muted-foreground">{lang.level}</p>
-                </div>
-              </div>
-              <div className="flex gap-1.5 mb-3">
-                {Array.from({ length: 5 }).map((_, idx) => (
-                  <div key={idx} className={`dot ${idx < lang.dots ? "filled" : ""}`} />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground">{lang.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Experience & Education */}
-        <SectionHeading title="Erfahrung & Ausbildung" />
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Experience */}
-          <div>
-            <h3 className="text-xl font-semibold font-[family-name:var(--font-poppins)] mb-6">
-              Berufserfahrung
-            </h3>
-            <div className="space-y-0 relative before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-0.5 before:bg-accent/30">
-              {experience.map((item, i) => (
-                <motion.div
-                  key={item.title + item.period}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="pl-8 pb-8 relative"
-                >
-                  <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-accent border-2 border-background" />
-                  <h4 className="font-semibold text-sm mb-1">{item.title}</h4>
-                  <p className="text-xs text-accent mb-2">{item.period}</p>
-                  {item.description && (
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                  )}
-                </motion.div>
-              ))}
+        <div className="sprachen">
+          <h3>Sprachen</h3>
+          {languages.map((l) => (
+            <div key={l.name}>
+              <strong>{l.name}</strong>
+              <span>
+                {l.level}
+                {l.name === "Deutsch" ? " · DSH 3" : ""}
+              </span>
             </div>
-          </div>
-
-          {/* Education */}
-          <div>
-            <h3 className="text-xl font-semibold font-[family-name:var(--font-poppins)] mb-6">
-              Bildung
-            </h3>
-            <div className="space-y-0 relative before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-0.5 before:bg-accent/30">
-              {education.map((item, i) => (
-                <motion.div
-                  key={item.title + item.period}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="pl-8 pb-8 relative"
-                >
-                  <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-accent border-2 border-background" />
-                  <h4 className="font-semibold text-sm mb-1">{item.title}</h4>
-                  {item.organization && (
-                    <p className="text-xs text-accent mb-1">{item.organization}</p>
-                  )}
-                  <p className="text-xs text-muted-foreground mb-2">{item.period}</p>
-                  {item.description && (
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          ))}
+          <p>
+            Abseits des Codes: Musik, Klavier, Sport und neue Geschichten in
+            Filmen und Anime.
+          </p>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

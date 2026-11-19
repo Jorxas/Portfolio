@@ -1,102 +1,91 @@
 "use client";
-
-import Link from "next/link";
+import Link from "./link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { motion, useScroll } from "framer-motion";
 const links = [
-  { href: "/", label: "Startseite" },
-  { href: "/about", label: "Über mich" },
-  { href: "/projects", label: "Projekte" },
-  { href: "/contact", label: "Kontakt" },
+  { href: "/", text: "Start" },
+  { href: "/projects/", text: "Projekte" },
+  { href: "/about/", text: "Über mich" },
 ];
-
 export function Navbar() {
-  const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-
+  const pfad = usePathname();
+  const [offen, setzen] = useState(false);
+  const { scrollYProgress } = useScroll();
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const ende = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setzen(false);
+    };
+    window.addEventListener("keydown", ende);
+    return () => window.removeEventListener("keydown", ende);
   }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
+  const aktiv = (href: string) =>
+    href === "/" ? pfad === "/" : pfad.startsWith(href.slice(0, -1));
   return (
-    <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "glass shadow-lg shadow-black/10"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <>
+      <a className="sprunglink" href="#hauptinhalt">
+        Zum Inhalt springen
+      </a>
+      <header className="seitenkopf">
+        <nav className="hauptnavigation" aria-label="Hauptnavigation">
           <Link
+            className="wortmarke"
             href="/"
-            className="text-xl font-bold font-[family-name:var(--font-poppins)] tracking-tight"
+            onClick={() => setzen(false)}
+            aria-label="Jordan Freddy – Start"
           >
-            <span className="gradient-text">Portfolio</span>
+            <span className="markenpunkt">
+              JF<span>.</span>
+            </span>
+            <span className="markenname">
+              Jordan Freddy<small>Software & Daten</small>
+            </span>
           </Link>
-
-          {/* Desktop */}
-          <ul className="hidden md:flex items-center gap-1">
-            {links.map((l) => {
-              const active = pathname === l.href;
-              return (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      active
-                        ? "text-white bg-accent/20"
-                        : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                    }`}
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* Mobile toggle */}
+          <div className="desktoplinks">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                aria-current={aktiv(l.href) ? "page" : undefined}
+              >
+                {l.text}
+              </Link>
+            ))}
+          </div>
+          <Link className="kontaktknopf" href="/contact/">
+            Kontakt <ArrowUpRight size={16} />
+          </Link>
           <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden p-2 rounded-lg hover:bg-white/5 transition-colors"
-            aria-label="Menü"
+            className="menueknopf"
+            onClick={() => setzen(!offen)}
+            aria-expanded={offen}
+            aria-controls="mobile-navigation"
+            aria-label={offen ? "Menü schließen" : "Menü öffnen"}
           >
-            {open ? <X size={22} /> : <Menu size={22} />}
+            {offen ? <X /> : <Menu />}
           </button>
-        </div>
-
-        {/* Mobile menu */}
-        {open && (
-          <div className="md:hidden pb-4 border-t border-border mt-2 pt-4 space-y-1">
-            {links.map((l) => {
-              const active = pathname === l.href;
-              return (
+          {offen && (
+            <div id="mobile-navigation" className="mobiles-menue">
+              {[...links, { href: "/contact/", text: "Kontakt" }].map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    active
-                      ? "text-white bg-accent/20"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                  }`}
+                  onClick={() => setzen(false)}
+                  aria-current={aktiv(l.href) ? "page" : undefined}
                 >
-                  {l.label}
+                  {l.text}
+                  <ArrowUpRight size={18} />
                 </Link>
-              );
-            })}
-          </div>
-        )}
-      </div>
-    </nav>
+              ))}
+            </div>
+          )}
+        </nav>
+      </header>
+      <motion.div
+        className="lesefortschritt"
+        style={{ scaleX: scrollYProgress }}
+      />
+    </>
   );
 }

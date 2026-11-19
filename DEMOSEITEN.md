@@ -1,6 +1,6 @@
-# Dreizehn eigenständige Projektseiten
+# Sechzehn eigenständige Projektseiten
 
-Jede neue Seite unter `projects/<projektname>/` erklärt einen eigenen Fachbereich, stellt die Vorgehensweise dar und trennt gespeicherte Originalergebnisse von der zusätzlichen Browser-Demo. Alle Beispieldaten sind synthetisch. Die Seiten benötigen keinen bezahlten Server oder API-Schlüssel und werden zusammen mit dem bestehenden Portfolio statisch auf GitHub Pages veröffentlicht.
+Jede Seite unter `projects/<projektname>/` erklärt Fachbereich, Vorgehensweise, Ergebnisse und Grenzen. Die 13 technischen Lernprojekte verwenden synthetische Daten. Die drei zusätzlichen Kursprojektseiten (CNN, RNN und Quiz) verwenden veröffentlichte Originalartefakte; ihre zusätzliche Interaktion wird ausdrücklich eingeordnet. Die Seiten benötigen keinen bezahlten Server oder API-Schlüssel und werden statisch auf GitHub Pages veröffentlicht.
 
 ## Echte Oberfläche und simuliertes Backend
 
@@ -18,7 +18,15 @@ Die übrigen Seiten verwenden zusätzliche React-/SVG-Veranschaulichungen. Sie b
 - `public/demos/wartungsportal/`: fertiger Angular-Browserbuild samt Lizenzhinweisen.
 - `public/projektstand.json`: rein statischer Veröffentlichungsstatus; keine Backend-API.
 
-Die vorhandenen anderen Portfolio-Projekte und externen Links bleiben erhalten. Neue Projektkarten führen zuerst zur jeweiligen Demo- und Erklärseite. Noch nicht vorhandene Quellrepositorys führen vorübergehend zum GitHub-Profil; sie werden nicht als vorhanden behauptet.
+Jede Projektkarte hat getrennte Code- und Demo-Links. Acht Arbeiten sind ausgewählt; alle 17 sind über Filter und Suche zugänglich. Kleine redundante Frontend-Übungen wurden aus der Präsentation genommen, ohne ihre Repositories zu löschen.
+
+## Zusätzliche Kursprojekte
+
+- **CNN:** `src/data/legacy-daten.json` enthält originale Matrix, Messwerte und Quellen. Die Matrix summiert sich zu 392 Testbildern und 284 richtigen Vorhersagen. Grafiken unter `public/images/lernstudien/` stammen aus dem Original-Repository; keine rekonstruierten Kurvenwerte, keine neue Bilderkennung.
+- **RNN:** Das Datenartefakt enthält zehn Epochen je Modell, getrennte Testergebnisse und drei originale ABC-Texte. Der Browser spielt auf Wunsch eine vereinfachte Sinus-Synthese ab. Keine historischen Audiodateien, kein Modell-Sampling und keine belastbare Aussage zur musikalischen Qualität.
+- **Quiz:** `public/demos/quiz/` enthält das originale Frontend mit ergänztem lokalem Adapter. Externe MQTT-Bibliothek und ursprüngliche Umgebungskonfiguration werden nicht verwendet. Kein Broker, keine echte Anmeldung, keine Hardware-Controller. Antwortklicks am Host sind eine Demo-Ergänzung. Die fünf Fragen stammen aus den Original-SQL-Dateien. Lobby, Mitspieler, Highscores und 100 Punkte pro richtiger Antwort sind simuliert. Andere Spielkonfigurationen sind ausgeblendet.
+
+Originalquellen sind in `src/data/legacy-daten.json` und `public/demos/quiz/fragen.json` dokumentiert. Concal führt zur externen Anwendung; deren Anmeldung, Datenbank und Gemini-Anbindung werden durch die statischen Portfolio-Prüfungen nicht validiert. Die ergänzende Präsentation wurde mit KI-Unterstützung erstellt.
 
 ## Lokal prüfen
 
@@ -50,3 +58,5 @@ node werkzeuge/demos-pruefen.cjs http://127.0.0.1:<Vorschau-Port>/Portfolio/
 ```
 
 Optional kann `PLAYWRIGHT_MODUL` auf eine vorhandene Playwright-Installation zeigen. Der Bericht bleibt unter `.demo-nachweise/` lokal. Die Prüfung aktualisiert die echten Browserbilder für die Projektkarten unter `public/images/projektstudien/`.
+
+Am 19. November 2026 wurden zusätzlich die interaktive CNN-Matrix samt Originalgrafiken, der LSTM-/GRU-Vergleich mit lokaler Audiowiedergabe und eine komplette Quizrunde mit fünf Fragen geprüft. Die 13 bisherigen Demos bestanden ihre Interaktions- und Mobilprüfungen erneut. `werkzeuge/portfolio-pruefen.cjs` prüft außerdem Projektauswahl, Suche, Code-/Demo-Links, Kontakt ohne Versand, mobile Navigation und reduzierte Bewegung. Die lokalen Läufe zeigten keine JavaScript-Laufzeitfehler, fehlenden Dateien oder echten Backend-Anfragen. Diese Prüfung gilt für die Browseransichten, nicht für externe oder native Systeme.

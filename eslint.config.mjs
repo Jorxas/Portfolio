@@ -5,6 +5,10 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    files: ["werkzeuge/**/*.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
@@ -12,6 +16,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Kompilierte Anwendung und unveränderte Teile des Original-Quiz-Frontends.
+    "public/demos/wartungsportal/**",
+    "public/demos/quiz/js/**",
+    ".demo-nachweise/**",
   ]),
 ]);
 

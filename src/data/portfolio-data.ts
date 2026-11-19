@@ -8,9 +8,9 @@ export const personalInfo = {
   email: "pokemtezo5@gmail.com",
   address: "Eichendorffring 99, Zimmer 009\n35394 Gießen, Deutschland",
   bio: [
-    'Mein Name ist <strong>Jordan Freddy</strong> und ich studiere derzeit <strong>Informatik an der THM in Gießen</strong> (Bachelor) mit Fokus auf <strong>Software Engineering</strong> und <strong>Datenanalyse</strong>.',
-    'Besonders interessiere ich mich für die <strong>praktische Umsetzung von IT-Lösungen</strong> und die <strong>Arbeit in dynamischen Teams</strong>. Ich gelte als zuverlässig, teamorientiert und lerne schnell.',
-    'Aktuell suche ich eine <strong>Werkstudentenstelle im IT-Bereich</strong>, um mein Wissen zu vertiefen und es in realen Projekten anzuwenden.',
+    "Mein Name ist <strong>Jordan Freddy</strong> und ich studiere derzeit <strong>Informatik an der THM in Gießen</strong> (Bachelor) mit Fokus auf <strong>Software Engineering</strong> und <strong>Datenanalyse</strong>.",
+    "Besonders interessiere ich mich für die <strong>praktische Umsetzung von IT-Lösungen</strong> und die <strong>Arbeit in dynamischen Teams</strong>. Ich gelte als zuverlässig, teamorientiert und lerne schnell.",
+    "Aktuell suche ich eine <strong>Werkstudentenstelle im IT-Bereich</strong>, um mein Wissen zu vertiefen und es in realen Projekten anzuwenden.",
   ],
   social: {
     linkedin: "https://www.linkedin.com/in/jordan-freddy",
@@ -45,7 +45,18 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     category: "Softwareentwicklung & Web",
-    items: ["Java", "JavaScript", "TypeScript (Grundkenntnisse)", "HTML5", "CSS3", "Bootstrap", "React", "Next.js (Grundkenntnisse)", "Tailwind CSS", "APIs"],
+    items: [
+      "Java",
+      "JavaScript",
+      "TypeScript (Grundkenntnisse)",
+      "HTML5",
+      "CSS3",
+      "Bootstrap",
+      "React",
+      "Next.js (Grundkenntnisse)",
+      "Tailwind CSS",
+      "APIs",
+    ],
   },
   {
     category: "Python & Data",
@@ -53,11 +64,21 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: "Tools & DevOps",
-    items: ["Docker", "Docker Compose", "Git / GitLab", "MQTT", "Linux-Grundlagen"],
+    items: [
+      "Docker",
+      "Docker Compose",
+      "Git / GitLab",
+      "MQTT",
+      "Linux-Grundlagen",
+    ],
   },
   {
     category: "KI-Fokus",
-    items: ["LLM-basierte Features", "Strukturierte Datenverarbeitung", "Python für produktnahe Anwendungen"],
+    items: [
+      "LLM-basierte Features",
+      "Strukturierte Datenverarbeitung",
+      "Python für produktnahe Anwendungen",
+    ],
   },
 ];
 
@@ -73,41 +94,59 @@ export interface Project {
   techStack: string[];
   demoUrl: string | null;
   codeUrl: string;
-  category: "Web App" | "Website" | "Data Science" | "Daten & KI" | "Software & Systeme" | "Automatisierung & GIS";
+  category:
+    | "Web App"
+    | "Website"
+    | "Data Science"
+    | "Daten & KI"
+    | "Software & Systeme"
+    | "Automatisierung & GIS";
   demoLabel?: string;
   domain?: string;
+  ausgewaehlt?: boolean;
 }
 
 export const projects: Project[] = [
-  ...projektstudien.map((p): Project => ({
-    id: p.slug,
-    title: p.titel,
-    description: p.problem,
-    image: `/images/projektstudien/${p.slug}.png`,
-    techStack: p.technologien,
-    demoUrl: `/projects/${p.slug}/`,
-    demoLabel: "Demo & Erklärung",
-    codeUrl: "#",
-    domain: p.bereich,
-    category: ["P01", "P02", "P03", "P13"].includes(p.id) ? "Daten & KI" : ["P08", "P10", "P11", "P12"].includes(p.id) ? "Automatisierung & GIS" : "Software & Systeme",
-  })),
+  ...projektstudien.map(
+    (p): Project => ({
+      id: p.slug,
+      title: p.titel,
+      description: p.problem,
+      image: `/images/projektstudien/${p.slug}.png`,
+      imageObjectFit: "contain",
+      techStack: p.technologien,
+      demoUrl: `/projects/${p.slug}/`,
+      demoLabel: "Demo & Erklärung",
+      codeUrl: p.repository,
+      domain: p.bereich,
+      ausgewaehlt: ["P01", "P04", "P05", "P11"].includes(p.id),
+      category: ["P01", "P02", "P03", "P13"].includes(p.id)
+        ? "Daten & KI"
+        : ["P08", "P10", "P11", "P12"].includes(p.id)
+          ? "Automatisierung & GIS"
+          : "Software & Systeme",
+    }),
+  ),
   {
     id: "concal",
+    domain: "Webanwendung & Ernährung",
     title: "Concal",
     description:
-      "Kalorien- und Makro-Tracking mit KI (Foto-Analyse via Gemini), persönliche Tagesziele aus Profil & TDEE, Dashboard mit Mahlzeiten-Slots, Rezepte teilen und in der Community entdecken. Next.js, Supabase.",
+      "Ernährung im Alltag erfassen: Mahlzeiten, Tagesziele und ein Dashboard in einer Next.js-Anwendung mit Supabase und Gemini-Anbindung.",
     image: "/images/concal-cover.png",
     techStack: ["Next.js", "Supabase", "Gemini AI", "TypeScript"],
     demoUrl: "https://concal-eight.vercel.app",
-    codeUrl: "#",
+    codeUrl: "https://github.com/Jorxas/Concal",
+    ausgewaehlt: true,
     category: "Web App",
   },
   {
     id: "quizgame",
+    domain: "Verteilte Systeme & Echtzeit",
     title: "Multiplayer Trivia Quiz",
     description:
-      "Quiz-Plattform: Web-Frontend (HTML/CSS/JS, Nginx), Java-Vert.x-REST-Backend (/api), MariaDB, MQTT (Mosquitto), Docker-Compose; Web-Controller für Eingaben. Akademisches Gruppenprojekt.",
-    image: "/images/quizgame-cover.png",
+      "Akademisches Gruppenprojekt: ein verteiltes Quiz mit Java-Backend, Datenbank und MQTT. Die Web-Demo macht eine lokale Runde ohne Server spielbar.",
+    image: "/images/quizgame-demo.png",
     techStack: [
       "Java (Vert.x)",
       "MariaDB",
@@ -117,105 +156,44 @@ export const projects: Project[] = [
       "HTML/CSS/JS",
       "Bootstrap",
     ],
-    demoUrl: null,
+    demoUrl: "/projects/multiplayer-trivia-quiz/",
     codeUrl: "https://github.com/Jorxas/quizgame",
+    ausgewaehlt: true,
     category: "Web App",
   },
   {
     id: "cnn-clothing-classification",
+    domain: "Deep Learning & Bildklassifikation",
     title: "CNN Clothing Classification",
     description:
-      "CNN from scratch in PyTorch für die Klassifikation von Kleidungsstücken in 5 Kategorien. Eigene Data-Augmentation-Pipeline, Hyperparameter-Tuning und Experiment-Tracking mit Weights & Biases, 72,45% Testgenauigkeit bei ~767k Parametern ganz ohne Transfer Learning. Projekt im Kurs Einführung in Deep Learning (THM).",
+      "Fünf Kleidungsklassen, ein eigenes CNN und 392 Testbilder. Die Auswertung zeigt 72,45 % Testgenauigkeit und die häufigsten Verwechslungen.",
     image: "/images/cnn-clothing-confusion-matrix.png",
     imageObjectFit: "contain",
     techStack: ["PyTorch", "Python", "torchvision", "CNN", "Weights & Biases"],
-    demoUrl: null,
+    demoUrl: "/projects/cnn-clothing-classification/",
     codeUrl: "https://github.com/Jorxas/cnn-clothing-classification",
+    ausgewaehlt: true,
     category: "Data Science",
   },
   {
     id: "rnn-music-generation",
+    domain: "Deep Learning & Musik",
     title: "Irische Musikgenerierung mit RNN",
     description:
-      "Zeichenbasiertes RNN (LSTM & GRU) in PyTorch, trainiert auf dem IrishMAN-Datensatz, um irische Folk-Musik in ABC-Notation zu lernen und neue Stücke zu generieren. Eigener Tokenizer, ABC-Syntax-Validator und selbstgebaute Audio-Synthese (Sinuswellen zu WAV) ohne externe Audio-Bibliothek. GRU erreichte 68,5% Top-1- bzw. 93,6% Top-5-Genauigkeit. Gruppenprojekt im Kurs Einführung in Deep Learning (THM).",
+      "LSTM und GRU lernen irische Musik als ABC-Zeichenfolgen. Verglichen werden dokumentierte Trainingsverläufe und gespeicherte Musikbeispiele.",
     image: "/images/rnn-music-lstm-vs-gru.png",
     imageObjectFit: "contain",
-    techStack: ["PyTorch", "Python", "LSTM/GRU", "Sequenzmodellierung", "Weights & Biases"],
-    demoUrl: null,
+    techStack: [
+      "PyTorch",
+      "Python",
+      "LSTM/GRU",
+      "Sequenzmodellierung",
+      "Weights & Biases",
+    ],
+    demoUrl: "/projects/rnn-music-generation/",
     codeUrl: "https://github.com/Jorxas/eidl-abgabe3-musikgenerierung",
+    ausgewaehlt: true,
     category: "Data Science",
-  },
-  {
-    id: "function-plotter",
-    title: "Function Plotter",
-    description: "Java-basiertes Tool zum Plotten von Funktionen mit Fokus auf Streams, Collections und funktionaler Programmierung.",
-    image: "/images/function-plotter-cover.png",
-    techStack: ["Java", "Markdown", "HTML/CSS"],
-    demoUrl: null,
-    codeUrl: "https://github.com/Jorxas/funtionplotter",
-    category: "Web App",
-  },
-  {
-    id: "portfolio-website",
-    title: "Portfolio Website",
-    description:
-      "Moderne Portfolio-Website mit Next.js (App Router), React und TypeScript. Responsives Design mit Tailwind CSS, Animationen mit Framer Motion; statischer Export und Deployment auf GitHub Pages.",
-    image: "/images/portfolio-website-cover.png",
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"],
-    demoUrl: null,
-    codeUrl: "https://github.com/Jorxas/Portfolio",
-    category: "Web App",
-  },
-  {
-    id: "simon-game",
-    title: "Simon Game",
-    description: "Verteiltes Multiplayer-Spiel mit Echtzeit-Synchronisation (MQTT). Backend in Java (Vert.x) mit MariaDB; Frontend in HTML/CSS/JS; DevOps via Docker Compose.",
-    image: "/images/simon-game-cover.png",
-    imageObjectFit: "contain",
-    techStack: ["Java (Vert.x)", "MariaDB", "MQTT", "Docker", "HTML/CSS/JS", "Git"],
-    demoUrl: null,
-    codeUrl: "https://github.com/Jorxas/simon_game",
-    category: "Web App",
-  },
-  {
-    id: "todo-app",
-    title: "To-Do App",
-    description: "Task-Management-Anwendung mit responsivem UI. Backend Java (Vert.x) mit MariaDB, Frontend HTML/CSS/JS, Deployment via Docker, Versionskontrolle mit Git.",
-    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=2072&q=80",
-    techStack: ["Java (Vert.x)", "MariaDB", "HTML/CSS/JS", "Docker", "Git"],
-    demoUrl: null,
-    codeUrl: "https://github.com/Jorxas/Todo-app",
-    category: "Web App",
-  },
-  {
-    id: "mini-apps",
-    title: "Mini Apps Collection – Spielezentrum",
-    description: "Moderne Benutzeroberfläche, die alle JavaScript-Projekte an einem Ort zusammenführt. Enthält Taschenrechner, Countdown Timer, Währungsrechner, Witz-Generator und Zahlenraten.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80",
-    techStack: ["JavaScript", "HTML", "CSS"],
-    demoUrl: "https://jorxas.github.io/mini_js_project/",
-    codeUrl: "https://github.com/Jorxas/mini_js_project",
-    category: "Web App",
-  },
-  {
-    id: "empanadas-3d",
-    title: "Interaktive 3D-Karte – Empanadas",
-    description: "Interaktive elektronische Karte zur Förderung eines Empanada-Verkaufsstands. 3D-Rotationsanimation, Touch-Interaktion, Vollbildansicht und Download-Funktion.",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=2070&q=80",
-    techStack: ["HTML5", "CSS3", "JavaScript", "Canvas API"],
-    demoUrl: "https://cs-empanadas.netlify.app",
-    codeUrl: "https://github.com/Jorxas/empanadas",
-    category: "Web App",
-  },
-  {
-    id: "erste-webseite",
-    title: "Meine Erste Webseite",
-    description: "Meine erste selbst erstellte Webseite mit HTML und CSS. Portfolio-Projekt mit Navigation, Kontaktformular und Social Media Integration.",
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=2070&q=80",
-    techStack: ["HTML", "CSS", "Font Awesome", "Google Fonts"],
-    demoUrl: null,
-    codeUrl: "https://github.com/Jorxas/myfirstpage",
-    category: "Website",
   },
 ];
 
@@ -227,12 +205,45 @@ export interface Hobby {
 }
 
 export const hobbies: Hobby[] = [
-  { icon: "Gamepad2", title: "Gaming", subtitle: "Videospiele", description: "Ich liebe es, verschiedene Videospiele zu spielen und neue Welten zu entdecken." },
-  { icon: "Film", title: "Filme & Anime", subtitle: "Unterhaltung", description: "Ich schaue gerne Filme und Anime, um neue Geschichten und Kulturen kennenzulernen." },
-  { icon: "Music", title: "Tanz & Musik", subtitle: "Kreativität", description: "Ich tanze gerne und genieße es, mich zur Musik zu bewegen." },
-  { icon: "Dumbbell", title: "Sport", subtitle: "Fitness", description: "Ich treibe regelmäßig Sport, um fit und gesund zu bleiben." },
-  { icon: "Piano", title: "Klavier", subtitle: "Musik", description: "Ich spiele gerne Klavier und genieße es, Musik zu machen." },
-  { icon: "Code", title: "Programmierung", subtitle: "Technologie", description: "Ich liebe es, neue Projekte zu entwickeln und zu programmieren." },
+  {
+    icon: "Gamepad2",
+    title: "Gaming",
+    subtitle: "Videospiele",
+    description:
+      "Ich liebe es, verschiedene Videospiele zu spielen und neue Welten zu entdecken.",
+  },
+  {
+    icon: "Film",
+    title: "Filme & Anime",
+    subtitle: "Unterhaltung",
+    description:
+      "Ich schaue gerne Filme und Anime, um neue Geschichten und Kulturen kennenzulernen.",
+  },
+  {
+    icon: "Music",
+    title: "Tanz & Musik",
+    subtitle: "Kreativität",
+    description: "Ich tanze gerne und genieße es, mich zur Musik zu bewegen.",
+  },
+  {
+    icon: "Dumbbell",
+    title: "Sport",
+    subtitle: "Fitness",
+    description: "Ich treibe regelmäßig Sport, um fit und gesund zu bleiben.",
+  },
+  {
+    icon: "Piano",
+    title: "Klavier",
+    subtitle: "Musik",
+    description: "Ich spiele gerne Klavier und genieße es, Musik zu machen.",
+  },
+  {
+    icon: "Code",
+    title: "Programmierung",
+    subtitle: "Technologie",
+    description:
+      "Ich liebe es, neue Projekte zu entwickeln und zu programmieren.",
+  },
 ];
 
 export interface Certification {
@@ -250,7 +261,8 @@ export const certifications: Certification[] = [
     title: "Frontend-Webentwickler",
     provider: "LinkedIn Learning • 45 Std.",
     date: "Abgeschlossen: 6. April 2025",
-    description: "Frontend-Entwicklung mit HTML, CSS, JavaScript und modernen Frameworks",
+    description:
+      "Frontend-Entwicklung mit HTML, CSS, JavaScript und modernen Frameworks",
     url: "https://www.linkedin.com/learning/certificates/45c3d36f14565fda11b59d76061c19d52be168fa5498b1a0c1c6b9fbe3b29c33?trk=share_certificate",
   },
   {
@@ -266,7 +278,8 @@ export const certifications: Certification[] = [
     title: "Grundlagen der Programmierung: Objektorientiertes Design",
     provider: "LinkedIn Learning • 2h 8m",
     date: "Abgeschlossen: 25. Januar 2025",
-    description: "Grundlagen der objektorientierten Programmierung und Design-Patterns",
+    description:
+      "Grundlagen der objektorientierten Programmierung und Design-Patterns",
     url: "https://www.linkedin.com/learning/certificates/7e5c5694213eb3709e6c36fb503151555600510c2094dbd9a0c7e107760dd4ae",
   },
 ];
@@ -280,9 +293,27 @@ export interface Language {
 }
 
 export const languages: Language[] = [
-  { flag: "🇫🇷", name: "Französisch", level: "Muttersprache", dots: 5, description: "Perfekte Beherrschung in Wort und Schrift" },
-  { flag: "🇩🇪", name: "Deutsch", level: "Sehr gut", dots: 4, description: "DSH3 – Sehr gute Kommunikation im Alltag und Beruf" },
-  { flag: "🇬🇧", name: "Englisch", level: "Grundkenntnisse", dots: 2, description: "Grundlegende Kommunikation und Verständnis" },
+  {
+    flag: "🇫🇷",
+    name: "Französisch",
+    level: "Muttersprache",
+    dots: 5,
+    description: "Perfekte Beherrschung in Wort und Schrift",
+  },
+  {
+    flag: "🇩🇪",
+    name: "Deutsch",
+    level: "Sehr gut",
+    dots: 4,
+    description: "DSH3 – Sehr gute Kommunikation im Alltag und Beruf",
+  },
+  {
+    flag: "🇬🇧",
+    name: "Englisch",
+    level: "Grundkenntnisse",
+    dots: 2,
+    description: "Grundlegende Kommunikation und Verständnis",
+  },
 ];
 
 export interface TimelineItem {
@@ -293,15 +324,45 @@ export interface TimelineItem {
 }
 
 export const experience: TimelineItem[] = [
-  { title: "Werkstudent – Softwareentwicklung (gesucht)", period: "Aktiv auf der Suche", description: "Motiviert, praktische Erfahrungen in realen Projekten zu sammeln und mein Studium sinnvoll zu ergänzen." },
-  { title: "Werkstudent – Lagerhelfer", period: "seit 2025", description: "Wareneingang/-ausgang, Kommissionierung und Bestandskontrolle; effizientes Arbeiten im Team und unter Zeitdruck." },
-  { title: "Werkstudent – Verkäufer", period: "2023 – 2024", description: "Kundenberatung, Kassenabwicklung und Warenpräsentation; Stärkung von Kommunikations- und Organisationsfähigkeiten." },
+  {
+    title: "Werkstudent – Softwareentwicklung (gesucht)",
+    period: "Aktiv auf der Suche",
+    description:
+      "Motiviert, praktische Erfahrungen in realen Projekten zu sammeln und mein Studium sinnvoll zu ergänzen.",
+  },
+  {
+    title: "Werkstudent – Lagerhelfer",
+    period: "seit 2025",
+    description:
+      "Wareneingang/-ausgang, Kommissionierung und Bestandskontrolle; effizientes Arbeiten im Team und unter Zeitdruck.",
+  },
+  {
+    title: "Werkstudent – Verkäufer",
+    period: "2023 – 2024",
+    description:
+      "Kundenberatung, Kassenabwicklung und Warenpräsentation; Stärkung von Kommunikations- und Organisationsfähigkeiten.",
+  },
 ];
 
 export const education: TimelineItem[] = [
-  { title: "Bachelor Informatik", organization: "Technische Hochschule Mittelhessen (THM), Gießen", period: "seit 2024", description: "Schwerpunkte: Softwareentwicklung, Data Science, verteilte Systeme, Datenbanken" },
-  { title: "Bachelor Informatik", organization: "Technische Universität Darmstadt", period: "10/2023 – 2024", description: "Grundstudium Informatik" },
-  { title: "Baccalauréat (Allgemeine Hochschulreife)", organization: "Kamerun", period: "2021" },
+  {
+    title: "Bachelor Informatik",
+    organization: "Technische Hochschule Mittelhessen (THM), Gießen",
+    period: "seit 2024",
+    description:
+      "Schwerpunkte: Softwareentwicklung, Data Science, verteilte Systeme, Datenbanken",
+  },
+  {
+    title: "Bachelor Informatik",
+    organization: "Technische Universität Darmstadt",
+    period: "10/2023 – 2024",
+    description: "Grundstudium Informatik",
+  },
+  {
+    title: "Baccalauréat (Allgemeine Hochschulreife)",
+    organization: "Kamerun",
+    period: "2021",
+  },
 ];
 
 export const furtherTraining = [

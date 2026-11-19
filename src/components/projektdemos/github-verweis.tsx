@@ -5,8 +5,9 @@ import { ArrowUpRight } from "lucide-react";
 import { assetPath } from "@/lib/asset-path";
 
 export function GitHubVerweis({ projekt, repository }: { projekt: string; repository: string }) {
-  const [bereit, setzen] = useState(false);
+  const [bereit, setzen] = useState(["CNN", "RNN", "QUIZ"].includes(projekt));
   useEffect(() => {
+    if (["CNN", "RNN", "QUIZ"].includes(projekt)) return;
     const abbruch = new AbortController();
     fetch(assetPath("/projektstand.json"), { signal: abbruch.signal, cache: "no-store" })
       .then(a => a.ok ? a.json() : null)

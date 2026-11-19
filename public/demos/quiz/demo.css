@@ -1,0 +1,101 @@
+.demo-hinweis {
+  padding: 18px 22px;
+  background: #e9f1ff;
+  border-bottom: 1px solid #bad1ff;
+  color: #17345b;
+  font:
+    13px/1.6 system-ui,
+    sans-serif;
+}
+.demo-hinweis button {
+  background: #165dff;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 9px 13px;
+  margin: 8px 6px 0 0;
+  font: 600 12px system-ui;
+  cursor: pointer;
+}
+.demo-hinweis button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.demo-hinweis p {
+  margin: 8px 0 0;
+}
+.demo-hinweis button[hidden] {
+  display: none;
+}
+.demo-modus .page {
+  display: block;
+  max-width: 100%;
+  padding: 18px;
+}
+.demo-modus .panel.left[hidden] {
+  display: none;
+}
+.demo-modus .card[hidden] {
+  display: none;
+}
+.demo-modus .grid-2 {
+  grid-template-columns: 1fr;
+}
+.demo-modus .bottom-nav {
+  position: static;
+}
+.demo-modus .panel.right {
+  width: 100%;
+  min-width: 0;
+}
+.demo-modus .panel.right.is-locked {
+  pointer-events: auto;
+}
+.demo-modus #answerGrid .answer {
+  cursor: pointer;
+}
+.demo-modus [data-section="web-controller"] {
+  display: none !important;
+}
+.demo-modus {
+  min-width: 0;
+  overflow-x: hidden;
+}
+.demo-modus .page > main {
+  min-width: 0;
+}
+.demo-modus .table {
+  width: 100%;
+}
+.demo-modus .panel {
+  min-width: 0;
+}
+.demo-modus button:focus-visible {
+  outline: 3px solid #165dff;
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .demo-modus .page {
+    padding: 8px;
+  }
+  .demo-hinweis {
+    padding: 13px;
+  }
+  .demo-modus .panel-body {
+    padding: 13px;
+  }
+  .demo-modus .bottom-nav {
+    flex-wrap: wrap;
+  }
+  .demo-modus #answerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
