@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import "./refonte.css";
+import { Bewegungsrahmen } from "@/components/bewegung";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Jordan Freddy",
   },
   description:
-    "Portfolio von Jordan Freddy – Informatikstudent an der THM Gießen, spezialisiert auf Softwareentwicklung.",
+    "Jordan Freddy – Informatikstudent an der THM Gießen. Softwareentwicklung, Datenanalyse und interaktive Projektdemos.",
   authors: [{ name: "Jordan Freddy" }],
 };
 
@@ -42,9 +44,13 @@ export default function RootLayout({
         className="min-h-dvh w-full overflow-x-hidden flex flex-col font-[family-name:var(--font-inter)] antialiased"
         suppressHydrationWarning
       >
-        <Navbar />
-        <main className="flex-1 w-full overflow-x-clip">{children}</main>
-        <Footer />
+        <Bewegungsrahmen>
+          <Navbar />
+          <main id="hauptinhalt" className="flex-1 w-full overflow-x-clip">
+            {children}
+          </main>
+          <Footer />
+        </Bewegungsrahmen>
       </body>
     </html>
   );

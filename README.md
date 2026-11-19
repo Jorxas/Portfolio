@@ -6,7 +6,11 @@ Dies ist der Quellcode meiner Portfolio-Website. Ich studiere Informatik an der 
 
 ## Die Website
 
-Die Projektübersicht enthält zusätzlich **13 eigenständige Demo- und Erklärseiten** für BI, Datenintegration, KI, Web-/Desktopentwicklung, C++, DevOps, IT-Support, E-Commerce, Automatisierung und GIS. Jede Seite erklärt Problem, Vorgehen, tatsächliche Ergebnisse und Grenzen. Interaktionen verwenden klar gekennzeichnete simulierte Backends und synthetische Daten; native Produkte werden im Browser nicht vorgetäuscht. Das Wartungsportal verwendet seine echten kompilierten Angular-Komponenten mit einem Demo-HTTP-Interceptor. [Aufbau und Reproduktion](DEMOSEITEN.md).
+Die Projektübersicht zeigt **acht ausgewählte Arbeiten**. Über „Alle Arbeiten“, Suche und Themenfilter sind **17 Projekte** zugänglich. Jede Karte hat getrennte Links zum **Quellcode** und zur **Demo**. Ältere, redundante Frontend-Übungen werden nicht mehr hervorgehoben; ihre Repositories bleiben erhalten.
+
+**16 eigenständige Demo- und Erklärseiten** behandeln Software, Daten und technische Abläufe; Concal verlinkt seine externe Anwendung. Die 13 technischen Lernprojekte verwenden synthetische Beispiele und klar gekennzeichnete simulierte Backends. Beim Wartungsportal läuft das kompilierte Angular-Frontend. Das Quiz verwendet sein vorhandenes Frontend mit lokalem HTTP-/MQTT-Adapter. CNN und RNN zeigen gespeicherte Originalauswertungen statt neuer Modellaufrufe. [Aufbau und Reproduktion](DEMOSEITEN.md).
+
+Das blau-weiße Layout verbindet eine interaktive Projektvorschau, dezente Bewegungen, Tastaturbedienung und eine mobile Navigation. Die Einstellung für reduzierte Bewegung wird berücksichtigt. Fähigkeiten werden anhand von Projekten erklärt, ohne subjektive Prozentbalken. Kontakt erfolgt per E-Mail-Link oder Zwischenablage; die Website versendet keine Nachrichten.
 
 Die Seite enthält eine Startseite, eine Projektübersicht, Informationen über mich und eine Kontaktseite. Projekttexte und Profildaten sind in [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts) gesammelt, damit ich Inhalte pflegen kann, ohne sie an vielen Stellen im UI zu ändern.
 
@@ -33,3 +37,18 @@ npm run dev
 - [`public/`](public/) — Bilder und weitere statische Dateien.
 
 Einige Projekte, die auf der Website vorgestellt werden: [Concal](https://github.com/Jorxas/Concal), [Multiplayer Trivia Quiz](https://github.com/Jorxas/quizgame), [CNN Clothing Classification](https://github.com/Jorxas/cnn-clothing-classification) und [Musikgenerierung mit RNNs](https://github.com/Jorxas/eidl-abgabe3-musikgenerierung).
+
+## Prüfen
+
+```powershell
+npm ci
+npm run lint
+$env:NEXT_PUBLIC_BASE_PATH = '/Portfolio'
+npm run build
+node werkzeuge/vorschau.cjs
+# In einer zweiten Konsole, mit installiertem Playwright:
+node werkzeuge/portfolio-pruefen.cjs http://127.0.0.1:<Port>/Portfolio/
+node werkzeuge/demos-pruefen.cjs http://127.0.0.1:<Port>/Portfolio/
+```
+
+`PLAYWRIGHT_MODUL` kann auf eine vorhandene Playwright-Installation zeigen. Berichte und Bildschirmbilder bleiben unter `.demo-nachweise/`. Interne Links verwenden vollständige Dokumentnavigation: Der Export benötigt auf GitHub Pages keine RSC-Rewrite-Regeln. Die Website und ihre zusätzlichen Demos wurden mit KI-Unterstützung überarbeitet.

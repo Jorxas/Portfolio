@@ -1,91 +1,139 @@
 "use client";
-
 import { useState } from "react";
-import { Search } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
-import { ProjectCard } from "@/components/project-card";
+import { Search, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/portfolio-data";
-
-const categories = ["Alle", ...new Set(projects.map((projekt) => projekt.category))];
-
-export default function ProjectsPage() {
-  const [activeCategory, setActiveCategory] = useState("Alle");
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const filtered = projects.filter((p) => {
-    const matchCategory = activeCategory === "Alle" || p.category === activeCategory;
-    const q = searchTerm.toLowerCase();
-    const matchSearch =
-      !q ||
-      p.title.toLowerCase().includes(q) ||
-      p.description.toLowerCase().includes(q) ||
-      p.techStack.some((t) => t.toLowerCase().includes(q));
-    return matchCategory && matchSearch;
-  });
-
+import { ProjectCard } from "@/components/project-card";
+import { Einblenden } from "@/components/bewegung";
+const bereiche = [
+  "Alle",
+  "Software & Systeme",
+  "Daten & KI",
+  "Automatisierung & GIS",
+];
+function bereich(p: (typeof projects)[number]) {
+  return p.category === "Web App"
+    ? "Software & Systeme"
+    : p.category === "Data Science"
+      ? "Daten & KI"
+      : p.category;
+}
+export default function Projekte() {
+  const [alle, setzenAlle] = useState(false),
+    [filter, setzenFilter] = useState("Alle"),
+    [suche, setzenSuche] = useState("");
+  const sichtbar = projects.filter(
+    (p) =>
+      (alle || filter !== "Alle" || suche.trim() || p.ausgewaehlt) &&
+      (filter === "Alle" || bereich(p) === filter) &&
+      (p.title + " " + p.description + " " + p.techStack.join(" "))
+        .toLocaleLowerCase("de")
+        .includes(suche.trim().toLocaleLowerCase("de")),
+  );
   return (
-    <div className="pt-24 pb-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Meine Projekte"
-          subtitle="Projekte aus unterschiedlichen Fachbereichen. Die neuen Projektseiten erklären Vorgehen und Ergebnisse und bieten klar gekennzeichnete Browser-Demos."
-        />
-
-        {/* Filters */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-10">
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeCategory === cat
-                    ? "bg-accent text-white"
-                    : "bg-white/5 border border-border text-muted-foreground hover:text-foreground hover:border-accent/30"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="relative w-full sm:w-72">
-            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder="Projekte suchen..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-card border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent/50 transition-colors"
-            />
-          </div>
+    <div className="projekte-seite seitenbreite">
+      <Einblenden klasse="seiten-intro">
+        <p className="kleine-ueberschrift">PROJEKTE / VOM CODE ZUR ANWENDUNG</p>
+        <h1>
+          Weniger Beliebigkeit.
+          <br />
+          <span>Mehr Substanz.</span>
+        </h1>
+        <p>
+          Software, Daten und technische Abläufe. Eine Auswahl aus Studien- und
+          Lernprojekten – mit Quellcode, verständlichen Einblicken und klar
+          gekennzeichneten Demos.
+        </p>
+      </Einblenden>
+      <div className="projektauswahl">
+        <div
+          className="ansichtschalter"
+          role="group"
+          aria-label="Projektauswahl"
+        >
+          <button
+            aria-pressed={!alle}
+            onClick={() => {
+              setzenAlle(false);
+              setzenFilter("Alle");
+              setzenSuche("");
+            }}
+          >
+            Auswahl <span>{projects.filter((p) => p.ausgewaehlt).length}</span>
+          </button>
+          <button aria-pressed={alle} onClick={() => setzenAlle(true)}>
+            Alle Arbeiten <span>{projects.length}</span>
+          </button>
         </div>
-
-        {/* Grid */}
-        {filtered.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-20">
-            <h3 className="text-xl font-semibold mb-3">Keine Projekte gefunden</h3>
-            <p className="text-muted-foreground mb-6">
-              Suchkriterien anpassen oder alle Projekte anzeigen.
-            </p>
-            <button
-              onClick={() => {
-                setActiveCategory("Alle");
-                setSearchTerm("");
-              }}
-              className="px-6 py-2.5 rounded-lg bg-accent text-white font-medium hover:bg-accent/80 transition-colors"
-            >
-              Alle Projekte anzeigen
-            </button>
-          </div>
-        )}
+        <label className="projektsuche">
+          <Search size={18} />
+          <input
+            type="search"
+            value={suche}
+            onChange={(e) => setzenSuche(e.target.value)}
+            placeholder="Projekt oder Technologie suchen"
+            aria-label="Projekte suchen"
+          />
+        </label>
       </div>
+      <div
+        className="bereichsfilter"
+        role="group"
+        aria-label="Nach Themen filtern"
+      >
+        {bereiche.map((b) => (
+          <button
+            key={b}
+            aria-pressed={filter === b}
+            onClick={() => setzenFilter(b)}
+          >
+            {b}
+          </button>
+        ))}
+      </div>
+      <p className="ergebniszeile" aria-live="polite">
+        {sichtbar.length} {sichtbar.length === 1 ? "Projekt" : "Projekte"}
+        {filter !== "Alle" ? " · " + filter : ""}
+      </p>
+      <div className="projektgitter">
+        {sichtbar.map((p, i) => (
+          <ProjectCard key={p.id} project={p} index={i} />
+        ))}
+      </div>
+      {!sichtbar.length && (
+        <div className="leerzustand">
+          <h2>Hier gibt es noch keinen Treffer.</h2>
+          <p>Versuche eine andere Technologie oder setze die Suche zurück.</p>
+          <button
+            className="knopf knopf-blau"
+            onClick={() => {
+              setzenSuche("");
+              setzenFilter("Alle");
+              setzenAlle(true);
+            }}
+          >
+            Alle Projekte anzeigen
+          </button>
+        </div>
+      )}
+      <aside className="projektarchivhinweis">
+        <div>
+          <h2>Die passende Tiefe für den ersten Einblick.</h2>
+          <p>
+            „Code“ führt zum Originalprojekt. „Demo“ öffnet eine Webansicht oder
+            die Anwendung. Simulierte Backends und gespeicherte Modellergebnisse
+            sind dort ausdrücklich gekennzeichnet. Ältere kleine
+            Frontend-Übungen bleiben auf GitHub im Archiv.
+          </p>
+        </div>
+        <a
+          className="textlink"
+          href="https://github.com/Jorxas?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub-Archiv <ArrowUpRight size={18} />
+        </a>
+      </aside>
     </div>
   );
 }

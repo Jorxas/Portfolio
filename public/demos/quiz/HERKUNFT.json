@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/Jorxas/quizgame",
+  "umfang": "Akademisches Gruppenprojekt. Originales Frontend, ergänzt um einen lokalen Demo-Adapter.",
+  "dateien": [
+    {"pfad":"index.html","quelle":"frontend/index.html","urspruenglicherGitBlob":"14aa39104f40ad88f46221d77f13b15bce70e5d4","anpassung":"Lokaler Adapter und Hinweise ergänzt; externe MQTT-Bibliothek, externe Schrift und ursprüngliche Umgebungskonfiguration entfernt; Titel übersetzt, Kartenbeispiele ersetzt."},
+    {"pfad":"css/styles.css","quelle":"frontend/css/styles.css","urspruenglicherGitBlob":"56d33017c579f6591f39e7d66383da4ef3026849","anpassung":"Unverändert; Zusatzregeln stehen getrennt in demo.css."},
+    {"pfad":"js/app.js","quelle":"frontend/js/app.js","urspruenglicherGitBlob":"cd5473f3a052efcdd96226bf14d39477a577357e","anpassung":"Externe Controller-URL deaktiviert."},
+    {"pfad":"js/http/app_http.js","quelle":"frontend/js/http/app_http.js","urspruenglicherGitBlob":"93baf9fbfe0b17b35c276821701ff74686591ca7","anpassung":"Externe Controller-URL deaktiviert."},
+    {"pfad":"js/mqtt/app_mqtt.js","quelle":"frontend/js/mqtt/app_mqtt.js","urspruenglicherGitBlob":"1f52a478bb38bc16c322b20d37155275c9750377","anpassung":"Topic-Präfix durch demo/ ersetzt."}
+  ],
+  "ergaenzung": "adapter.js ersetzt HTTP und MQTT lokal, lädt fünf Originalfragen, simuliert einen Mitspieler und ergänzt Antwortklicks am Host. demo.css blendet Anmeldung, Controller und andere Konfigurationen aus. Keine echte Backendvalidierung.",
+  "unterstuetzung": "Zusätzliche Demo mit KI-Unterstützung erstellt und geprüft."
+}
