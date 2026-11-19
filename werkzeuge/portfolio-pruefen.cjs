@@ -80,10 +80,10 @@ const pruefen = (name) => {
     });
     pruefen("Startseite und interaktiver Projektkompass");
     await seite.goto(basis + "projects/", { waitUntil: "networkidle" });
-    assert.equal(await seite.locator(".projektkarte").count(), 8);
+    assert.equal(await seite.locator(".projektkarte").count(), 9);
     await alleBilderLaden();
     await seite.getByRole("button", { name: /Alle Arbeiten/ }).click();
-    assert.equal(await seite.locator(".projektkarte").count(), 17);
+    assert.equal(await seite.locator(".projektkarte").count(), 18);
     for (const karte of await seite.locator(".projektkarte").all()) {
       const code = karte.getByRole("link", { name: /^Code:/ });
       const demo = karte.getByRole("link", { name: /^Demo:/ });
@@ -107,19 +107,55 @@ const pruefen = (name) => {
     await seite
       .getByRole("button", { name: "Alle Projekte anzeigen", exact: true })
       .click();
-    assert.equal(await seite.locator(".projektkarte").count(), 17);
+    assert.equal(await seite.locator(".projektkarte").count(), 18);
     await seite
       .getByRole("button", { name: "Daten & KI", exact: true })
       .click();
     assert.equal(await seite.locator(".projektkarte").count(), 6);
     await seite.getByRole("button", { name: /Auswahl/ }).click();
-    assert.equal(await seite.locator(".projektkarte").count(), 8);
+    assert.equal(await seite.locator(".projektkarte").count(), 9);
     await seite.screenshot({
       path: path.join(ziel, "projekte-desktop.png"),
       fullPage: true,
       animations: "disabled",
     });
-    pruefen("Auswahl 8 / alle 17, Filter, Suche, echte Code- und Demo-Links");
+    pruefen("Auswahl 9 / alle 18, Filter, Suche, echte Code- und Demo-Links");
+    await seite.goto(basis + "projects/stellensuche-jobpilot/", {
+      waitUntil: "networkidle",
+    });
+    const jobpilot = seite.frameLocator("iframe");
+    await jobpilot
+      .getByRole("button", { name: "Demo zurücksetzen", exact: true })
+      .click();
+    assert.equal(await jobpilot.locator(".stellenzeile").count(), 8);
+    await jobpilot
+      .getByRole("searchbox", { name: "Stellen durchsuchen" })
+      .fill("Nordlicht");
+    assert.equal(await jobpilot.locator(".stellenzeile").count(), 1);
+    await jobpilot
+      .getByRole("button", { name: "Suchmechanik", exact: true })
+      .click();
+    assert.equal(await jobpilot.locator(".familienraster>div").count(), 24);
+    await jobpilot
+      .getByRole("button", { name: "Formularassistent", exact: true })
+      .click();
+    await jobpilot
+      .getByRole("button", { name: "1. Beispielprofil eintragen", exact: true })
+      .click();
+    assert.equal(
+      await jobpilot
+        .frameLocator("iframe")
+        .getByLabel("Vorname", { exact: true })
+        .inputValue(),
+      "Alex",
+    );
+    assert.equal(
+      await jobpilot.frameLocator("iframe").getByRole("checkbox").isChecked(),
+      false,
+    );
+    pruefen(
+      "JobPilot: eingebettete Stellenübersicht, Suchplan und echter Formularmotor",
+    );
     await seite.goto(basis + "projects/cnn-clothing-classification/", {
       waitUntil: "networkidle",
     });
@@ -246,6 +282,7 @@ const pruefen = (name) => {
       "projects/cnn-clothing-classification/",
       "projects/rnn-music-generation/",
       "projects/multiplayer-trivia-quiz/",
+      "projects/stellensuche-jobpilot/",
     ]) {
       await seite.goto(basis + route, { waitUntil: "networkidle" });
       assert(

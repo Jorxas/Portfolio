@@ -6,11 +6,13 @@ Dies ist der Quellcode meiner Portfolio-Website. Ich studiere Informatik an der 
 
 ## Die Website
 
-Die Projektübersicht zeigt **acht ausgewählte Arbeiten**. Über „Alle Arbeiten“, Suche und Themenfilter sind **17 Projekte** zugänglich. Jede Karte hat getrennte Links zum **Quellcode** und zur **Demo**. Ältere, redundante Frontend-Übungen werden nicht mehr hervorgehoben; ihre Repositories bleiben erhalten.
+Die Projektübersicht zeigt **neun ausgewählte Arbeiten**. Über „Alle Arbeiten“, Suche und Themenfilter sind **18 Projekte** zugänglich. Jede Karte hat getrennte Links zum **Quellcode** und zur **Demo**. Ältere, redundante Frontend-Übungen werden nicht mehr hervorgehoben; ihre Repositories bleiben erhalten.
 
-**16 eigenständige Demo- und Erklärseiten** behandeln Software, Daten und technische Abläufe; Concal verlinkt seine externe Anwendung. Die 13 technischen Lernprojekte verwenden synthetische Beispiele und klar gekennzeichnete simulierte Backends. Beim Wartungsportal läuft das kompilierte Angular-Frontend. Das Quiz verwendet sein vorhandenes Frontend mit lokalem HTTP-/MQTT-Adapter. CNN und RNN zeigen gespeicherte Originalauswertungen statt neuer Modellaufrufe. [Aufbau und Reproduktion](DEMOSEITEN.md).
+**17 eigenständige Demo- und Erklärseiten** behandeln Software, Daten und technische Abläufe; Concal verlinkt seine externe Anwendung. Die 13 technischen Lernprojekte verwenden synthetische Beispiele und klar gekennzeichnete simulierte Backends. Beim Wartungsportal läuft das kompilierte Angular-Frontend. Das Quiz verwendet sein vorhandenes Frontend mit lokalem HTTP-/MQTT-Adapter. CNN und RNN zeigen gespeicherte Originalauswertungen statt neuer Modellaufrufe. [Aufbau und Reproduktion](DEMOSEITEN.md).
 
 Das blau-weiße Layout verbindet eine interaktive Projektvorschau, dezente Bewegungen, Tastaturbedienung und eine mobile Navigation. Die Einstellung für reduzierte Bewegung wird berücksichtigt. Fähigkeiten werden anhand von Projekten erklärt, ohne subjektive Prozentbalken. Kontakt erfolgt per E-Mail-Link oder Zwischenablage; die Website versendet keine Nachrichten.
+
+**JobPilot** ergänzt den Einblick in ein tatsächlich verwendetes persönliches Jobsuchwerkzeug: Die eigenständige öffentliche Fassung enthält Such- und Bewertungsmodule, Firmenhistorie, einen Formularmotor sowie einen optionalen lokalen Node-Server. Die Portfolio-Demo verwendet denselben statischen Browserexport mit ausschließlich synthetischen Angeboten. Private Bewerbungsdaten sind ausgeschlossen. [Eigenständiges Repository](https://github.com/Jorxas/JobPilot).
 
 Die Seite enthält eine Startseite, eine Projektübersicht, Informationen über mich und eine Kontaktseite. Projekttexte und Profildaten sind in [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts) gesammelt, damit ich Inhalte pflegen kann, ohne sie an vielen Stellen im UI zu ändern.
 

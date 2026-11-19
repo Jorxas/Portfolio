@@ -24,6 +24,49 @@ export const projektstudien = daten as ProjektStudie[];
 
 const weitereStudien: ProjektStudie[] = [
   {
+    id: "JP",
+    slug: "stellensuche-jobpilot",
+    titel: "JobPilot – Stellensuche mit Überblick",
+    bereich: "Software & Systeme",
+    kopfzeile: "Vom offenen Tab zum nächsten Schritt.",
+    problem:
+      "Eine Jobsuche verteilt sich schnell auf Stellenportale, Karriereseiten, Notizen und Formulare. JobPilot bringt Suche, Vergleich und die Bewerbungsvorbereitung in einen nachvollziehbaren Ablauf.",
+    nutzen:
+      "Das Werkzeug entstand aus der eigenen Jobsuche. Die öffentliche portable Fassung übernimmt ausgewählte tatsächliche Such- und Formularmodule und macht den Ablauf mit einer neuen deutschen Oberfläche und synthetischen Angeboten verständlich.",
+    ergebnis:
+      "Die öffentliche Version umfasst Stellenübersicht, Filter, heuristischen Profilvergleich, geschützte Firmenhistorie, manuelle Imports, Suchpläne und einen echten Formularmotor am Übungsformular. Ein separat startbarer Node-Server ergänzt Quellenadapter, Seitencursor, Beschreibungsanreicherung und lokale JSON-Persistenz. Kern-, Server- und Browserprüfungen wurden ausgeführt.",
+    grenze:
+      "Die gehostete Webdemo simuliert Quellenzugriffe und enthält keine echten Unternehmen oder Bewerbungen. Der Vergleichswert ist keine Einstellungswahrscheinlichkeit. Automatische Tests mocken externe Anbieter und belegen keinen erfolgreichen Dauerzugriff auf alle Portale. Private Profile, Kontakte, Dokumente, Versand und die persönliche PostgreSQL-Datenbank bleiben ausgeschlossen.",
+    farbe: "#165dff",
+    technologien: ["React", "TypeScript", "Node.js", "JSON-LD", "Manifest V3"],
+    kennzahlen: [
+      { wert: "24", text: "Technikfamilien im Suchplan" },
+      { wert: "4 + 1", text: "Portale und Arbeitgeberadapter" },
+      { wert: "Lokal", text: "Datenhaltung ohne Konto in der Demo" },
+    ],
+    vorgehen: [
+      {
+        titel: "Quellen und Suchraum trennen",
+        text: "24 Technikfelder rotieren über sechs Pläne. Öffentliche Quellen behalten ihre Zustände: verfügbar, teilweise, blockiert oder fehlerhaft. Ein fehlender Zugriff wird nicht als erfolgreiche Suche ohne Treffer ausgegeben.",
+      },
+      {
+        titel: "Vergleichen, ohne die Historie zu verlieren",
+        text: "Quellenreferenzen und normalisierte Firma, Titel und Ort verhindern doppelte Imports. Bereits beworbene oder archivierte Unternehmen bleiben erhalten; Profilbegriffe dienen nur einem nachvollziehbaren Vergleich.",
+      },
+      {
+        titel: "Offene Formularfragen ausdrücklich klären",
+        text: "Der gemeinsame Feldmotor trägt bekannte Angaben ein, erhält bestehende Werte und lässt unbekannte Fragen offen. Eine ausdrücklich gespeicherte Antwort wird beim nächsten Durchlauf wiederverwendet; abgesendet wird durch die Person.",
+      },
+    ],
+    repository: "https://github.com/Jorxas/JobPilot",
+    original:
+      "Aus dem tatsächlich genutzten persönlichen JobPilot-Werkzeug abgeleitete öffentliche Fassung. Der Suchkern und der Formularmotor werden wiederverwendet; das private Next.js-/Prisma-System bleibt getrennt.",
+    demoHinweis:
+      "Quellenzugriffe und Backend der gehosteten Demo sind simuliert. Die Angebote sind vollständig synthetisch. Suchplan, Vergleich, Dublettenregeln und Formularerkennung laufen tatsächlich im Browser. Keine Bewerbung, kein E-Mail-Versand und kein Zugriff auf persönliche Daten.",
+    herkunft:
+      "Persönliches Werkzeug zur Jobsuche. Öffentliche portable Fassung und zusätzliche Präsentation mit KI-Unterstützung entwickelt und geprüft. Enthaltene Drittanteile sind im Repository ausgewiesen.",
+  },
+  {
     id: "CNN",
     slug: "cnn-clothing-classification",
     titel: "CNN Clothing Classification",

@@ -15,7 +15,7 @@ const auswahl = [
   "quizgame",
   "cnn-clothing-classification",
   "werkstatt-datenqualitaet-bi",
-  "wartungsportal-angular-java",
+  "stellensuche-jobpilot",
   "wartungskarte-qgis",
 ].map((id) => projects.find((p) => p.id === id)!);
 export default function Startseite() {
