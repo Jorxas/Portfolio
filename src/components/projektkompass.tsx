@@ -5,21 +5,21 @@ import { ArrowUpRight, Braces } from "lucide-react";
 const felder = [
   {
     name: "Software",
-    titel: "Wartung verständlich organisieren",
-    code: "Angular → Java → PostgreSQL",
-    slug: "wartungsportal-angular-java",
+    titel: "Hermes: Entwicklungssitzungen koordinieren",
+    code: "Python → MCP → dauerhafte Aufgaben",
+    href: "https://jorxas.github.io/Hermes/",
   },
   {
     name: "Daten",
-    titel: "Aus Messwerten Klarheit gewinnen",
-    code: "Python → SQL → Power BI",
-    slug: "werkstatt-datenqualitaet-bi",
+    titel: "PPS: Sprache lokal verarbeiten",
+    code: "FastAPI → Modellprozesse → Wortausrichtung",
+    href: "https://jorxas.github.io/PPS/",
   },
   {
     name: "Automatisierung",
-    titel: "Maschinenzustände sichtbar machen",
-    code: "Simulation → Zustände → Auswertung",
-    slug: "maschinenzustand-simulation",
+    titel: "THOT: Veröffentlichungen begleiten",
+    code: "Prüfsumme → Freigabe → Zustellstatus",
+    href: "https://jorxas.github.io/THOT/",
   },
 ];
 export function Projektkompass() {
@@ -106,7 +106,7 @@ export function Projektkompass() {
           </button>
         ))}
       </div>
-      <Link className="kompass-vorschau" href={`/projects/${feld.slug}/`}>
+      <Link className="kompass-vorschau" href={feld.href}>
         <div>
           <p className="kompass-code">{feld.code}</p>
           <strong>{feld.titel}</strong>

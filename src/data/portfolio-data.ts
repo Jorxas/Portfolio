@@ -83,6 +83,7 @@ export const skillCategories: SkillCategory[] = [
 ];
 
 import { projektstudien } from "./projektstudien";
+import { persoenlicheProjekte } from "./persoenliche-projekte";
 
 export interface Project {
   id: string;
@@ -107,6 +108,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  ...persoenlicheProjekte,
   {
     id: "stellensuche-jobpilot",
     title: "JobPilot – Stellensuche mit Überblick",
@@ -133,7 +135,7 @@ export const projects: Project[] = [
       demoLabel: "Demo & Erklärung",
       codeUrl: p.repository,
       domain: p.bereich,
-      ausgewaehlt: ["P01", "P04", "P05", "P11"].includes(p.id),
+      ausgewaehlt: false,
       category: ["P01", "P02", "P03", "P13"].includes(p.id)
         ? "Daten & KI"
         : ["P08", "P10", "P11", "P12"].includes(p.id)
@@ -206,7 +208,7 @@ export const projects: Project[] = [
     ],
     demoUrl: "/projects/rnn-music-generation/",
     codeUrl: "https://github.com/Jorxas/eidl-abgabe3-musikgenerierung",
-    ausgewaehlt: true,
+    ausgewaehlt: false,
     category: "Data Science",
   },
 ];

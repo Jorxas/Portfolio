@@ -11,12 +11,12 @@ import { ProjectCard } from "@/components/project-card";
 import { Einblenden } from "@/components/bewegung";
 import { Projektkompass } from "@/components/projektkompass";
 const auswahl = [
-  "concal",
-  "quizgame",
-  "cnn-clothing-classification",
-  "werkstatt-datenqualitaet-bi",
+  "hermes",
+  "thot",
+  "horror-studio-3d",
+  "pps",
   "stellensuche-jobpilot",
-  "wartungskarte-qgis",
+  "quizgame",
 ].map((id) => projects.find((p) => p.id === id)!);
 export default function Startseite() {
   return (
