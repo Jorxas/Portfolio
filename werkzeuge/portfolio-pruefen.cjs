@@ -63,14 +63,14 @@ const pruefen = (name) => {
     await seite.getByRole("button", { name: "Daten", exact: true }).click();
     assert.match(
       await seite.locator(".kompass-vorschau").getAttribute("href"),
-      /werkstatt-datenqualitaet/,
+      /PPS/,
     );
     await seite
       .getByRole("button", { name: "Automatisierung", exact: true })
       .click();
     assert.match(
       await seite.locator(".kompass-vorschau").textContent(),
-      /Maschinenzustände/,
+      /THOT/,
     );
     await alleBilderLaden();
     await seite.screenshot({
@@ -83,7 +83,7 @@ const pruefen = (name) => {
     assert.equal(await seite.locator(".projektkarte").count(), 9);
     await alleBilderLaden();
     await seite.getByRole("button", { name: /Alle Arbeiten/ }).click();
-    assert.equal(await seite.locator(".projektkarte").count(), 18);
+    assert.equal(await seite.locator(".projektkarte").count(), 23);
     for (const karte of await seite.locator(".projektkarte").all()) {
       const code = karte.getByRole("link", { name: /^Code:/ });
       const demo = karte.getByRole("link", { name: /^Demo:/ });
@@ -107,11 +107,11 @@ const pruefen = (name) => {
     await seite
       .getByRole("button", { name: "Alle Projekte anzeigen", exact: true })
       .click();
-    assert.equal(await seite.locator(".projektkarte").count(), 18);
+    assert.equal(await seite.locator(".projektkarte").count(), 23);
     await seite
       .getByRole("button", { name: "Daten & KI", exact: true })
       .click();
-    assert.equal(await seite.locator(".projektkarte").count(), 6);
+    assert.equal(await seite.locator(".projektkarte").count(), 7);
     await seite.getByRole("button", { name: /Auswahl/ }).click();
     assert.equal(await seite.locator(".projektkarte").count(), 9);
     await seite.screenshot({
@@ -119,7 +119,7 @@ const pruefen = (name) => {
       fullPage: true,
       animations: "disabled",
     });
-    pruefen("Auswahl 9 / alle 18, Filter, Suche, echte Code- und Demo-Links");
+    pruefen("Auswahl 9 / alle 23, Filter, Suche, echte Code- und Demo-Links");
     await seite.goto(basis + "projects/stellensuche-jobpilot/", {
       waitUntil: "networkidle",
     });

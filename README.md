@@ -6,9 +6,9 @@ Dies ist der Quellcode meiner Portfolio-Website. Ich studiere Informatik an der 
 
 ## Die Website
 
-Die Projektübersicht zeigt **neun ausgewählte Arbeiten**. Über „Alle Arbeiten“, Suche und Themenfilter sind **18 Projekte** zugänglich. Jede Karte hat getrennte Links zum **Quellcode** und zur **Demo**. Ältere, redundante Frontend-Übungen werden nicht mehr hervorgehoben; ihre Repositories bleiben erhalten.
+Die Projektübersicht zeigt **neun ausgewählte Arbeiten**. Über „Alle Arbeiten“, Suche und Themenfilter sind **23 Projekte** zugänglich. Jede Karte hat getrennte Links zum **Quellcode** und zur **Demo**. Ältere, redundante Frontend-Übungen werden nicht mehr hervorgehoben; ihre Repositories bleiben erhalten.
 
-**17 eigenständige Demo- und Erklärseiten** behandeln Software, Daten und technische Abläufe; Concal verlinkt seine externe Anwendung. Die 13 technischen Lernprojekte verwenden synthetische Beispiele und klar gekennzeichnete simulierte Backends. Beim Wartungsportal läuft das kompilierte Angular-Frontend. Das Quiz verwendet sein vorhandenes Frontend mit lokalem HTTP-/MQTT-Adapter. CNN und RNN zeigen gespeicherte Originalauswertungen statt neuer Modellaufrufe. [Aufbau und Reproduktion](DEMOSEITEN.md).
+**22 eigenständige Demo- und Erklärseiten** behandeln Software, Daten und technische Abläufe; Concal verlinkt seine externe Anwendung. Die 13 technischen Lernprojekte verwenden synthetische Beispiele und klar gekennzeichnete simulierte Backends. Beim Wartungsportal läuft das kompilierte Angular-Frontend. Das Quiz verwendet sein vorhandenes Frontend mit lokalem HTTP-/MQTT-Adapter. CNN und RNN zeigen gespeicherte Originalauswertungen statt neuer Modellaufrufe. [Aufbau und Reproduktion](DEMOSEITEN.md).
 
 Das blau-weiße Layout verbindet eine interaktive Projektvorschau, dezente Bewegungen, Tastaturbedienung und eine mobile Navigation. Die Einstellung für reduzierte Bewegung wird berücksichtigt. Fähigkeiten werden anhand von Projekten erklärt, ohne subjektive Prozentbalken. Kontakt erfolgt per E-Mail-Link oder Zwischenablage; die Website versendet keine Nachrichten.
 
@@ -38,7 +38,9 @@ npm run dev
 - [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts) — Inhalte und Projektliste.
 - [`public/`](public/) — Bilder und weitere statische Dateien.
 
-Einige Projekte, die auf der Website vorgestellt werden: [Concal](https://github.com/Jorxas/Concal), [Multiplayer Trivia Quiz](https://github.com/Jorxas/quizgame), [CNN Clothing Classification](https://github.com/Jorxas/cnn-clothing-classification) und [Musikgenerierung mit RNNs](https://github.com/Jorxas/eidl-abgabe3-musikgenerierung).
+Neu hervorgehoben werden [Hermes](https://github.com/Jorxas/Hermes), [THOT](https://github.com/Jorxas/THOT), [PPS](https://github.com/Jorxas/PPS), [Horror Studio 3D](https://github.com/Jorxas/HorrorStudio3D) und [Vie](https://github.com/Jorxas/Vie). Ihre öffentlichen Fassungen enthalten keine privaten Betriebsdaten. Gespeicherte Motorbilder, der echte lokale Planungskern und simulierte Dienste sind in den Demos unterschieden.
+
+Weitere Projekte, die auf der Website vorgestellt werden: [Concal](https://github.com/Jorxas/Concal), [Multiplayer Trivia Quiz](https://github.com/Jorxas/quizgame), [CNN Clothing Classification](https://github.com/Jorxas/cnn-clothing-classification) und [Musikgenerierung mit RNNs](https://github.com/Jorxas/eidl-abgabe3-musikgenerierung).
 
 ## Prüfen
 
