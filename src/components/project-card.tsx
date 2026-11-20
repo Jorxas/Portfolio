@@ -45,20 +45,22 @@ export function ProjectCard({
             )}
           </div>
           <div className="projektlinks">
-            <a
+            {project.quellcodeHinweis ? (
+              <span className="quellcode-hinweis"><Code2 size={16} /> {project.quellcodeHinweis}</span>
+            ) : <a
               href={project.codeUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Code: ${project.title}`}
             >
               <Code2 size={16} /> Code <ArrowUpRight size={14} />
-            </a>
+            </a>}
             {project.demoUrl && (
               <Link
                 href={project.demoUrl}
                 aria-label={`Demo: ${project.title}`}
               >
-                <Play size={14} /> Demo <ArrowUpRight size={14} />
+                <Play size={14} /> {project.quellcodeHinweis ? "Projekt & Demo" : "Demo"} <ArrowUpRight size={14} />
               </Link>
             )}
           </div>

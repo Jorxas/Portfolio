@@ -95,6 +95,8 @@ export interface Project {
   techStack: string[];
   demoUrl: string | null;
   codeUrl: string;
+  /** Verhindert einen Code-Link bei geschützten oder nicht angebotenen Quellen. */
+  quellcodeHinweis?: string;
   category:
     | "Web App"
     | "Website"

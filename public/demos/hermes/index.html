@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="Hermes-Leitstand: mehrere KI-Werkzeuge, automatische Auswahl und nachvollziehbare Missionszustände in 2D und 3D. Private Demo mit erfundenen Daten.">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+ <meta name="referrer" content="no-referrer"><title>Hermes · KI-Leitstand</title>
+ <link rel="icon" href="favicon.svg"><link rel="stylesheet" href="grundlage.css"><link rel="stylesheet" href="stil.css">
+ <script type="module" src="leitstand.mjs"></script>
+</head>
+<body>
+ <a class="sprung" href="#missions-section">Zu den Aufgaben</a>
+ <header class="topbar">
+  <div class="brand"><span class="hermes-marke" aria-hidden="true">H</span><div><strong>Hermes</strong><span>Leitstand für mehrere KI-Werkzeuge</span></div></div>
+  <nav class="ansichten" aria-label="Dashboard-Ansicht"><button id="ansicht-2d" aria-pressed="true">Dashboard 2D</button><button id="ansicht-3d" aria-pressed="false">3D-Einblick</button></nav>
+  <span class="privat">Produktquellcode privat</span>
+ </header>
+ <div class="simulationsband" role="note"><strong>SIMULATION</strong><span>Erfundene Missionen, Kontingente und Messwerte. Keine echte KI verbunden. Kein Zugriff auf deine Hermes-Daten.</span></div>
+ <main>
+  <section class="steuerung card" aria-labelledby="steuerung-titel">
+   <div><p class="augenbraue">ChatGPT erteilt den Auftrag. Hermes koordiniert.</p><h1 id="steuerung-titel">Das passende Werkzeug. Eine gemeinsame Mission.</h1><p class="muted">Claude Code, Codex und Antigravity arbeiten über kontrollierte Ausführungswege. Die 2D-Simulation erklärt den Ablauf. Bereinigte 3D-Aufnahmen zeigen zusätzlich den privaten Originalleitstand.</p></div>
+   <div class="ablaufsteuerung"><label>Beispielablauf<select id="szenario"><option value="team">Zusammenarbeit und Abhängigkeiten</option><option value="quota">Kontingentgruppe erschöpft</option><option value="sperre">Zwei Aufträge, ein Arbeitsbaum</option><option value="unklar">Zustellung unklar</option></select></label><div class="buttons"><button id="abspielen">Ablauf abspielen</button><button id="takt" class="ghost">Nächster Takt</button><button id="zuruecksetzen" class="ghost">Zurücksetzen</button></div><a class="kurzauswahl" href="#auswahl-titel"><span id="route-kurz"></span><span>Auswahl und Einstellungen ansehen</span></a></div>
+  </section>
+  <section class="kpis" aria-label="Simulierter Überblick"><article class="kpi"><div><p>Direktion</p><strong>ChatGPT</strong><span class="muted">Aufträge und Ergebnisrückgabe</span></div></article><article class="kpi"><div><p>Ausführungswege</p><strong>3</strong><span class="muted">Claude Code · Codex · Antigravity</span></div></article><article class="kpi"><div><p>Aktive Aufgaben</p><strong id="kpi-aktiv">0</strong><span id="speicher-stand" class="muted"></span></div></article><article class="kpi"><div><p>Abgeschlossen</p><strong id="kpi-fertig">0 / 4</strong><span class="muted">Ergebnisbelege im Beispiel</span></div></article><article class="kpi"><div><p>Für die Direktion</p><strong id="kpi-post">0</strong><span class="muted">Gespeichert heißt noch nicht abgerufen</span></div></article></section>
+  <div class="arbeitsbereich">
+   <div class="hauptspalte">
+    <section id="klassisch" aria-label="Klassischer Hermes-Leitstand">
+     <section class="card" id="missions-section"><div class="card-head"><h2>Missionen und Abhängigkeiten</h2><span class="muted small">Aufgabe auswählen</span></div><div class="table-wrap"><table class="missions-table"><thead><tr><th>Mission</th><th>Route und Modell</th><th>Zustand</th><th>Modus</th></tr></thead><tbody id="mission-rows"></tbody></table></div></section>
+     <section class="card"><div class="card-head"><h2>Agenten und Modellfamilien</h2></div><div id="agents" class="agent-grid"></div></section>
+    </section>
+    <section id="stadtansicht" class="card" hidden aria-label="Hermes City 3D">
+     <div class="card-head"><div><h2>3D-Einblick aus dem Originalleitstand</h2><p class="muted small">Statische Aufnahmen mit erfundenen Daten. Der Originalmotor bleibt privat.</p></div><button id="stadt-zentrieren" class="ghost">Nächste Aufnahme</button></div>
+     <div class="stadt-buehne"><img id="stadt-bild" src="bilder/stadt-0.png" alt="Bereinigte Aufnahme des privaten Hermes-City-Leitstands mit fiktiven Missionen"></div>
+     <p id="stadt-bildtext" class="aufnahme-hinweis">Aufnahme eines fiktiven Beispiellaufs. Kein live gerenderter Produktmotor und kein Abbild deiner aktuellen Simulation.</p>
+     <div class="stadt-legende"><span>Haus: Mission</span><span>Beleuchtete Werkstatt: aktiver Auftrag</span><span>Postfach: Ergebnis für die Direktion</span><span>Farben: Missionszustand</span></div>
+     <div id="stadt-missionsliste" class="stadt-auswahl" aria-label="Missionen der 2D-Simulation auswählen"></div>
+    </section>
+    <section class="card"><div class="card-head"><h2>Ergebnispostfach</h2><span class="muted small">Zustellschritte bleiben unterscheidbar</span></div><div id="postfach" class="postfach"></div></section>
+    <section class="card"><div class="card-head"><h2>Ereignisse und Entscheidungen</h2><span class="muted small">Nur dieser Beispielablauf</span></div><ol id="ereignisse" class="ereignisse" aria-live="polite"></ol></section>
+   </div>
+   <aside class="card auswahlpanel" aria-labelledby="auswahl-titel">
+    <p class="augenbraue">Automatische Auswahl nachvollziehen</p><h2 id="auswahl-titel">Auftrag und Route</h2><p id="ausgewaehlte-mission" class="ausgewaehlt"></p>
+    <label>Aufgabenmodus<select id="modus"><option value="plan">Planen · lesen und analysieren</option><option value="implement">Implementieren · Änderungen erlaubt</option></select></label>
+    <label class="schalter"><input id="schreiben" type="checkbox">Schreibzugriff für diese Beispielaufgabe freigeben</label>
+    <label>Schwierigkeit <output id="schwierigkeit-wert">2 / 5</output><input id="schwierigkeit" type="range" min="1" max="5" step="1" value="2"></label>
+    <label>Ausführungsroute<select id="anbieter"><option value="auto">Automatisch auswählen</option><option value="claude">Claude Code vorgeben</option><option value="codex">Codex vorgeben</option><option value="antigravity">Antigravity vorgeben</option></select></label>
+    <label>Modell<select id="modell"><option value="auto">Automatisch auswählen</option></select></label>
+    <label class="schalter"><input id="historie" type="checkbox" checked>Vergleichbare Beispielhistorie verwenden</label>
+    <div class="route"><span id="route-name"></span><ul id="route-gruende"></ul></div>
+    <p id="blocker" role="status" class="blocker"></p>
+    <details><summary id="kandidaten-titel">Kandidaten und Ausschlüsse</summary><div id="kandidaten" class="kandidaten"></div><p class="muted small">Qualitäts- und Zeitwerte sind erfundene Beispieldaten. Die Browserauswahl bildet die untersuchten Regeln vereinfacht nach.</p></details>
+    <div class="panel-aktionen"><button id="kontingent-leer" class="ghost">Aktives Kontingent erschöpfen</button><button id="prozess-ende" class="ghost">Prozessende im Beispiel bestätigen</button><button id="ram-aendern" class="ghost">RAM-Reserve zeigen</button></div>
+    <section class="modellnachweis"><h3>Modellnachweis</h3><dl id="modellnachweis"></dl><p class="muted small">Angefordert, ausgewählt und ausgeführt sind getrennte Aussagen. Hier wird kein echtes Modell ausgeführt.</p></section>
+   </aside>
+  </div>
+  <details class="card fakten"><summary>Was die Demo aus dem Projekt übernimmt</summary><div class="faktenraster"><p><strong>Mehrere Ausführungswege.</strong> Claude Code und Codex haben eigene Anbindungen. Antigravity erschließt unter anderem Gemini Flash, Gemini Argon, Claude und GPT-OSS. Die Demo enthält die 13 Antigravity-Identitäten des untersuchten Quellstands.</p><p><strong>Begründete Auswahl.</strong> Vergleichbare Qualitätsbelege und Gesamtzeit stehen im Vordergrund. Kontingente, Schwierigkeit und ausdrücklich vorgegebene Kandidaten begrenzen die Wahl. Keine behauptete pauschale Überlegenheit eines Anbieters.</p><p><strong>Kontrollierte Fortsetzung.</strong> Abhängigkeiten, ein Schreiber je Arbeitsbaum und Speicherreserven begrenzen Parallelität. Eine unklare Zustellung wird abgeglichen. Beim Kontingentwechsel wird keine vollständige Gesprächshistorie übertragen.</p><p><strong>Vorhandene Dashboards.</strong> Die 2D-Demo bildet ausgewählte Regeln vereinfacht nach. Die 3D-Bilder stammen aus synthetischen Läufen des privaten Originalmotors; dessen Code ist hier nicht enthalten. Keine Verbindung zum persönlichen MCP.</p></div></details>
+ </main>
+ <footer><span>Hermes · privater MCP-Orchestrator</span><span>Simulation im Browser · keine Anmeldung · keine externen Aufrufe</span></footer>
+</body></html>

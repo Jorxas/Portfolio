@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Nur Dateien aus diesem Ordner; Netzwerkzugriffe, Formularversand und fremde Ressourcen sind gesperrt. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>THOT – Offline-Demo (simuliert)</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/demo.css">
+<script src="js/logik.js" defer></script>
+<script src="js/daten.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+<div class="demo-banner" id="demo-banner" role="note">
+  <strong>Demo – simuliert / keine echten Aktionen</strong>
+  <span>Fiktive Daten · kein Server · keine Netzwerkanfragen · nichts wird gespeichert</span>
+</div>
+<header class="kopf">
+  <div class="marke">
+    <span class="marke-symbol" aria-hidden="true">T</span>
+    <span class="marke-text"><span class="marke-name">THOT</span><span class="marke-zusatz">Veröffentlichungs-Cockpit</span></span>
+  </div>
+  <nav class="bereiche" aria-label="Bereiche">
+    <a href="#kampagne">Kampagne</a><a href="#aufgaben-bereich">Aufgaben</a><a href="#vorschau">Vorschau</a><a href="#kalender">Kalender</a><a href="#plattformen">Plattformen</a>
+  </nav>
+</header>
+
+<main id="inhalt" tabindex="-1">
+  <section class="steuerung" aria-labelledby="titel">
+    <div class="steuerung-text">
+      <h1 id="titel">Kampagnen-Cockpit</h1>
+      <p class="einleitung">Planen und Verteilen eines Kurzvideos – hier vollständig im Browser simuliert. Die Demo bildet ausgewählte Regeln und Zustände des Planers vereinfacht nach; sie ruft keine Plattform-API auf.</p>
+    </div>
+    <fieldset class="szenarien">
+      <legend>Szenario</legend>
+      <div class="segmente" id="szenarien"></div>
+      <p class="hilfe" id="szenario-text"></p>
+    </fieldset>
+    <div class="uhr-leiste">
+      <p class="uhr"><span class="uhr-label">Demo-Uhr</span> <strong id="uhr"></strong></p>
+      <div class="knoepfe">
+        <button type="button" class="primaer" id="schritt">Nächster Planer-Schritt</button>
+        <button type="button" class="sekundaer" id="abspielen">Alles abspielen</button>
+        <button type="button" class="sekundaer" id="zuruecksetzen">Zurücksetzen</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="meldung" class="meldung" role="status" aria-live="polite"></div>
+
+  <section aria-labelledby="kennzahlen-titel">
+    <h2 class="visuell-versteckt" id="kennzahlen-titel">Kennzahlen</h2>
+    <ul class="kennzahlen" id="kennzahlen"></ul>
+  </section>
+
+  <div class="raster">
+    <section class="karte bereich-kampagne" id="kampagne" aria-labelledby="kampagne-titel">
+      <h2 id="kampagne-titel" tabindex="-1">Kampagne</h2>
+      <div id="kampagne-inhalt"></div>
+    </section>
+
+    <section class="karte bereich-aufgaben" id="aufgaben-bereich" aria-labelledby="aufgaben-titel">
+      <h2 id="aufgaben-titel" tabindex="-1">Aufgaben</h2>
+      <p class="hilfe">Warteschlange des Planers, nach Zeitpunkt sortiert. Ungewisse Ergebnisse werden nie automatisch wiederholt.</p>
+      <div id="aufgaben"></div>
+    </section>
+
+    <section class="karte bereich-vorschau" id="vorschau" aria-labelledby="vorschau-titel">
+      <h2 id="vorschau-titel" tabindex="-1">Beitragsvorschau</h2>
+      <div id="vorschau-inhalt"></div>
+    </section>
+
+    <section class="karte bereich-kalender" id="kalender" aria-labelledby="kalender-titel">
+      <div class="kalender-kopf">
+        <h2 id="kalender-titel" tabindex="-1">Kalender</h2>
+        <div class="kalender-nav">
+          <button type="button" class="sekundaer klein" id="woche-zurueck" aria-label="Vorherige Woche">←</button>
+          <p class="woche-label" id="woche-label" aria-live="polite"></p>
+          <button type="button" class="sekundaer klein" id="woche-vor" aria-label="Nächste Woche">→</button>
+          <button type="button" class="sekundaer klein" id="woche-heute">Woche der Demo-Uhr</button>
+        </div>
+      </div>
+      <p class="hilfe">Anzeige in Europe/Berlin. Tage mit Zeitumstellung sind markiert.</p>
+      <ol class="woche" id="woche"></ol>
+      <form class="planen" id="planen" novalidate>
+        <h3>Neuen Termin planen</h3>
+        <div class="felder">
+          <label>Ziel <select id="planen-ziel"></select></label>
+          <label>Datum <input type="date" id="planen-datum" required></label>
+          <label>Uhrzeit <input type="time" id="planen-zeit" required></label>
+          <label>Zeitzone
+            <select id="planen-zone">
+              <option value="Europe/Berlin">Europe/Berlin</option>
+              <option value="America/New_York">America/New_York</option>
+              <option value="UTC">UTC</option>
+            </select>
+          </label>
+        </div>
+        <div id="planen-wahl"></div>
+        <div class="planen-aktionen">
+          <button type="submit" class="primaer">Termin planen (simuliert)</button>
+          <button type="button" class="link" id="beispiel-luecke">Beispiel: Uhrzeit in der Sommerzeit-Lücke</button>
+          <button type="button" class="link" id="beispiel-doppelt">Beispiel: doppelte Stunde im Herbst</button>
+        </div>
+        <div id="planen-meldung" class="formular-meldung" role="alert"></div>
+      </form>
+    </section>
+
+    <section class="karte bereich-plattformen" id="plattformen" aria-labelledby="plattformen-titel">
+      <h2 id="plattformen-titel" tabindex="-1">Plattformen</h2>
+      <ul class="plattformen" id="plattformen-liste"></ul>
+    </section>
+
+    <section class="karte bereich-protokoll" aria-labelledby="protokoll-titel">
+      <details class="protokoll">
+        <summary><h2 id="protokoll-titel">Protokoll (simuliert)</h2></summary>
+        <ol id="protokoll"></ol>
+      </details>
+    </section>
+  </div>
+</main>
+
+<footer class="fuss">
+  <p>Alle Daten sind erfunden. Die Seite lädt nur Dateien aus ihrem eigenen Ordner; eine Content-Security-Policy sperrt ausgehende Verbindungen. Freigabe, Terminplanung und Fehlerbehandlung sind vereinfacht dargestellt. Kein Nachweis einer echten Plattformverbindung oder eines produktiven SaaS-Betriebs.</p>
+</footer>
+<noscript><p class="noscript">Die Demo benötigt JavaScript. Sie läuft vollständig lokal und sendet nichts.</p></noscript>
+</body>
+</html>
