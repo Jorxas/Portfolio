@@ -40,8 +40,8 @@ export default function Projekte() {
         </h1>
         <p>
           Software, Daten und technische Abläufe. Eine Auswahl aus Studien- und
-          Lernprojekten – mit Quellcode, verständlichen Einblicken und klar
-          gekennzeichneten Demos.
+          Lernprojekten – mit verständlichen Einblicken, klar gekennzeichneten
+          Demos und öffentlichen oder geschützten Quellständen.
         </p>
       </Einblenden>
       <div className="projektauswahl">

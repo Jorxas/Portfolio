@@ -520,6 +520,14 @@ p {
   display: flex;
   gap: 12px;
 }
+.projektlinks > .quellcode-hinweis {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .7rem 0;
+  font-size: .875rem;
+  color: #36506e;
+}
 .projektlinks > a {
   display: flex;
   align-items: center;

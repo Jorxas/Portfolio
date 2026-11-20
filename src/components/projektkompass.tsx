@@ -5,9 +5,9 @@ import { ArrowUpRight, Braces } from "lucide-react";
 const felder = [
   {
     name: "Software",
-    titel: "Hermes: Entwicklungssitzungen koordinieren",
-    code: "Python → MCP → dauerhafte Aufgaben",
-    href: "https://jorxas.github.io/Hermes/",
+    titel: "Hermes: mehrere KI-Agenten koordinieren",
+    code: "ChatGPT → Hermes → Claude Code / Codex / Antigravity",
+    href: "/projects/hermes/",
   },
   {
     name: "Daten",
@@ -19,7 +19,7 @@ const felder = [
     name: "Automatisierung",
     titel: "THOT: Veröffentlichungen begleiten",
     code: "Prüfsumme → Freigabe → Zustellstatus",
-    href: "https://jorxas.github.io/THOT/",
+    href: "/projects/thot/",
   },
 ];
 export function Projektkompass() {
