@@ -6,15 +6,13 @@ Dies ist der Quellcode meiner Portfolio-Website. Ich studiere Informatik an der 
 
 ## Die Website
 
-Die Projektübersicht zeigt **neun ausgewählte Arbeiten**. Über „Alle Arbeiten“, Suche und Themenfilter sind **23 Projekte** zugänglich. Jede Karte hat getrennte Links zum **Quellcode** und zur **Demo**. Ältere, redundante Frontend-Übungen werden nicht mehr hervorgehoben; ihre Repositories bleiben erhalten.
+Die Projektübersicht zeigt eine Auswahl und über „Alle Arbeiten“, Suche und Themenfilter alle Projekte. Jede Karte führt direkt zur echten Demo oder, wenn es keine gibt, zum Quellcode. Demos öffnen in einem neuen Tab, ohne Zwischenseite und ohne Einbettung.
 
-**22 eigenständige Demo- und Erklärseiten** behandeln Software, Daten und technische Abläufe; Concal verlinkt seine externe Anwendung. Die 13 technischen Lernprojekte verwenden synthetische Beispiele und klar gekennzeichnete simulierte Backends. Beim Wartungsportal läuft das kompilierte Angular-Frontend. Das Quiz verwendet sein vorhandenes Frontend mit lokalem HTTP-/MQTT-Adapter. CNN und RNN zeigen gespeicherte Originalauswertungen statt neuer Modellaufrufe. [Aufbau und Reproduktion](DEMOSEITEN.md).
+- **Externe Demos:** JobPilot, PPS, Horror Studio 3D, Vie, Concal.
+- **Demos in diesem Repository:** das Quiz unter `public/demos/quiz/` (vorhandenes Frontend mit lokalem Adapter) und das Wartungsportal unter `public/demos/wartungsportal/` (kompiliertes Angular-Frontend, Quelle in `demo-quellen/wartungsportal/`, siehe [DEMOSEITEN.md](DEMOSEITEN.md)).
+- **Ohne Demo:** Hermes und THOT (privater Quellcode), CNN, RNN und die übrigen Studienprojekte (nur Link zum Repository).
 
-Das blau-weiße Layout verbindet eine interaktive Projektvorschau, dezente Bewegungen, Tastaturbedienung und eine mobile Navigation. Die Einstellung für reduzierte Bewegung wird berücksichtigt. Fähigkeiten werden anhand von Projekten erklärt, ohne subjektive Prozentbalken. Kontakt erfolgt per E-Mail-Link oder Zwischenablage; die Website versendet keine Nachrichten.
-
-**JobPilot** ergänzt den Einblick in ein tatsächlich verwendetes persönliches Jobsuchwerkzeug: Die eigenständige öffentliche Fassung enthält Such- und Bewertungsmodule, Firmenhistorie, einen Formularmotor sowie einen optionalen lokalen Node-Server. Die Portfolio-Demo verwendet denselben statischen Browserexport mit ausschließlich synthetischen Angeboten. Private Bewerbungsdaten sind ausgeschlossen. [Eigenständiges Repository](https://github.com/Jorxas/JobPilot).
-
-Die Seite enthält eine Startseite, eine Projektübersicht, Informationen über mich und eine Kontaktseite. Projekttexte und Profildaten sind in [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts) gesammelt, damit ich Inhalte pflegen kann, ohne sie an vielen Stellen im UI zu ändern.
+Die Seite enthält eine Startseite, eine Projektübersicht, Informationen über mich und eine Kontaktseite. Projekttexte und Profildaten sind in [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts), [`src/data/persoenliche-projekte.ts`](src/data/persoenliche-projekte.ts) und [`src/data/lernprojekte.ts`](src/data/lernprojekte.ts) gesammelt, damit ich Inhalte pflegen kann, ohne sie an vielen Stellen im UI zu ändern.
 
 Umgesetzt mit **Next.js**, **React**, **TypeScript**, **Tailwind CSS** und **Framer Motion**. Das Layout ist responsive; die Next.js-Konfiguration erstellt einen statischen Export für GitHub Pages.
 
@@ -35,10 +33,8 @@ npm run dev
 
 - [`src/app/`](src/app/) — Seiten, Layout und globale Styles.
 - [`src/components/`](src/components/) — wiederverwendbare Komponenten.
-- [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts) — Inhalte und Projektliste.
+- [`src/data/`](src/data/) — Inhalte und Projektlisten.
 - [`public/`](public/) — Bilder und weitere statische Dateien.
-
-Neu hervorgehoben werden [Hermes](https://github.com/Jorxas/Hermes), [THOT](https://github.com/Jorxas/THOT), [PPS](https://github.com/Jorxas/PPS), [Horror Studio 3D](https://github.com/Jorxas/HorrorStudio3D) und [Vie](https://github.com/Jorxas/Vie). Ihre öffentlichen Fassungen enthalten keine privaten Betriebsdaten. Gespeicherte Motorbilder, der echte lokale Planungskern und simulierte Dienste sind in den Demos unterschieden.
 
 Weitere Projekte, die auf der Website vorgestellt werden: [Concal](https://github.com/Jorxas/Concal), [Multiplayer Trivia Quiz](https://github.com/Jorxas/quizgame), [CNN Clothing Classification](https://github.com/Jorxas/cnn-clothing-classification) und [Musikgenerierung mit RNNs](https://github.com/Jorxas/eidl-abgabe3-musikgenerierung).
 
@@ -50,9 +46,6 @@ npm run lint
 $env:NEXT_PUBLIC_BASE_PATH = '/Portfolio'
 npm run build
 node werkzeuge/vorschau.cjs
-# In einer zweiten Konsole, mit installiertem Playwright:
-node werkzeuge/portfolio-pruefen.cjs http://127.0.0.1:<Port>/Portfolio/
-node werkzeuge/demos-pruefen.cjs http://127.0.0.1:<Port>/Portfolio/
 ```
 
-`PLAYWRIGHT_MODUL` kann auf eine vorhandene Playwright-Installation zeigen. Berichte und Bildschirmbilder bleiben unter `.demo-nachweise/`. Interne Links verwenden vollständige Dokumentnavigation: Der Export benötigt auf GitHub Pages keine RSC-Rewrite-Regeln. Die Website und ihre zusätzlichen Demos wurden mit KI-Unterstützung überarbeitet.
+`werkzeuge/vorschau.cjs` liefert `out/` lokal unter dem Basispfad `/Portfolio/` aus. Interne Links verwenden vollständige Dokumentnavigation: Der Export benötigt auf GitHub Pages keine RSC-Rewrite-Regeln.
