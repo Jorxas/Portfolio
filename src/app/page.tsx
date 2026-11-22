@@ -9,7 +9,6 @@ import {
 import { projects } from "@/data/portfolio-data";
 import { ProjectCard } from "@/components/project-card";
 import { Einblenden } from "@/components/bewegung";
-import { Projektkompass } from "@/components/projektkompass";
 const auswahl = [
   "hermes",
   "thot",
@@ -54,13 +53,10 @@ export default function Startseite() {
             </a>
           </div>
         </Einblenden>
-        <Einblenden klasse="held-grafik" verzug={0.15}>
-          <Projektkompass />
-        </Einblenden>
       </section>
       <div className="fokusleiste">
         <div className="seitenbreite">
-          <span>VOM PROBLEM ZUM PROJEKT</span>
+          <span>PROJEKTBEREICHE</span>
           <p>
             Software & Systeme <b>✳</b> Daten & KI <b>✳</b> Automatisierung &
             GIS
@@ -72,14 +68,15 @@ export default function Startseite() {
           <div>
             <p className="kleine-ueberschrift">01 / AUSGEWÄHLTE ARBEITEN</p>
             <h2>
-              Ideen, die man
+              Projekte aus
               <br />
-              <span>ausprobieren kann.</span>
+              <span>Studium und Eigeninitiative.</span>
             </h2>
           </div>
           <p>
-            Keine reine Technologieliste: Jedes Projekt zeigt eine konkrete
-            Aufgabe, den Lösungsweg und die Grenzen des Ergebnisses.
+            Eine Auswahl meiner Arbeiten. Wo eine Demo existiert, öffnet sie
+            sich direkt in einem neuen Tab; sonst führt die Karte zum
+            Quellcode.
           </p>
         </Einblenden>
         <div className="projektgitter">
@@ -128,7 +125,7 @@ export default function Startseite() {
               {
                 icon: Workflow,
                 titel: "Abläufe sichtbar machen",
-                text: "Zustände, Schnittstellen und Fehlerfälle erklären. Browser-Demos machen auch native Projekte zugänglich.",
+                text: "Zustände, Schnittstellen und Fehlerfälle nachvollziehbar darstellen.",
               },
             ].map((m, i) => (
               <Einblenden key={m.titel} verzug={i * 0.08}>

@@ -8,6 +8,7 @@ import {
   experience,
 } from "@/data/portfolio-data";
 import { Einblenden } from "@/components/bewegung";
+import { assetPath } from "@/lib/asset-path";
 export const metadata: Metadata = {
   title: "Über mich",
   description:
@@ -18,22 +19,22 @@ const felder = [
     titel: "Software & Systeme",
     text: "Weboberflächen, Schnittstellen und verteilte Anwendungen.",
     technik: "Java · TypeScript · Angular · SQL · MQTT",
-    href: "/projects/multiplayer-trivia-quiz/",
-    beleg: "Im Multiplayer-Quiz ansehen",
+    href: "/demos/quiz/",
+    beleg: "Multiplayer-Quiz ausprobieren",
   },
   {
     titel: "Daten & KI",
     text: "Daten aufbereiten, Modelle auswerten und Ergebnisse erklären.",
     technik: "Python · PyTorch · Pandas · Power BI",
-    href: "/projects/cnn-clothing-classification/",
-    beleg: "In der CNN-Auswertung ansehen",
+    href: "https://github.com/Jorxas/cnn-clothing-classification",
+    beleg: "CNN-Projekt auf GitHub",
   },
   {
     titel: "Technische Abläufe",
     text: "Zustände, Automatisierung und räumliche Daten verständlich verbinden.",
     technik: "C++ · Node-RED · QGIS · Git",
-    href: "/projects/wartungskarte-qgis/",
-    beleg: "In der Wartungskarte ansehen",
+    href: "https://github.com/Jorxas/wartungskarte-qgis",
+    beleg: "Wartungskarte auf GitHub",
   },
 ];
 export default function UeberMich() {
@@ -75,8 +76,8 @@ export default function UeberMich() {
           </div>
           <p>
             Die folgenden Technologien kommen in meinen Studien- und
-            Lernprojekten vor. Die verlinkten Beispiele zeigen den jeweiligen
-            Umfang und seine Grenzen.
+            Lernprojekten vor. Die verlinkten Beispiele zeigen, wo ich sie
+            eingesetzt habe.
           </p>
         </div>
         <div className="methodengitter kenntnisse">
@@ -85,10 +86,15 @@ export default function UeberMich() {
               <h3>{f.titel}</h3>
               <p>{f.text}</p>
               <p className="technikzeile">{f.technik}</p>
-              <Link className="textlink" href={f.href}>
+              <a
+                className="textlink"
+                href={assetPath(f.href)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {f.beleg}
                 <ArrowUpRight size={16} />
-              </Link>
+              </a>
             </Einblenden>
           ))}
         </div>

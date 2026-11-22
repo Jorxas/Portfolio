@@ -226,11 +226,10 @@ p {
 }
 .startheld {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   padding-block: 92px 70px;
-  min-height: 720px;
+  min-height: 620px;
 }
 .startheld h1 {
   font-size: clamp(44px, 4.8vw, 69px);
@@ -241,7 +240,7 @@ p {
 .held-einleitung {
   font-size: 15px;
   line-height: 1.85;
-  max-width: 455px;
+  max-width: 520px;
 }
 .held-aktionen {
   display: flex;
@@ -264,104 +263,6 @@ p {
   padding: 10px;
   border-radius: 50%;
   color: var(--blau);
-}
-.held-grafik {
-  min-width: 0;
-}
-.projektkompass {
-  position: relative;
-  background: linear-gradient(135deg, #f5f8ff, #eaf2ff);
-  border: 1px solid #dce7fa;
-  border-radius: 16px;
-  padding: 25px 24px 20px;
-  isolation: isolate;
-  box-shadow: 0 30px 70px -40px #165dff60;
-}
-.kompass-raster {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  background-image:
-    linear-gradient(#165dff08 1px, transparent 1px),
-    linear-gradient(90deg, #165dff08 1px, transparent 1px);
-  background-size: 28px 28px;
-  z-index: -1;
-  mask-image: linear-gradient(#000, transparent);
-}
-.kompass-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--blau);
-}
-.kompass-top > span {
-  font: 10px monospace;
-  letter-spacing: 0.14em;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.kompass-zeichnung {
-  width: 100%;
-  margin: 12px auto 0;
-  overflow: visible;
-}
-.kompass-linie {
-  stroke-dasharray: 5 5;
-  animation: leitung 24s linear infinite;
-}
-.kompass-knoten {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: knoten 4s ease-in-out infinite;
-}
-.knoten-zwei {
-  animation-delay: 2s;
-}
-.kompass-auswahl {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  padding: 5px;
-  background: #fff9;
-  border: 1px solid #dce7fa;
-  border-radius: 7px;
-  position: relative;
-}
-.kompass-auswahl button {
-  font-size: 10px;
-  padding: 8px 12px;
-  flex: 1;
-  border-radius: 4px;
-  color: #526986;
-}
-.kompass-auswahl button[aria-pressed="true"] {
-  background: var(--blau);
-  color: white;
-  box-shadow: 0 3px 8px #165dff30;
-}
-.kompass-vorschau {
-  margin-top: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 18px 15px;
-  background: #fff;
-  border: 1px solid #e3eaf6;
-  border-radius: 7px;
-  color: var(--blau);
-}
-.kompass-vorschau strong {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--tinte);
-}
-.kompass-code {
-  font: 9px monospace;
-  letter-spacing: 0.02em;
-  color: #657b99;
-  margin-bottom: 6px;
 }
 .fokusleiste {
   border-block: 1px solid var(--border);
@@ -474,6 +375,19 @@ p {
   background: white;
   color: var(--blau);
   box-shadow: 0 2px 10px #17243a10;
+}
+.projektbild.ohne-bild {
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(135deg, #f1f5fb, #e4ecf8);
+}
+.bildband {
+  padding: 18px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3d567a;
 }
 .projektkarten-inhalt {
   padding: 23px;
@@ -1016,280 +930,6 @@ p {
   margin-top: 25px;
   max-width: 680px;
 }
-.lern-demo {
-  padding: 0 22px 24px;
-}
-.lern-demo > .demo-werkzeugkopf {
-  margin-inline: -22px;
-}
-.lern-einleitung {
-  padding: 25px 0 20px;
-}
-.lern-einleitung h3,
-.lern-audio h3 {
-  font-size: 23px;
-  font-weight: 500;
-}
-.lern-einleitung p,
-.lern-audio > p {
-  font-size: 13px;
-  line-height: 1.9;
-  margin-top: 10px;
-}
-.matrix-scroll {
-  overflow-x: auto;
-  max-width: 100%;
-  padding-bottom: 8px;
-}
-.konfusionsmatrix {
-  width: 100%;
-  border-collapse: separate !important;
-  border-spacing: 5px !important;
-  text-align: center;
-  min-width: 550px;
-}
-.konfusionsmatrix caption {
-  text-align: left;
-  font-size: 10px;
-  color: #5c6f8c;
-  margin-bottom: 10px;
-}
-.konfusionsmatrix th {
-  font-size: 10px;
-  font-weight: 500;
-  max-width: 110px;
-  padding: 7px;
-}
-.konfusionsmatrix th:first-child {
-  text-align: left;
-}
-.konfusionsmatrix td {
-  padding: 0 !important;
-  border: 0 !important;
-}
-.konfusionsmatrix button {
-  width: 100%;
-  height: 53px;
-  border-radius: 5px;
-  font: 600 15px monospace;
-  border: 2px solid transparent;
-}
-.konfusionsmatrix button[aria-pressed="true"] {
-  border-color: #172c4d;
-  outline: 2px solid white;
-  outline-offset: -4px;
-}
-.lern-rueckmeldung {
-  background: #edf4ff;
-  padding: 18px 22px;
-  border-radius: 7px;
-  margin-top: 17px;
-}
-.lern-rueckmeldung strong {
-  font-size: 14px;
-}
-.lern-rueckmeldung p {
-  font-size: 12px;
-  margin-top: 6px;
-}
-.lern-details {
-  margin-top: 20px;
-  border: 1px solid var(--border);
-  padding: 15px;
-  border-radius: 6px;
-  font-size: 12px;
-}
-.lern-details summary {
-  cursor: pointer;
-  font-weight: 500;
-  color: var(--blau);
-}
-.lern-details img {
-  width: 100%;
-  height: auto;
-  margin-top: 20px;
-}
-.lern-details p {
-  margin-top: 10px;
-}
-.lern-quellenlink {
-  display: inline-block;
-  color: var(--blau);
-  font-size: 11px;
-  margin-top: 25px;
-}
-.lern-modellauswahl {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-.lern-modellauswahl button {
-  font-size: 12px;
-  border: 1px solid var(--border);
-  padding: 9px 23px;
-  border-radius: 5px;
-}
-.lern-modellauswahl button[aria-pressed="true"] {
-  background: var(--blau);
-  color: white;
-  border-color: var(--blau);
-}
-.lern-kennzahlen {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-.lern-kennzahlen > div {
-  padding: 22px;
-  border-right: 1px solid var(--border);
-}
-.lern-kennzahlen > div:last-child {
-  border: 0;
-}
-.lern-kennzahlen strong {
-  font: 500 27px var(--font-poppins);
-  color: var(--blau);
-  display: block;
-}
-.lern-kennzahlen span {
-  font-size: 11px;
-  color: var(--leise);
-}
-.lern-kurve {
-  max-width: 740px;
-  margin: 28px auto 0;
-}
-.lern-kurve svg {
-  width: 100%;
-}
-.lern-kurve figcaption {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  font-size: 11px;
-}
-.lern-kurve figcaption span:first-child {
-  color: var(--blau);
-}
-.lern-kurve figcaption span:last-child {
-  color: #6584af;
-}
-.lern-details table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-  min-width: 350px;
-}
-.lern-details td,
-.lern-details th {
-  text-align: left;
-  padding: 8px;
-  border-bottom: 1px solid var(--border);
-}
-.lern-audio {
-  margin-top: 35px;
-  padding-top: 30px;
-  border-top: 1px solid var(--border);
-}
-.lern-audio label {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 22px;
-  font-size: 12px;
-  color: var(--leise);
-}
-.lern-audio select {
-  padding: 8px 25px 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  background: white;
-}
-.lern-audio pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  background: #f3f6fb;
-  border: 1px solid var(--border);
-  padding: 18px;
-  border-radius: 7px;
-  margin: 15px 0 20px;
-  font: 11px/1.9 monospace;
-  color: #435a7b;
-}
-.lern-audio .lern-audiostatus {
-  font-size: 11px;
-}
-.quiz-rahmen {
-  display: block;
-  width: 100%;
-  height: 820px;
-  border: 0;
-  background: #f5f7fc;
-}
-.projektstudie {
-  background: #fff !important;
-  padding-top: 45px !important;
-}
-.projektstudie .studie-kopf h1 {
-  font-weight: 500;
-  letter-spacing: -0.045em;
-}
-.projektstudie .studie-beleg {
-  box-shadow: none;
-}
-.projektstudie .studie-abschluss {
-  border-radius: 10px;
-}
-.projektstudie .studie-inhalt {
-  padding-top: 0;
-}
-@media (max-width: 600px) {
-  .lern-demo {
-    padding: 0 13px 20px;
-  }
-  .lern-demo > .demo-werkzeugkopf {
-    margin-inline: -13px;
-  }
-  .lern-kennzahlen > div {
-    padding: 15px 8px;
-  }
-  .lern-kennzahlen strong {
-    font-size: 19px;
-  }
-  .lern-kennzahlen span {
-    font-size: 9px;
-  }
-  .lern-einleitung h3,
-  .lern-audio h3 {
-    font-size: 20px;
-  }
-  .quiz-rahmen {
-    height: 950px;
-  }
-  .lern-rueckmeldung {
-    padding: 15px;
-  }
-  .lern-audio .knopf {
-    white-space: normal;
-    text-align: left;
-  }
-  .lern-demo .demo-werkzeugkopf {
-    flex-wrap: wrap;
-    font-size: 9px;
-  }
-}
-@keyframes leitung {
-  to {
-    stroke-dashoffset: -100;
-  }
-}
-@keyframes knoten {
-  50% {
-    transform: scale(1.35);
-    opacity: 0.5;
-  }
-}
 @media (min-width: 1600px) {
   .startheld {
     min-height: 790px;
@@ -1312,9 +952,6 @@ p {
   }
   .held-einleitung {
     font-size: 13px;
-  }
-  .kompass-auswahl button {
-    padding: 8px 5px;
   }
   .projektgitter {
     gap: 22px;
@@ -1416,21 +1053,6 @@ p {
   }
   .held-fuss {
     margin-top: 30px;
-  }
-  .held-grafik {
-    max-width: 510px;
-    width: 100%;
-    margin-inline: auto;
-  }
-  .projektkompass {
-    padding: 20px;
-  }
-  .kompass-zeichnung {
-    max-height: 270px;
-  }
-  .kompass-auswahl button {
-    font-size: 10px;
-    padding: 8px;
   }
   .fokusleiste > div {
     display: block;
@@ -1653,14 +1275,8 @@ p {
     font-size: 12px;
     padding: 14px 18px;
   }
-  .kompass-vorschau strong {
-    font-size: 11px;
-  }
   .kleine-ueberschrift {
     font-size: 9px;
-  }
-  .kompass-zeichnung {
-    max-height: 235px;
   }
   .held-fuss {
     font-size: 9px;
@@ -1678,18 +1294,5 @@ p {
   }
   .lesefortschritt {
     display: none;
-  }
-}
-
-.jobpilot-rahmen {
-  display: block;
-  width: 100%;
-  height: 1150px;
-  border: 0;
-  background: #f5f7fb;
-}
-@media (max-width: 650px) {
-  .jobpilot-rahmen {
-    height: 1250px;
   }
 }

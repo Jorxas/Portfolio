@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Jordan Freddy",
   },
   description:
-    "Jordan Freddy – Informatikstudent an der THM Gießen. Softwareentwicklung, Datenanalyse und interaktive Projektdemos.",
+    "Jordan Freddy – Informatikstudent an der THM Gießen. Softwareentwicklung, Datenanalyse und Projekte mit Demos.",
   authors: [{ name: "Jordan Freddy" }],
 };
 

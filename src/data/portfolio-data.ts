@@ -82,14 +82,15 @@ export const skillCategories: SkillCategory[] = [
   },
 ];
 
-import { projektstudien } from "./projektstudien";
+import { lernprojekte } from "./lernprojekte";
 import { persoenlicheProjekte } from "./persoenliche-projekte";
 
 export interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
+  /** Fehlt bei Projekten ohne eigene Abbildung; die Karte zeigt dann ein Farbband. */
+  image?: string;
   /** "contain" = ganzes Bild sichtbar ohne Beschnitt. Standard: cover */
   imageObjectFit?: "cover" | "contain";
   techStack: string[];
@@ -104,7 +105,6 @@ export interface Project {
     | "Daten & KI"
     | "Software & Systeme"
     | "Automatisierung & GIS";
-  demoLabel?: string;
   domain?: string;
   ausgewaehlt?: boolean;
 }
@@ -121,30 +121,11 @@ export const projects: Project[] = [
     imageObjectFit: "contain",
     techStack: ["React", "TypeScript", "Node.js", "Browser-Erweiterung"],
     codeUrl: "https://github.com/Jorxas/JobPilot",
-    demoUrl: "/projects/stellensuche-jobpilot/",
+    demoUrl: "https://jorxas.github.io/JobPilot/",
     ausgewaehlt: true,
     category: "Software & Systeme",
   },
-  ...projektstudien.map(
-    (p): Project => ({
-      id: p.slug,
-      title: p.titel,
-      description: p.problem,
-      image: `/images/projektstudien/${p.slug}.png`,
-      imageObjectFit: "contain",
-      techStack: p.technologien,
-      demoUrl: `/projects/${p.slug}/`,
-      demoLabel: "Demo & Erklärung",
-      codeUrl: p.repository,
-      domain: p.bereich,
-      ausgewaehlt: false,
-      category: ["P01", "P02", "P03", "P13"].includes(p.id)
-        ? "Daten & KI"
-        : ["P08", "P10", "P11", "P12"].includes(p.id)
-          ? "Automatisierung & GIS"
-          : "Software & Systeme",
-    }),
-  ),
+  ...lernprojekte,
   {
     id: "concal",
     domain: "Webanwendung & Ernährung",
@@ -174,7 +155,7 @@ export const projects: Project[] = [
       "HTML/CSS/JS",
       "Bootstrap",
     ],
-    demoUrl: "/projects/multiplayer-trivia-quiz/",
+    demoUrl: "/demos/quiz/",
     codeUrl: "https://github.com/Jorxas/quizgame",
     ausgewaehlt: true,
     category: "Web App",
@@ -188,7 +169,7 @@ export const projects: Project[] = [
     image: "/images/cnn-clothing-confusion-matrix.png",
     imageObjectFit: "contain",
     techStack: ["PyTorch", "Python", "torchvision", "CNN", "Weights & Biases"],
-    demoUrl: "/projects/cnn-clothing-classification/",
+    demoUrl: null,
     codeUrl: "https://github.com/Jorxas/cnn-clothing-classification",
     ausgewaehlt: true,
     category: "Data Science",
@@ -208,7 +189,7 @@ export const projects: Project[] = [
       "Sequenzmodellierung",
       "Weights & Biases",
     ],
-    demoUrl: "/projects/rnn-music-generation/",
+    demoUrl: null,
     codeUrl: "https://github.com/Jorxas/eidl-abgabe3-musikgenerierung",
     ausgewaehlt: false,
     category: "Data Science",

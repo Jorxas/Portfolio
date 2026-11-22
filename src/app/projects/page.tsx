@@ -39,9 +39,9 @@ export default function Projekte() {
           <span>Mehr Substanz.</span>
         </h1>
         <p>
-          Software, Daten und technische Abläufe. Eine Auswahl aus Studien- und
-          Lernprojekten – mit verständlichen Einblicken, klar gekennzeichneten
-          Demos und öffentlichen oder geschützten Quellständen.
+          Software, Daten und technische Abläufe: Eine Auswahl aus Studien-,
+          Lern- und eigenen Projekten, mit Link zum Quellcode und, wo
+          vorhanden, zur Demo.
         </p>
       </Einblenden>
       <div className="projektauswahl">
@@ -117,12 +117,12 @@ export default function Projekte() {
       )}
       <aside className="projektarchivhinweis">
         <div>
-          <h2>Die passende Tiefe für den ersten Einblick.</h2>
+          <h2>Code und Demos.</h2>
           <p>
-            „Code“ führt zum Originalprojekt. „Demo“ öffnet eine Webansicht oder
-            die Anwendung. Simulierte Backends und gespeicherte Modellergebnisse
-            sind dort ausdrücklich gekennzeichnet. Ältere kleine
-            Frontend-Übungen bleiben auf GitHub im Archiv.
+            „Code“ führt zum Repository, „Demo“ öffnet die Anwendung in einem
+            neuen Tab. Projekte ohne Demo-Link haben nur den Quellcode; bei privaten
+            Repositories steht ein Hinweis. Ältere kleine Frontend-Übungen
+            bleiben auf GitHub im Archiv.
           </p>
         </div>
         <a
