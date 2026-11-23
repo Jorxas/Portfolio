@@ -17,6 +17,7 @@ export const lernprojekte: Project[] = [
       "Bestellungsdaten einer Werkstatt mit Dubletten und fehlerhaften Beträgen bereinigen und in SQL, Excel und Power BI vergleichbar auswerten.",
     techStack: ["Python", "SQLite", "Power BI", "DAX", "Excel/VBA"],
     codeUrl: "https://github.com/Jorxas/werkstatt-datenqualitaet-bi",
+    demoUrl: "https://jorxas.github.io/werkstatt-datenqualitaet-bi/",
     category: "Daten & KI",
   }),
   lernprojekt({
@@ -27,6 +28,7 @@ export const lernprojekte: Project[] = [
       "JSONL-Protokolle wiederholt importieren und je Umgebung auswerten, ohne Ereignisse zu verdoppeln.",
     techStack: ["Python", "FastAPI", "SQLite", "JSONL"],
     codeUrl: "https://github.com/Jorxas/mini-datahub-api",
+    demoUrl: "https://jorxas.github.io/mini-datahub-api/",
     category: "Daten & KI",
   }),
   lernprojekt({
@@ -37,6 +39,7 @@ export const lernprojekte: Project[] = [
       "Eine passende Anweisung in drei Dokumenten finden; Antworten belegen ihre Quelle oder weisen eine fehlende Grundlage aus.",
     techStack: ["Python", "Ollama", "Quellenprüfung"],
     codeUrl: "https://github.com/Jorxas/lokaler-dokumentenassistent",
+    demoUrl: "https://jorxas.github.io/lokaler-dokumentenassistent/",
     category: "Daten & KI",
   }),
   lernprojekt({
@@ -58,6 +61,7 @@ export const lernprojekte: Project[] = [
       "Messwerte aus einer CSV-Datei gegen einen Toleranzvertrag prüfen und Fehlerhinweise in einer Windows-Oberfläche anzeigen.",
     techStack: ["C#", ".NET", "WPF", "CSV"],
     codeUrl: "https://github.com/Jorxas/messwertpruefung-dotnet",
+    demoUrl: "https://jorxas.github.io/messwertpruefung-dotnet/",
     category: "Software & Systeme",
   }),
   lernprojekt({
@@ -68,6 +72,7 @@ export const lernprojekte: Project[] = [
       "Temperaturverläufe überwachen und Schwellenüberschreitungen reproduzierbar melden, bevor echte Sensorhardware verfügbar ist.",
     techStack: ["C++", "CMake", "Ninja"],
     codeUrl: "https://github.com/Jorxas/sensorsimulation-cpp",
+    demoUrl: "https://jorxas.github.io/sensorsimulation-cpp/",
     category: "Software & Systeme",
   }),
   lernprojekt({
@@ -78,6 +83,7 @@ export const lernprojekte: Project[] = [
       "Einen Dienst reproduzierbar bauen und starten, mit Gesundheitsprüfung, Konfigurationsfehlern und Wiederherstellung.",
     techStack: ["Docker", "Node.js", "Healthcheck"],
     codeUrl: "https://github.com/Jorxas/devops-prueflabor",
+    demoUrl: "https://jorxas.github.io/devops-prueflabor/",
     category: "Software & Systeme",
   }),
   lernprojekt({
@@ -88,6 +94,7 @@ export const lernprojekte: Project[] = [
       "Geräte erfassen, zu weit gefasste Rechte erkennen und Support- und Risikoberichte erstellen.",
     techStack: ["PowerShell", "Inventar", "Rechteprüfung"],
     codeUrl: "https://github.com/Jorxas/it-inventar-support",
+    demoUrl: "https://jorxas.github.io/it-inventar-support/",
     category: "Automatisierung & GIS",
   }),
   lernprojekt({
@@ -98,6 +105,7 @@ export const lernprojekte: Project[] = [
       "Produktdaten in einen kleinen Katalog importieren, ohne Preise zu verfälschen oder beim erneuten Import Duplikate anzulegen.",
     techStack: ["PHP", "PDO", "SQLite"],
     codeUrl: "https://github.com/Jorxas/produktkatalog-php",
+    demoUrl: "https://jorxas.github.io/produktkatalog-php/",
     category: "Software & Systeme",
   }),
   lernprojekt({
@@ -108,6 +116,7 @@ export const lernprojekte: Project[] = [
       "Normalbetrieb, Not-Halt und Sensorfehler eines Förderbands als Zustandsautomat nachvollziehbar prüfen.",
     techStack: ["Python", "Zustandsautomat", "Simulation"],
     codeUrl: "https://github.com/Jorxas/maschinenzustand-simulation",
+    demoUrl: "https://jorxas.github.io/maschinenzustand-simulation/",
     category: "Automatisierung & GIS",
   }),
   lernprojekt({
@@ -118,6 +127,7 @@ export const lernprojekte: Project[] = [
       "Wartungsaufträge einer fiktiven Gemeinde nach Bezirk verorten, ohne dass ungültige Koordinaten die Karte verfälschen.",
     techStack: ["QGIS", "GeoJSON", "Python"],
     codeUrl: "https://github.com/Jorxas/wartungskarte-qgis",
+    demoUrl: "https://jorxas.github.io/wartungskarte-qgis/",
     category: "Automatisierung & GIS",
   }),
   lernprojekt({
@@ -128,6 +138,7 @@ export const lernprojekte: Project[] = [
       "Kleine Beschaffungsanträge mit getrennten Rollen und prüfbaren Betragsregeln vor einem lokalen ERP-Export freigeben.",
     techStack: ["Node.js", "Node-RED", "JSON Schema"],
     codeUrl: "https://github.com/Jorxas/beschaffungsprozess-node-red",
+    demoUrl: "https://jorxas.github.io/beschaffungsprozess-node-red/",
     category: "Automatisierung & GIS",
   }),
   lernprojekt({
@@ -138,6 +149,7 @@ export const lernprojekte: Project[] = [
       "Einen kleinen Textklassifikator gegen eine Mehrheitsbaseline prüfen, mit getrennten Trainings- und Testdaten.",
     techStack: ["scikit-learn", "Pandas", "NumPy", "TF-IDF"],
     codeUrl: "https://github.com/Jorxas/stoerungsklassifikation-ml",
+    demoUrl: "https://jorxas.github.io/stoerungsklassifikation-ml/",
     category: "Daten & KI",
   }),
 ];
