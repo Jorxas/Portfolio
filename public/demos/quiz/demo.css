@@ -99,3 +99,28 @@
     transition: none !important;
   }
 }
+.demo-sprache {
+  float: right;
+  display: inline-flex;
+  margin-left: 12px;
+}
+.demo-sprache button,
+.demo-hinweis .demo-sprache button {
+  margin: 0;
+  border-radius: 0;
+  padding: 6px 11px;
+  background: #fff;
+  color: #165dff;
+  border: 1px solid #165dff;
+}
+.demo-sprache button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.demo-sprache button:last-child {
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+}
+.demo-hinweis .demo-sprache button[aria-pressed="true"] {
+  background: #165dff;
+  color: #fff;
+}

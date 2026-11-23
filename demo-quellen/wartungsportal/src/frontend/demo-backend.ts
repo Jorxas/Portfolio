@@ -22,7 +22,7 @@ export const demoBackend: HttpInterceptorFn = (anfrage, weiter) => {
     if (anfrage.method === 'POST') {
       if (!koerper || Object.keys(koerper).length !== 2 || typeof koerper['bezeichnung'] !== 'string'
         || !koerper['bezeichnung'].trim() || [...koerper['bezeichnung']].length > 120
-        || !['normal', 'hoch'].includes(String(koerper['prioritaet']))) return fehler(400, 'ungueltige_anfrage', 'Anfrage ungueltig: Feld oder Kennung pruefen.');
+        || !['normal', 'hoch'].includes(String(koerper['prioritaet']))) return fehler(400, 'ungueltige_anfrage', 'Anfrage ungültig: Feld oder Kennung prüfen.');
       const auftrag = { kennung: 'A' + String(naechsteKennung++).padStart(2, '0'), bezeichnung: koerper['bezeichnung'], prioritaet: String(koerper['prioritaet']), zustand: 'offen' };
       auftraege.push(auftrag); return antwort(auftrag, 201);
     }
@@ -31,7 +31,7 @@ export const demoBackend: HttpInterceptorFn = (anfrage, weiter) => {
     if (!auftrag) return fehler(404, 'auftrag_nicht_gefunden', 'Der angefragte Auftrag wurde nicht gefunden.');
     if (anfrage.method === 'GET') return antwort(auftrag);
     if (anfrage.method === 'PATCH') {
-      if (!koerper || Object.keys(koerper).length !== 1 || !['offen', 'erledigt'].includes(String(koerper['zustand']))) return fehler(400, 'ungueltige_anfrage', 'Anfrage ungueltig: Feld oder Kennung pruefen.');
+      if (!koerper || Object.keys(koerper).length !== 1 || !['offen', 'erledigt'].includes(String(koerper['zustand']))) return fehler(400, 'ungueltige_anfrage', 'Anfrage ungültig: Feld oder Kennung prüfen.');
       auftrag.zustand = String(koerper['zustand']); return antwort(auftrag);
     }
   }

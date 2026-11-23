@@ -8,6 +8,6 @@
     {"pfad":"js/http/app_http.js","quelle":"frontend/js/http/app_http.js","urspruenglicherGitBlob":"93baf9fbfe0b17b35c276821701ff74686591ca7","anpassung":"Externe Controller-URL deaktiviert."},
     {"pfad":"js/mqtt/app_mqtt.js","quelle":"frontend/js/mqtt/app_mqtt.js","urspruenglicherGitBlob":"1f52a478bb38bc16c322b20d37155275c9750377","anpassung":"Topic-Präfix durch demo/ ersetzt."}
   ],
-  "ergaenzung": "adapter.js ersetzt HTTP und MQTT lokal, lädt fünf Originalfragen, simuliert einen Mitspieler und ergänzt Antwortklicks am Host. demo.css blendet Anmeldung, Controller und andere Konfigurationen aus. Keine echte Backendvalidierung.",
+  "ergaenzung": "adapter.js ersetzt HTTP und MQTT lokal, lädt fünf Originalfragen, simuliert einen Mitspieler und ergänzt Antwortklicks am Host. demo.css blendet Anmeldung, Controller und andere Konfigurationen aus. Keine echte Backendvalidierung. sprache.js stellt die Oberfläche auf Deutsch (Standard) oder Französisch um; fragen-fr.json enthält die französischen Fragen.",
   "unterstuetzung": "Zusätzliche Demo mit KI-Unterstützung erstellt und geprüft."
 }

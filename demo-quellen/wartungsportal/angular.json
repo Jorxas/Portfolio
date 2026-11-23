@@ -15,7 +15,8 @@
             "browser": "src/frontend/main.ts",
             "index": "src/frontend/index.html",
             "tsConfig": "tsconfig.json",
-            "styles": ["src/frontend/gestaltung.css"]
+            "styles": ["src/frontend/gestaltung.css"],
+            "scripts": ["src/frontend/sprache.js"]
           }
         },
         "serve": {

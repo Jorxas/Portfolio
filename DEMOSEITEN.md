@@ -14,11 +14,11 @@ npm ci
 npm run bauen -- --base-href /Portfolio/demos/wartungsportal/
 ```
 
-Den Inhalt von `ausgabe/oberflaeche/browser/` danach nach `public/demos/wartungsportal/` übernehmen.
+Den Inhalt von `ausgabe/oberflaeche/browser/` danach nach `public/demos/wartungsportal/` übernehmen. Die Sprachumschaltung (`sprache.js`, Deutsch als Standard, Französisch per DE/FR-Schalter) ist in `angular.json` als Skript eingetragen; liegt `sprache.js` nach dem Bau nur als gehashte Datei vor, das eingebundene Skript im `index.html` auf diese Datei umstellen.
 
 ## Quiz
 
-`public/demos/quiz/` enthält das vorhandene Frontend mit ergänztem lokalem Adapter (`adapter.js`). Es gibt keinen Broker und keine Anmeldung; Herkunft in `HERKUNFT.json`.
+`public/demos/quiz/` enthält das vorhandene Frontend mit ergänztem lokalem Adapter (`adapter.js`). Es gibt keinen Broker und keine Anmeldung; Herkunft in `HERKUNFT.json`. `sprache.js` schaltet die Oberfläche zwischen Deutsch (Standard) und Französisch um; die französischen Fragen stehen in `fragen-fr.json`.
 
 ## Weitere Demos
 

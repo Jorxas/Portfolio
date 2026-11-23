@@ -23,6 +23,18 @@
     aktiv = false,
     beantwortet = false,
     ablauf = null;
+  const franzoesisch = window.__DEMO_SPRACHE__ === "fr";
+  const schwierigkeit = franzoesisch
+    ? { EASY: "Facile", MEDIUM: "Moyen", HARD: "Difficile" }
+    : { EASY: "Leicht", MEDIUM: "Mittel", HARD: "Schwer" };
+  const zeitpunkt = () =>
+    new Date().toLocaleString(franzoesisch ? "fr-FR" : "de-DE", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   const senden = (thema, daten) => {
     if (meldungen.message)
       meldungen.message("demo/" + thema, JSON.stringify(daten));
@@ -69,12 +81,12 @@
               {
                 username: "Demospieler",
                 score: punkte,
-                created_at: new Date().toISOString(),
+                created_at: zeitpunkt(),
               },
               {
                 username: "Lernbot (simuliert)",
                 score: botPunkte,
-                created_at: new Date().toISOString(),
+                created_at: zeitpunkt(),
               },
             ]
           : [],
@@ -122,6 +134,7 @@
     senden("game/state", { state: "QUESTION" });
     senden("game/question", {
       ...f,
+      difficulty: schwierigkeit[f.difficulty] || f.difficulty,
       questionIndex: index + 1,
       totalQuestions: fragen.length,
       duration: 30,
@@ -216,7 +229,7 @@
     document.querySelector("#modePills").closest(".card").hidden = true;
     document.body.className = "demo-modus";
     try {
-      const r = await anfragen("fragen.json");
+      const r = await anfragen(franzoesisch ? "fragen-fr.json" : "fragen.json");
       if (!r.ok) throw Error("Fragen nicht erreichbar");
       const d = await r.json();
       fragen = d.fragen;

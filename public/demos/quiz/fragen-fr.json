@@ -1,0 +1,195 @@
+{
+  "umfang": "Cinq vraies questions du dépôt public du cours (traduites en français). Backend, bus MQTT, état des joueurs et attribution des points sont simulés localement dans la démo du navigateur et signalés comme tels.",
+  "beschriftung": "Frontend du quiz d’origine · backend et MQTT simulés localement · co-joueur simulé · aucune vraie connexion",
+  "konfiguration": {
+    "mode": 5,
+    "categories": [
+      3
+    ],
+    "difficulties": [
+      "EASY"
+    ]
+  },
+  "startauswahl": {
+    "kategorie": "web-technologien",
+    "schwierigkeit": "leicht",
+    "fragenanzahl": 5
+  },
+  "fragen": [
+    {
+      "questionId": 13,
+      "text": "Que signifie HTTP ?",
+      "difficulty": "EASY",
+      "options": {
+        "A": "Hypertext Transfer Protocol",
+        "B": "High Throughput Transfer Process",
+        "C": "Host Transfer Protocol",
+        "D": "Hyperlink Transmission Package"
+      },
+      "correctOption": "A"
+    },
+    {
+      "questionId": 14,
+      "text": "Quel code d’état HTTP indique une requête réussie ?",
+      "difficulty": "EASY",
+      "options": {
+        "A": "301 Moved Permanently",
+        "B": "200 OK",
+        "C": "404 Not Found",
+        "D": "500 Internal Server Error"
+      },
+      "correctOption": "B"
+    },
+    {
+      "questionId": 69,
+      "text": "Quelle méthode HTTP sert en général à récupérer des données ?",
+      "difficulty": "EASY",
+      "options": {
+        "A": "GET",
+        "B": "POST",
+        "C": "DELETE",
+        "D": "PUT"
+      },
+      "correctOption": "A"
+    },
+    {
+      "questionId": 70,
+      "text": "Que signifie HTML ?",
+      "difficulty": "EASY",
+      "options": {
+        "A": "Hyper Transfer Markup Language",
+        "B": "Hypertext Markup Language",
+        "C": "High Technology Markup Layout",
+        "D": "Home Tool Markup Language"
+      },
+      "correctOption": "B"
+    },
+    {
+      "questionId": 71,
+      "text": "Qu’est-ce qu’une API (Application Programming Interface) ?",
+      "difficulty": "EASY",
+      "options": {
+        "A": "Une interface utilisateur graphique",
+        "B": "Un langage de programmation",
+        "C": "Une interface par laquelle des programmes peuvent communiquer entre eux",
+        "D": "Un format de base de données"
+      },
+      "correctOption": "C"
+    }
+  ],
+  "transport": {
+    "POST /api/lobby/create": {
+      "status": 200,
+      "text": "Demo-Lobby bereit."
+    },
+    "GET /api/lobby/status": {
+      "players": [
+        {
+          "username": "Demospieler",
+          "controllerId": "DEMO-WEB-1",
+          "controllerStatus": "ONLINE",
+          "ready": true
+        },
+        {
+          "username": "Lernbot (simuliert)",
+          "controllerId": "DEMO-WEB-2",
+          "controllerStatus": "ONLINE",
+          "ready": true
+        }
+      ]
+    },
+    "GET /api/controllers/available": {
+      "controllers": [
+        {
+          "controllerId": "DEMO-WEB-1",
+          "type": "WEB"
+        }
+      ]
+    },
+    "POST /api/controllers/create-web": {
+      "controllerId": "DEMO-WEB-1",
+      "type": "WEB"
+    },
+    "POST /api/game/config": {
+      "status": 200,
+      "text": "Demo-Konfiguration übernommen."
+    },
+    "POST /api/game/start": {
+      "status": 200,
+      "text": "Demo-Spiel gestartet."
+    },
+    "hinweis": "create/config/start werden vom Original-Frontend nur über HTTP-Erfolg und Text geprüft; dort ist keine bestimmte JSON-Antwortstruktur erforderlich."
+  },
+  "mqtt": {
+    "praefix": "demo/",
+    "state": {
+      "state": "QUESTION"
+    },
+    "countdown": {
+      "tick": 3
+    },
+    "question": {
+      "questionId": 13,
+      "text": "Wofür steht HTTP?",
+      "difficulty": "EASY",
+      "options": {
+        "A": "Hypertext Transfer Protocol",
+        "B": "High Throughput Transfer Process",
+        "C": "Host Transfer Protocol",
+        "D": "Hyperlink Transmission Package"
+      },
+      "questionIndex": 1,
+      "totalQuestions": 5,
+      "duration": 30
+    },
+    "evaluation": {
+      "questionIndex": 1,
+      "totalQuestions": 5,
+      "correctOption": "A",
+      "questionResults": [
+        {
+          "username": "Demospieler",
+          "correct": true,
+          "points": 100
+        }
+      ],
+      "rankings": [
+        {
+          "username": "Demospieler",
+          "totalPoints": 100
+        }
+      ]
+    },
+    "ended": {},
+    "lobbyStatus": {
+      "players": [
+        {
+          "username": "Demospieler",
+          "controllerId": "DEMO-WEB-1",
+          "controllerStatus": "ONLINE",
+          "ready": true
+        },
+        {
+          "username": "Lernbot (simuliert)",
+          "controllerId": "DEMO-WEB-2",
+          "controllerStatus": "ONLINE",
+          "ready": true
+        }
+      ]
+    },
+    "hinweise": [
+      "Das lokale Punktebeispiel 100 ist kein Beleg für die Punkteformel des Originalservers.",
+      "Nachrichten werden vom Frontend per JSON.parse(message.toString()) gelesen.",
+      "Die Antwortknöpfe der Hauptansicht sind im Original eine Host-Anzeige. Lokale Klickantworten sind eine Ergänzung des Demo-Adapters.",
+      "Zwei getWebControllerUrl-Funktionen im Original verweisen auf Port 81; für die isolierte Demo ersetzen oder deaktivieren.",
+      "Lokalen Adapter vor app_http.js laden, weil dieser beim Laden sofort /api/lobby/create aufruft."
+    ]
+  },
+  "quellen": [
+    "https://github.com/Jorxas/quizgame/blob/main/frontend/index.html",
+    "https://github.com/Jorxas/quizgame/blob/main/frontend/js/http/app_http.js",
+    "https://github.com/Jorxas/quizgame/blob/main/frontend/js/mqtt/app_mqtt.js",
+    "https://github.com/Jorxas/quizgame/blob/main/mariadb/mariadb_init/04-seed-questions-web.sql",
+    "https://github.com/Jorxas/quizgame/blob/main/mariadb/mariadb_init/15-add-questions-to-match-frontend.sql"
+  ]
+}
