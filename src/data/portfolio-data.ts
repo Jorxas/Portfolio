@@ -309,9 +309,9 @@ export const languages: Language[] = [
   {
     flag: "🇬🇧",
     name: "Englisch",
-    level: "Grundkenntnisse",
-    dots: 2,
-    description: "Grundlegende Kommunikation und Verständnis",
+    level: "Fortgeschritten",
+    dots: 3,
+    description: "Sehr gutes Verständnis und Verständigung im Alltag",
   },
 ];
 
